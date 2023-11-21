@@ -802,6 +802,7 @@ footer {
     position: relative;
     height: 55px;
     padding: .5rem;
+    box-shadow: 0.1rem 0.1rem 0.3rem black;
 }
 
 .sidebar {
@@ -1000,15 +1001,16 @@ footer {
     }
 
     .limiteLinhas{
+        display: block;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-        max-width: 10rem;
+        max-width: 80%;
     }
 
-    .controllerSideContainer{
-        width: 3rem; 
-        aspect-ratio: 1;
-    }
+}
 
+.controllerSideContainer{
+    width: 100%; 
+    aspect-ratio: 1;
 }

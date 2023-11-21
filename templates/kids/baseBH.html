@@ -90,14 +90,14 @@
           <div class="bg-transparent rounded-circle d-flex align-items-center justify-content-center"
             style="aspect-ratio: 1; width: 100%;">
             <svg width="30" height="30" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" aria-hidden="true"
-              focusable="false" fill="white" id="arrow">
+              focusable="false" fill="black" id="arrow">
               <g>
                 <path d="M4 16V4H2v12h2zM13 15l-1.5-1.5L14 11H6V9h8l-2.5-2.5L13 5l5 5-5 5z"></path>
               </g>
             </svg>
           </div>
         </li>
-        <h1 class="mb-2 h6 text-white tituloLista opacity-75 text-center">Canais Seguidos</h1>
+        <h1 class="mb-2 h6 text-black tituloLista opacity-75 text-center">Canais Seguidos</h1>
         <li class="d-flex align-items-center justify-content-center col-12 gap-3 position-relative">
           <button class="bg-transparent border-0" aria-controls="sidebar-kids">
             <div class="bg-info rounded-circle d-flex align-items-center justify-content-center position-relative"
@@ -105,17 +105,17 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-person-fill "
                 viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3
-                                      0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+                                    0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
               </svg>
               <div class="p-1 position-absolute rounded-circle statusBall">
               </div>
             </div>
           </button>
           <div class="flex-column escondido me-auto">
-            <p class="m-0 text-white small fw-bolder">
+            <p class="m-0 text-black small fw-bolder">
               Usuario
             </p>
-            <p class="mb-0 text-white small opacity-50">
+            <p class="mb-0 text-black small opacity-50">
               Categoria
             </p>
           </div>
@@ -125,7 +125,7 @@
 
 
         <hr style="background-color: white; height: 3px; width: 100%; margin-inline: .2rem;" class="my-2">
-        <h1 class="mb-2 h6 text-white tituloLista opacity-75 text-center">Criadores recomendados</h1>
+        <h1 class="mb-2 h6 text-black tituloLista opacity-75 text-center">Criadores recomendados</h1>
         {%if usuarios%}
         {%for u in usuarios%}
         <li class="d-flex align-items-center justify-content-center col-12 gap-3 position-relative">
@@ -135,17 +135,17 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-person-fill "
                 viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3
-                                        0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                                      0 1 0 0-6 3 3 0 0 0 0 6Z" />
               </svg>
               <div class="p-1 position-absolute rounded-circle statusBall">
               </div>
             </div>
           </button>
           <div class="flex-column escondido me-auto">
-            <p class="m-0 text-white small fw-bolder">
+            <p class="m-0 text-black small fw-bolder">
               {{u.nomeUsuario}}
             </p>
-            <p class="mb-0 text-white small opacity-50">
+            <p class="mb-0 text-black small opacity-50">
               Categoria
             </p>
           </div>

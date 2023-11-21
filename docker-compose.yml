@@ -4,4 +4,4 @@ services:
     container_name: roomon
     build: .
     ports:
-      - "8001:8000"
+      - "8102:8000"

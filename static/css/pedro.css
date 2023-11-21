@@ -873,7 +873,7 @@ footer {
 
 
 .statusBall {
-    background-color: rgb(79, 82, 79);
+    background-color: rgb(0, 255, 0);
     box-shadow: 0 0 0 .1rem white;
     bottom: 3px;
     right: 3px;
@@ -918,6 +918,7 @@ footer {
 
     .sidebar{
         display: block !important;
+        padding: 1rem;
     }
 }
 
@@ -1021,4 +1022,31 @@ footer {
 .controllerSideContainer{
     width: 100%; 
     aspect-ratio: 1;
+}
+
+.itemListaUsuarios{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    gap: 1rem;
+}
+
+.avatarItemSidebar{
+    width: 2rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: aqua;
+}
+
+.corpoItemSidebar{
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.nickItemSidebar{
+    font-family: dosis;
+    margin: 0;
+    font-weight: bold;
 }

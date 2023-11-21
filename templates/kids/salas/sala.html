@@ -1,7 +1,7 @@
 {% extends "kids/base.html"%}
 
 {% block content %}
-<div style="background-image: linear-gradient(90deg, #00a58e, #02ff1b, #00a58e);"
+<div style="background-image: linear-gradient(90deg, #00a58e, #02ff1b, #00a58e); border-radius: 10px 0 0 0;"
     class="w-100 h-100 d-flex justify-content-center">
     <main class="bg-trasnparent h-100 w-100 d-flex p-2 gap-2 maxw1600 position-relative"
         style="aspect-ratio: 16/9;max-height: 100%; align-self: center; ">
@@ -175,7 +175,7 @@
         message.classList.add("mensagem")
 
         var avatar = document.createElement("img")
-        avatar.src = `../static/imagens/usuarios/avatar00${idUsuario}.jpg`
+        avatar.src = `../static/imagens/usuarios/avatar${String(idUsuario).padStart(4, '0')}.jpg`
         avatar.classList.add('avatarParaSalas')
 
         var body = document.createElement("div")

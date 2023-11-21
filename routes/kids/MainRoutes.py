@@ -1,3 +1,4 @@
+from dataclasses import asdict
 from fastapi import APIRouter, Depends, Form, Query, Request, status
 from fastapi.responses import HTMLResponse, RedirectResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
@@ -10,6 +11,7 @@ from repositories.salaRepo import salaRepo
 from models.usuario import Usuario
 from typing import List
 from datetime import datetime
+import json
 
 from util.security import (
     gerar_token,
@@ -247,3 +249,17 @@ async def getPerfilKids(
             return RedirectResponse("/logindependentes", status.HTTP_302_FOUND)
         else:
             return RedirectResponse("/loginkids", status.HTTP_302_FOUND)
+        
+
+@router.get("/sidebar", response_class=JSONResponse)
+async def getUsuarios(
+    request: Request, usuario: Usuario = Depends(validar_usuario_logado),
+    crianca: Usuario = Depends(validar_crianca_logado),
+
+):
+    usuarios = pessoaRepo.obterUsuariosCriança()
+
+    # Convertendo a lista de usuários para um formato JSON serializável
+    usuarios_json = [asdict(user) for user in usuarios]
+
+    return JSONResponse({"usuarios": usuarios_json})

@@ -70,7 +70,6 @@ async def postCadastro(
     categorias: List[int] = Form(""),
     returnUrl: str = Query("/inicialkids"),
 ):
-    if usuario:
       nome = capitalizar_nome_proprio(nome).strip()
       email = email.lower().strip()
       senha = senha.strip()
@@ -153,8 +152,7 @@ async def postCadastro(
           raise Exception(
               "Não foi possível alterar o token do usuário no banco de dados."
           )
-    else:
-      return RedirectResponse("/loginroomon", status.HTTP_302_FOUND)
+
 
 
 @router.get("/precadastro", response_class=HTMLResponse)

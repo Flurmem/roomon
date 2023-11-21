@@ -93,7 +93,7 @@ async def postEdicaoPerfilKids(
         )
 
     imagem.save(f"static/imagens/usuarios/avatar{crianca.id:04d}.jpg", "JPEG")
-    return RedirectResponse("/perfilkids", status_code=status.HTTP_303_SEE_OTHER)
+    return RedirectResponse(f"/perfilkids/{crianca.nomeUsuario}", status_code=status.HTTP_303_SEE_OTHER)
 
 
 

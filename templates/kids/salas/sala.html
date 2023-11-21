@@ -1,19 +1,27 @@
 {% extends "kids/base.html"%}
 
 {% block content %}
-<main class="w-100 d-flex p-2 gap-2 maxw1600"
+<main class="w-100 d-flex p-2 gap-2 maxw1600 position-relative"
     style="aspect-ratio: 16/9;max-height: 100%; align-self: center; background-image: linear-gradient(90deg, #00a58e, #02ff1b, #00a58e);">
 
-    <div class="d-flex flex-column" style="flex-grow: 1 ;">
+    <div class="d-flex flex-column" style="flex-grow: 1; max-width: 100%;">
+        
         <div class="w-100 bg-white h-100 rounded-top-3 d-flex flex-column p-1 overflow-hidden">
-            <div class="w-100 rounded-3 d-flex gap-2" style="height: 5rem; background-color: rgb(151, 151, 151); ">
-                <img class="h-100 rounded-3 p-2" style="aspect-ratio: 16/9; object-fit: cover;"
+
+            <div class="w-100 rounded-3 d-flex p-1" style="height: 5rem; background-color: rgb(105, 105, 105); ">
+                <img class="h-100 rounded-3 p-1" style="aspect-ratio: 16/9; object-fit: cover;"
                     src="../static/imagens/salas/capas/capa{{sala.idSala|id_img}}.jpg">
-                <div>
-                    <h4 class="mb-0 text-white dosis">{{sala.titulo}}</h4>
-                    <p class="mb-0 text-white dosis limitar-a-2linhas"> {{sala.descricao}}</p>
+                <div class="flex-grow-1">
+                    <h4 class="mb-0 text-white dosis limit-text-2lines">{{sala.titulo}}</h4>
+                    <p class="mb-0 text-white dosis limiteLinhas"> {{sala.descricao}}</p>
+                </div>
+                <div class="controllerSideContainer">
+                    <svg class="w-100 h-100 ">
+                        <rect x="" y="50%" width="100" height="2" rx="15"></rect>
+                    </svg>
                 </div>
             </div>
+            
             <ul id='messages' style="max-height: 100%;" class="overflow-y-scroll list-unstyled p-3">
             </ul>
         </div>
@@ -62,7 +70,7 @@
     </div>
 
     <div
-        class="col-3 bg-white h-100 rounded-3 overflow-y-scroll p-3 d-flex flex-column align-items-center justify-content-start">
+        class="col-3 bg-white h-100 rounded-3 overflow-y-scroll p-3 sideContainer">
         <div class="w-100 mb-3" id="criador">
             <div class="d-flex gap-1 align-items-center">
                 <p class="mb-0 lilita">Criador</p>
@@ -127,7 +135,7 @@
 
 
 <script>
-    var ws = new WebSocket(`wss://${window.location.host}/ws/{{crianca.nomeUsuario}}/{{crianca.id}}`);
+    var ws = new WebSocket(`ws://${window.location.host}/ws/{{crianca.nomeUsuario}}/{{crianca.id}}`);
     ws.onmessage = function (event) {
 
         // <li class="" id="message">

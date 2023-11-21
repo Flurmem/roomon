@@ -47,5 +47,5 @@ app.include_router(configRoomOnRouter)
 app.include_router(pagRouter)
 app.include_router(perfilUserRouter)
 
-# if __name__ == "__main__":
-#     uvicorn.run(app="main:app", reload=True)
+if __name__ == "__main__":
+    uvicorn.run(app="main:app", reload=True)

@@ -1,36 +1,21 @@
 @font-face {
     font-family: "bahiana";
-    src: url("../static/fontes/Bahiana-Regular.ttf");
-}
-
-@font-face {
-    font-family: "Candara";
-    src: url("../static/fontes/Candara.ttf");
+    src: url("fontes/Bahiana-Regular.ttf");
 }
 
 @font-face {
     font-family: "Lilita";
-    src: url("../static/fontes/LilitaOne-Regular.ttf");
-}
-
-@font-face {
-    font-family: "Roboto";
-    src: url("../static/fontes/RobotoCondensed-Regular.ttf");
+    src: url("fontes/LilitaOne-Regular.ttf");
 }
 
 @font-face {
     font-family: "Bebas";
-    src: url("../static/fontes/BebasNeue-Regular.ttf");
-}
-
-@font-face {
-    font-family: 'Mont';
-    src: url(../static/fontes/Montserrat-Regular.ttf);
+    src: url("fontes/BebasNeue-Regular.ttf");
 }
 
 @font-face {
     font-family: 'Dosis';
-    src: url(../static/fontes/Dosis-Regular.ttf);
+    src: url("fontes/Dosis-Regular.ttf");
 }
 
 :root {
@@ -47,7 +32,7 @@
 
 html,
 body {
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
 }
 
@@ -216,10 +201,6 @@ body {
     font-family: Bebas !important;
 }
 
-.mont {
-    font-family: Mont !important;
-}
-
 .dosis {
     font-family: Dosis !important;
 }
@@ -291,7 +272,7 @@ input:hover {
 }
 
 
-@media (min-width: 600px) and (max-width: 1000px) {
+@media (min-width: 800px) and (max-width: 1000px) {
     .scrollerGrid, .paginacaoGrid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -301,6 +282,20 @@ input:hover {
     }
 
     .scrollerGrid > :nth-child(n+4){
+        display: none !important;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+    .scrollerGrid, .paginacaoGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hybGrid{
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .scrollerGrid > :nth-child(n+3){
         display: none !important;
     }
 }
@@ -724,7 +719,7 @@ footer {
     overflow: hidden;
 }
 
-.limitar-a-2linhas{
+.limiteLinhas{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -980,4 +975,40 @@ footer {
     color: black;
     font-weight: 500;
     font-size: 1.15rem;
+}
+
+.sideContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.controllerSideContainer{
+    display: none;    
+}
+
+@media (max-width: 900px){
+    .sideContainer{
+        position: absolute;
+        display: none;
+    }
+
+    .sideContainer[aria-expanded = "true"]{
+        right: 0;
+        height: 100%;
+    }
+
+    .limiteLinhas{
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 10rem;
+    }
+
+    .controllerSideContainer{
+        width: 3rem; 
+        aspect-ratio: 1;
+    }
+
 }

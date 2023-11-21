@@ -967,6 +967,10 @@ footer {
     border-radius: 50%;
 }
 
+.corpoMensagem{
+    flex: 1;
+}
+
 .corpoMensagem > *{
     margin-bottom: 0 !important;
     flex-grow: 1;

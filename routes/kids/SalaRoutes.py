@@ -11,6 +11,7 @@ from repositories.salaRepo import salaRepo
 from models.usuario import Usuario
 from fastapi import WebSocket, WebSocketDisconnect
 
+
 from util.security import (
     validar_usuario_logado,
     validar_crianca_logado,
@@ -194,3 +195,7 @@ async def websocket_endpoint(websocket: WebSocket,
     except WebSocketDisconnect:
         manager.disconnect(websocket)
         await manager.broadcast(f"{nomeUsuario} has left the chat")
+    finally:
+        # Fecha a conexão e retorna os headers CORS
+        await websocket.close()
+

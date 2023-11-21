@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 # Rotas Room ON #
 from routes.roomon.MainRoutes import router as mainRouter
 from routes.roomon.CadastrosRoutes import router as cadastroRoomOnRouter
@@ -31,8 +32,19 @@ pessoaRepo.tabelaSeguindo()
 #Tabelas categoria
 categoriaRepo.tabelaCategoria()
 
-
 app = FastAPI()
+
+origins = [
+    "https://roomon.cachoeiro.es",  # Adicione a URL do seu aplicativo cliente
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.mount(path="/static", app=StaticFiles(directory="static"), name="static")
 

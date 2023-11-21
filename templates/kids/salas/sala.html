@@ -154,20 +154,9 @@
 <script>
     var wsProtocol = window.location.protocol === "https:" ? "wss" : "ws";
     const url = `${wsProtocol}://${window.location.host}/ws/{{crianca.nomeUsuario}}/{{crianca.id}}`
-    console.log(url)
-
+  
     var ws = new WebSocket(url);
-
     ws.onmessage = function (event) {
-
-        // <li class="" id="message">
-        //             <div>
-        //                 <img src="">
-        //             </div>
-        //             <div id="messageBody">
-
-        //             </div>
-        // </li>
 
         dados = JSON.parse(event.data)
         var content = document.createTextNode(dados["mensagem"]);
@@ -180,7 +169,7 @@
         message.classList.add("mensagem")
 
         var avatar = document.createElement("img")
-        avatar.src = `../static/imagens/usuarios/avatar${String(idUsuario).padStart(4, '0')}.jpg`
+        avatar.src = `../static/imagens/usuarios/avatar00${idUsuario}.jpg`
         avatar.classList.add('avatarParaSalas')
 
         var body = document.createElement("div")

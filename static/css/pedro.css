@@ -217,6 +217,10 @@ body {
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
 }
 
+.sombraRight {
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+}
+
 input:focus {
     outline: none;
     border: none;
@@ -802,11 +806,15 @@ footer {
     position: relative;
     height: 55px;
     padding: .5rem;
-    box-shadow: 0.1rem 0.1rem 0.3rem black;
 }
 
+/* .primary-navbar-kids{
+    background-image: linear-gradient(to bottom, rgb(231, 241, 225), rgb(225, 236, 217));
+} */
+
 .sidebar {
-    background: #f2f2f2;
+    /* background-image: linear-gradient(to bottom, rgb(241, 255, 232), white) ;  */
+    background-color: white;
     width: var(--tamanhoSidebar);
     height: 100%;
     position: absolute;

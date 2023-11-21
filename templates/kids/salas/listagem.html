@@ -15,7 +15,7 @@
 
       <div class="card border-0 rounded-4 bg-transparent">
         <div>
-          <a class="w-100" href="/sala/{{s.nomeUsuario}}" data-id='{{s.idSala}}'>
+          <a class="w-100" adicionarparticipacao='true' href="/salakids/{{s.nomeUsuario}}" data-id='{{s.idSala}}'>
             <img src="../static/imagens/salas/capas/capa{{s.idSala|id_img}}.jpg" class="thumbnail rounded-4">
           </a>
         </div>
@@ -38,10 +38,9 @@
             <div class="d-flex align-items-start w-100">
               <a class=" mb-0 h6 dosis text-decoration-none text-black">{{s.nomeUsuario}}</a>
               <a href="#" class="text-decoration-none text-light ms-auto miniaturaUsuariosOverlapping">
-                <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
-                <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30" height="30">
-                <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30" height="30">
-                <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30" height="30">
+                {%for participante in s.participantes%}
+                <img class="rounded-circle" src="../static/imagens/usuarios/avatar{{participante.id|id_img}}.jpg" width="30" height="30">
+                {%endfor%}
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
                   class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16" style="
                       margin-left: -10px;

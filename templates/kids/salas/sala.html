@@ -152,7 +152,7 @@
 
 
 <script>
-    var ws = new WebSocket(`ws://${window.location.host}/ws/{{crianca.nomeUsuario}}/{{crianca.id}}`);
+    var ws = new WebSocket(`wss://${window.location.host}/ws/{{crianca.nomeUsuario}}/{{crianca.id}}`);
     ws.onmessage = function (event) {
 
         // <li class="" id="message">

@@ -1,0 +1,115 @@
+{% extends "kids/baseBH.html" %}
+{% block content %}
+{%if crianca%}
+<main
+    class="align-self-center mb-5 align-items-center bg-transparent flex-column rounded-4 col-11 col-sm-10 col-md-8 col-xl-7 col-xxl-7 d-flex maxw1360 gap-3 mt-2 z-3"
+    style="min-height: 0; margin-inline: auto;">
+
+    <div class="d-flex align-self-start flex-column mb-2">
+        <h1 class="bahiana display-6 text-white sliders fw-bolder slider-left-id">Configurações</h1>
+        <div class="d-flex gap-3 sliders slider-left-id animate--slower">
+            <a class="dosis h5 text-white kidshover elemento mb-0 text-decoration-none d-flex align-items-center flex-column"
+                href="/edicaoperfilkids">Edição de
+                Perfil
+                <div class="linha"></div>
+            </a>
+            <a class="dosis h5 text-white kidshover elemento mb-0 text-decoration-none d-flex align-items-center flex-column"
+                href="/contakids">Conta
+                <div class="linha"></div>
+            </a>
+        </div>
+    </div>
+
+    <div
+        class="col-12 col-sm-11 rounded-4 d-flex align-items-center justify-content-start flex-column bg-white sliders slider-top-id animate--slower">
+        <form class='d-flex align-items-start justify-content-center col-12 flex-column' method="post"
+            enctype="multipart/form-data" action='/edicaoperfilkids'>
+
+            <div class="col-12 bg-black p-3 px-5 rounded-top-4 div_perfil d-flex align-items-center justify-content-center"
+                id="banner" style="aspect-ratio: 340/60; background: url('#') center center; background-size: cover;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="position-relative kidshover" x="0px" y="0px" width="50"
+                    height="50" viewBox="0 0 72 72" fill='white'>
+                    <path
+                        d="M38.406 22.234l11.36 11.36L28.784 54.576l-12.876 4.307c-1.725.577-3.367-1.065-2.791-2.79l4.307-12.876L38.406 22.234zM41.234 19.406l5.234-5.234c1.562-1.562 4.095-1.562 5.657 0l5.703 5.703c1.562 1.562 1.562 4.095 0 5.657l-5.234 5.234L41.234 19.406z">
+                    </path>
+                </svg>
+            </div>
+
+            <div class="d-flex col-12 align-items-start gap-0 gap-sm-3 px-4 flex-sm-row flex-column">
+                <div class="bg-transparent p-0 position-relative z-3 d-flex justify-content-start align-items-start"
+                    style="margin-top: -40px; aspect-ratio: 1;">
+                    <div class=" bg-info rounded-circle overflow-hidden div_perfil" style="aspect-ratio: 1;">
+                        <input type="file" class="d-none" id="arquivoImagem" name="arquivoImagem"
+                            onchange="previewImage(event)" accept="image/jpeg" required>
+                        <label for="arquivoImagem" class="bg-transparent w-100 h-100 rounded-circle position-absolute"
+                            style='z-index: 101'>
+                        </label>
+                        <img id='preview' src='' class='rounded-circle position-absolute d-none imagemPerfil'>
+                    </div>
+                </div>
+                <div class="d-flex flex-column col-12 col-sm py-2">
+                    <div class="d-flex flex-column mb-3">
+                        <div class="h5 fw-bolder lilita mb-0 d-flex gap-0 gap-sm-1 align-items-center">
+                            <p class="mb-0">{{crianca.nome}}</p>
+                            <div class="rounded-5 lilita fw-light d-flex align-items-center p-1 kidshover">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
+                                    viewBox="0 0 72 72" fill='#389300'>
+                                    <path
+                                        d="M38.406 22.234l11.36 11.36L28.784 54.576l-12.876 4.307c-1.725.577-3.367-1.065-2.791-2.79l4.307-12.876L38.406 22.234zM41.234 19.406l5.234-5.234c1.562-1.562 4.095-1.562 5.657 0l5.703 5.703c1.562 1.562 1.562 4.095 0 5.657l-5.234 5.234L41.234 19.406z">
+                                    </path>
+                                </svg>
+                            </div>
+
+                        </div>
+                        <div class="h6 fw-bolder lilita mb-0 opacity-50">@{{crianca.nomeUsuario}}</div>
+                    </div>
+                    <div>
+                        <div class="h4 fw-bolder lilita mb-0 d-flex gap-2 align-items-center mb-1">
+                            <p class="mb-0 h6 opacity-75 lilita ">Descrição</p>
+
+                        </div>
+                        <textarea class="shadow-sm border-0 col-12 rounded-4 px-3"
+                            style="background-color: rgb(232, 232, 232);"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-1 d-none h-100 d-sm-flex align-items-center justify-content-center">
+                    <input type="submit" class="d-none" id="confirmar">
+                    <label class="rounded-5 lilita fw-light fundoKids d-flex align-items-center p-1 kidshover"
+                        for="confirmar">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
+                            viewBox="0 0 72 72" fill="white">
+                            <path
+                                d="M57.658,12.643c1.854,1.201,2.384,3.678,1.183,5.532l-25.915,40c-0.682,1.051-1.815,1.723-3.064,1.814	C29.764,59.997,29.665,60,29.568,60c-1.146,0-2.241-0.491-3.003-1.358L13.514,43.807c-1.459-1.659-1.298-4.186,0.36-5.646	c1.662-1.46,4.188-1.296,5.646,0.361l9.563,10.87l23.043-35.567C53.329,11.971,55.806,11.442,57.658,12.643z">
+                            </path>
+                        </svg>
+
+                    </label>
+                </div>
+
+            </div>
+            <span class="text-danger d-none small dosis"></span>
+            <div class="col-12 d-flex align-items-center justify-content-end d-sm-none p-3">
+                <button type="submit"
+                    class="p-2 px-3 text-white fundoKids rounded-5 border-0 align-self-end bebas h5 mb-0 kidshover">Salvar
+                    mudanças</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<script src='../static/js/mostrarImagem.js'> </script>
+<script src='../static/js/intMenu.js'> </script>
+
+{% if erros and valores: %}
+<script defer src="/static/js/formValidation.js"></script>
+<script>
+    const validationErrors = {{ erros| tojson }};
+    console.log(validationErrors)
+    const fieldValues = {{ valores| tojson }};
+</script>
+
+{% endif %}
+{%endif%}
+{% endblock %}

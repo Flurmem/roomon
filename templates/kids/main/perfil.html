@@ -1,0 +1,248 @@
+{% extends "kids/base.html" %}
+{% block content %}
+{%if crianca%}
+<main class="container-fluid p-0">
+    <div class="col-12 col-sm-12 d-flex align-items-center justify-content-start flex-column bg-white">
+        <div class="col-12 bg-info p-3 px-5 div_perfil d-flex align-items-center justify-content-center" id="banner"
+            style="aspect-ratio: 340/60; max-height:12rem; background: url('#')  center center; background-size: cover;">
+        </div>
+
+        <div class="d-flex col-12 align-items-start gap-0 gap-sm-3 px-2 px-sm-4 flex-sm-row flex-column">
+
+            <div class="d-flex animate--slower sliders slider-top-id">
+
+                <div class="bg-transparent  position-relative z-3 d-flex justify-content-start align-items-start w-auto overflow-hidden"
+                    style="margin-top: -40px; aspect-ratio: 1;">
+                    <div class=" bg-info rounded-circle overflow-hidden div_perfil position-relative"
+                        style="aspect-ratio: 1;">
+                        <img src='../static/imagens/usuarios/avatar{{ perfilCrianca.id|id_img }}.jpg'
+                            class='rounded-circle position-absolute imagemPerfil'>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column mb-3 pt-4 ">
+                    <div class="h5 fw-bolder lilita mb-0 d-flex gap-0 gap-sm-1 align-items-center">
+                        <p class="mb-0">{{perfilCrianca.nome}}</p>
+
+                    </div>
+                    <div class="h6 fw-bolder lilita mb-0 opacity-50">@{{perfilCrianca.nomeUsuario}}</div>
+                </div>
+            </div>
+
+            <div class="d-flex mb-3 pt-4 gap-3 ms-auto me-auto sliders slider-left-id">
+
+                <div class="h6 lilita mb-0 d-flex gap-0 gap-sm-1 align-items-center flex-column">
+                    <p class="mb-0 h4 lilita"> {{seguidores}}</p>
+                    <p class="mb-0 opacity-75 h6">Seguidores</p>
+
+                </div>
+                <div class="h6 lilita mb-0 d-flex gap-0 gap-sm-1 align-items-center flex-column">
+                    <p class="mb-0 h4 lilita"> {{seguindo}}</p>
+                    <p class="mb-0 opacity-75">Seguindo</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="d-flex col-12 align-items-start px-3 px-sm-5 flex-column sliders slider-top-id">
+            <div class="h4 fw-bolder lilita mb-1">
+                <p class="mb-0 h6 lilita ">Descrição</p>
+            </div>
+
+            <textarea class="border-0 rounded-4 lilita opacity-75 col-12 col-sm-8 col-md limit-text-2lines"
+                placeholder="{{perfilCrianca.descricao}}"></textarea>
+
+        </div>
+
+        <div class="d-flex col-12 align-items-start px-3 px-sm-5 flex-column animate--slower sliders slider-left-id">
+            {%if perfilCrianca.id == crianca.id%}
+            <div class=" d-flex align-items-center rounded-5 px-4 fundoKids kidshover my-3">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 72 72"
+                    fill='white'>
+                    <path
+                        d="M38.406 22.234l11.36 11.36L28.784 54.576l-12.876 4.307c-1.725.577-3.367-1.065-2.791-2.79l4.307-12.876L38.406 22.234zM41.234 19.406l5.234-5.234c1.562-1.562 4.095-1.562 5.657 0l5.703 5.703c1.562 1.562 1.562 4.095 0 5.657l-5.234 5.234L41.234 19.406z">
+                    </path>
+                </svg>
+                <a class="h6 bebas mb-0 text-white text-decoration-none" href="/edicaoperfilkids">Editar
+                    Perfil
+                </a>
+            </div>
+            {%else%}
+            <div>
+                {%if relacao.bloqueado %}
+                <button class="bebas seguir desbloquear rounded-4 px-4 p-1 bg-white kidshover"
+                    data-id="{{ crianca.id }}" excluir='1' style="border: 2px solid red; color: red;"
+                    value="{{perfilCrianca.id}}">Desbloquear</button>
+                {%else%}
+                {%if (relacao.idSeguidor == crianca.id)%}
+                <button class="bebas seguir rounded-4 px-4 p-1 bg-white kidshover" value="{{perfilCrianca.id}}" excluir='1'
+                    data-id="{{ crianca.id }}" style="border: 2px solid #389300; color: #389300;">Unfollow</button>
+                {%else%}
+                <button class="bebas seguir rounded-4 px-4 p-1 text-white fundoKids border-0 kidshover"
+                    value="{{perfilCrianca.id}}" data-id="{{ crianca.id }}">Seguir</button>
+                <button class="bebas seguir border-0 rounded-4 px-4 p-1 text-white kidshover" bloquear="1"
+                    data-id="{{ crianca.id }}" style="background-color: red;" value="{{perfilCrianca.id}}">Bloquear</button>
+                {%endif%}
+                {%endif%}
+
+            </div>
+            {%endif%}
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio='none' class='w-100' style="max-height:5rem;"
+            viewBox="0 0 1440 320">
+            <path fill="rgb(56,147,0)" fill-opacity="0.5"
+                d="M0,224L80,234.7C160,245,320,267,480,250.7C640,235,800,181,960,170.7C1120,160,1280,192,1360,208L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+            </path>
+            <path fill="rgb(56,147,0)" fill-opacity="1"
+                d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+            </path>
+
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class='w-100' preserveAspectRatio="none"
+            style="max-height: 8rem;">
+            <path fill="rgb(56,147,0)" fill-opacity="1"
+                d="M0,160L48,170.7C96,181,192,203,288,202.7C384,203,480,181,576,160C672,139,768,117,864,117.3C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+            </path>
+            <path fill="rgb(56,147,0)" fill-opacity="0.5"
+                d="M0,160L48,133.3C96,107,192,53,288,74.7C384,96,480,192,576,240C672,288,768,288,864,277.3C960,267,1056,245,1152,208C1248,171,1344,117,1392,90.7L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+            </path>
+            <path fill="rgb(56,147,0)" fill-opacity="0.5"
+                d="M0,320L48,314.7C96,309,192,299,288,245.3C384,192,480,96,576,64C672,32,768,64,864,85.3C960,107,1056,117,1152,138.7C1248,160,1344,192,1392,208L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+            </path>
+        </svg>
+
+    </div>
+
+    <div class="col-12 col-sm-12 d-flex align-items-center justify-content-start flex-column bg-white">
+        <div
+            class="container-box-salas d-flex align-items-center justify-content-between mt-2 mt-sm-5 mb-sm-5 px-2 px-sm-4">
+            <div class=" w-auto fundoKids text-center px-3 px-sm-5 animate--slower sliders slider-left-id"
+                style="border-radius: 50% 10% 30% 20%/ 50% 80% 20%;">
+                <h1 class="bahiana h2 fw-medium text-white mb-0 ">Histórico de salas</h1>
+            </div>
+        </div>
+
+        <div class="container-box-salas scrollerGrid container-box-salas scrollerGrid px-2 px-sm-4" id="salas ">
+            {%if salasParticipadas%}
+            {%for s in salasParticipadas%}
+
+            <div class="card border-0 rounded-4 bg-transparent">
+              <div>
+                <a class="w-100" adicionarparticipacao='true' href="/salakids/{{s.nomeUsuario}}" data-id='{{s.idSala}}'>
+                  <img src="../static/imagens/salas/capas/capa{{s.idSala|id_img}}.jpg" class="thumbnail rounded-4">
+                </a>
+              </div>
+              <div class="card-body d-flex pt-2 p-0">
+                <div class=' w-auto h-100 pe-3'>
+                  <div class='rounded-circle position-relative divMiniaturaPerfil' style='background-color: #D3D3D3'>
+                    <img src='../static/imagens/usuarios/avatar{{ s.idDono|id_img }}.jpg'
+                      class='rounded-circle position-absolute imagemPerfil'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="color: white;" fill="currentColor"
+                      class="position-absolute bi-person-fill" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 
+                 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                    </svg>
+                  </div>
+                </div>
+                <div class='d-flex align-items-start flex-column justify-content-center maxw80porcento'>
+                  <a class="limit-text-2lines titulo-card dosis text-justify text-decoration-none text-black h-100 w-100">
+                    {{s.titulo}}
+                  </a>
+                  <div class="d-flex align-items-start w-100">
+                    <a class=" mb-1 h6 dosis text-decoration-none text-black">{{s.nomeUsuario}}</a>
+                  </div>
+                  <p class="rounded-5 h6 text-white dosis px-3" style="background-color: #3C7A89;">{{s.categoria}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+            {%else%}
+            <h4 class="dosis w-100"> Essa pessoa ainda não visitou nenhuma sala</h4>
+            {%endif%}
+          </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio='none' class='w-100' style="max-height:8rem;"
+            viewBox="0 0 1440 320">
+            <path fill="rgb(56,147,0)" fill-opacity="0.5"
+                d="M0,224L80,234.7C160,245,320,267,480,250.7C640,235,800,181,960,170.7C1120,160,1280,192,1360,208L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+            </path>
+            <path fill="rgb(56,147,0)"
+                d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+            </path>
+
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class='w-100' preserveAspectRatio="none"
+            style="max-height: 8rem;">
+            <path fill="rgb(56,147,0)" fill-opacity="0.5"
+                d="M0,160L48,133.3C96,107,192,53,288,74.7C384,96,480,192,576,240C672,288,768,288,864,277.3C960,267,1056,245,1152,208C1248,171,1344,117,1392,90.7L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+            </path>
+            <path fill="rgb(56,147,0)" fill-opacity="0.5"
+                d="M0,320L48,314.7C96,309,192,299,288,245.3C384,192,480,96,576,64C672,32,768,64,864,85.3C960,107,1056,117,1152,138.7C1248,160,1344,192,1392,208L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+            </path>
+            <path fill="rgb(56,147,0)" fill-opacity="1"
+                d="M0,160L48,170.7C96,181,192,203,288,202.7C384,203,480,181,576,160C672,139,768,117,864,117.3C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+            </path>
+
+        </svg>
+    </div>
+
+    <div class="col-12 col-sm-12 pb-5 d-flex align-items-center justify-content-start flex-column bg-white">
+        <div
+            class="container-box-salas d-flex align-items-center justify-content-between mt-2 mt-sm-5 mb-sm-3 px-2 px-sm-4">
+            <div class=" w-auto fundoKids text-center px-3 px-sm-5 animate--slower sliders slider-left-id"
+                style="border-radius: 50% 10% 30% 20%/ 50% 80% 20%;">
+                <h1 class="bahiana h2 fw-medium text-white mb-0 ">Usuários Recomendados</h1>
+            </div>
+        </div>
+        {%if perfis %}
+        <div class="container-box-salas dragscroll scrollerGrid px-2 px-sm-4">
+
+            {%for p in perfis%}
+            <div
+                class="border-5 border d-flex flex-column align-items-center justify-content-center gap-4 p-3 rounded-5">
+                <div class=' d-flex flex-column align-items-center'>
+                    <div class='rounded-circle div_perfil position-relative' style='background-color: #D3D3D3'>
+                        <img src='../static/imagens/usuarios/avatar{{ p.id|id_img }}.jpg'
+                            class='rounded-circle position-absolute imagemPerfil'>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="h5 fw-bolder lilita mb-0 d-flex gap-0 gap-sm-1 align-items-center">
+                            <p class="mb-0">{{p.nome}}</p>
+
+                        </div>
+                        <div class="h6 fw-bolder lilita mb-0 opacity-50">@{{p.nomeUsuario}}</div>
+                    </div>
+                </div>
+                <div>
+                    {%if p.bloqueado %}
+                    <button class="bebas seguir desbloquear rounded-4 px-4 p-1 bg-white kidshover"
+                        data-id="{{ crianca.id }}" excluir='1' style="border: 2px solid red; color: red;"
+                        value="{{p.id}}">Desbloquear</button>
+                    {%else%}
+                    {%if (p.idSeguidor == crianca.id)%}
+                    <button class="bebas seguir rounded-4 px-4 p-1 bg-white kidshover" value="{{p.id}}" excluir='1'
+                        data-id="{{ crianca.id }}" style="border: 2px solid #389300; color: #389300;">Unfollow</button>
+                    {%else%}
+                    <button class="bebas seguir rounded-4 px-4 p-1 text-white fundoKids border-0 kidshover"
+                        value="{{p.id}}" data-id="{{ crianca.id }}">Seguir</button>
+                    <button class="bebas seguir border-0 rounded-4 px-4 p-1 text-white kidshover" bloquear="1"
+                        data-id="{{ crianca.id }}" style="background-color: red;" value="{{p.id}}">Bloquear</button>
+                    {%endif%}
+                    {%endif%}
+
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+        {%else%}
+        <p class="h3 mb-0 dosis"> Parece que não há usuários por aqui :/</p>
+        {%endif%}
+    </div>
+
+</main>
+<script src="../static/js/seguir&bloquear.js"></script>
+<script src="../static/lib/bootstrap/js/bootstrap.min.js"></script>
+{%endif%}
+{% endblock %}

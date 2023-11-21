@@ -1,0 +1,227 @@
+{% extends "baseRoomOn.html" %}
+{% block content%}
+            <!--Menu de opções-->
+<div class="m-3">
+                <h2>Suporte</h2>
+                <ul class="nav nav-underline mt-3">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="/perguntasfrequentessuporte">
+                            <h5>Ajuda&FAQ</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/sobrenossuporte">
+                            <h5>Sobre nós</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/denunciassuporte">
+                            <h5>Denúncias</h5>
+                        </a>
+                    </li>
+                </ul>
+        </div>
+    </div>
+    <!--Accordian de ajuda-->
+    <div class="container">
+        <h1 class="text-start text-light mt-4">Ajuda</h1>
+        <div class="col-11 mt-3 mx-auto">
+            <div class="card cardnormal">
+                <div class="accordion cardnormal" id="ajuda">
+                    <!--Ajuda 01-->
+                    <div class="accordion-item bg-black text-white ">
+                        <h4 class="accordion-header bg-black text-white m-2">
+                            <button class="accordion-button collapsed bg-black text-white" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseAjuda1" aria-expanded="false" aria-controls="flush-collapseAjuda1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="currentColor" class="bi bi-play-fill me-2" viewBox="0 0 16 16">
+                                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                                </svg>
+                                <strong>Como começar?  </strong></h4>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseAjuda1" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <h5 class="fw-light"><em><ol>
+                                    <li>Crie uma conta com seu nome, e-mail e senha. Certifique-se de ler e concordar com nossos termos de uso e políticas de privacidade.</li>
+                                    <li>Complete seu perfil adicionando uma foto de perfil e detalhes pessoais como data de nascimento, gênero e interesses. Isso ajudará a conectar você com pessoas e conteúdos relevantes.</li>
+                                </ol></em>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Ajuda 02-->
+                    <div class="accordion-item  bg-black text-white p-2">
+                        <h4 class="accordion-header  bg-black text-white">
+                            <button class="accordion-button collapsed  bg-black text-white" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseAjuda2" aria-expanded="false" aria-controls="flush-collapseAjuda2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="currentColor" class="bi bi-door-open-fill me-2" viewBox="0 0 16 16">
+                                    <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
+                                </svg>
+                                <strong>Salas e Transmissões  </strong></h4>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseAjuda2" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <h5 class="fw-light"><em><ol>
+                                    <li>Explore salas públicas e privadas com base em seus interesses. Clique em uma sala para entrar e participar de conversas em tempo real.</li>
+                                    <li>Você também pode criar suas próprias salas para discutir tópicos específicos ou interagir com amigos.</li>
+                                    <li>Sintonize em transmissões ao vivo de seus criadores favoritos ou eventos em tempo real. Interaja através de comentários e reações.</li>
+                                    <li>Se você é um criador, aprenda a iniciar sua própria transmissão de vídeo ao vivo e compartilhar seu conteúdo com a comunidade.</li>
+                                </ol></em> 
+                            </div>
+                        </div>
+                    </div>
+                    <!--Ajuda 03-->
+                    <div class="accordion-item  bg-black text-white p-2">
+                        <h4 class="accordion-header  bg-black text-white">
+                            <button class="accordion-button collapsed  bg-black text-white" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseAjuda3" aria-expanded="false"
+                                aria-controls="flush-collapseAjuda3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="currentColor" class="bi bi-shield-lock-fill me-2" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z"/>
+                                </svg>
+                                <strong> Privacidade e Segurança  </h4></strong>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseAjuda3" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <h5 class="fw-light"><em><ol>
+
+                                <li>Acesse suas configurações de privacidade para determinar quem pode ver seu perfil, interagir com você e muito mais.</li>
+                                <li>Se você se deparar com conteúdo ou usuários que violem nossas diretrizes de uso, denuncie imediatamente.</li>
+                                </ol> </em>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+        
+
+    <!--Accordion de perguntas-->
+    <div class="container">
+        <h1 class="text-start text-light mt-4">FAQ</h1>
+        <div class="col-11 mt-3 mx-auto">
+            <div class="card cardnormal">
+                <div class="accordion cardnormal" id="perguntasFrequentes">
+                    <!--Pergunta 01-->
+                    <div class="accordion-item bg-black text-white ">
+                        <h4 class="accordion-header bg-black text-white m-2">
+                            <button class="accordion-button collapsed bg-black text-white" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapse01" aria-expanded="false" aria-controls="flush-collapse01">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="currentColor" class="bi bi-exclamation-triangle-fill me-2" viewBox="0 0 16 16">
+                                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                </svg>
+                                <strong>Como faço para denunciar um usuário ou conteúdo inadequado?  </strong></h4>
+                            </button>
+                        </h2>
+                        <div id="flush-collapse01" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <h5 class="fw-light"><em>Você pode denunciar um usuário ou conteúdo clicando no ícone de denúncia próximo ao post ou
+                                perfil.
+                                Nossa equipe revisará a denúncia e tomará as medidas apropriadas.</h5></em>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Pergunta 02-->
+                    <div class="accordion-item  bg-black text-white p-2">
+                        <h4 class="accordion-header  bg-black text-white">
+                            <button class="accordion-button collapsed  bg-black text-white" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapse02" aria-expanded="false" aria-controls="flush-collapse02">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="currentColor" class="bi bi-house-lock-fill me-2" viewBox="0 0 16 16">
+                                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                                    <path d="m8 3.293 4.72 4.72a3 3 0 0 0-2.709 3.248A2 2 0 0 0 9 13v2H3.5A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                                    <path d="M13 9a2 2 0 0 0-2 2v1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1v-1a2 2 0 0 0-2-2Zm0 1a1 1 0 0 1 1 1v1h-2v-1a1 1 0 0 1 1-1Z"/>
+                                </svg>
+                                <strong>É seguro compartilhar informações pessoais em salas de chat?  </strong></h4>
+                            </button>
+                        </h2>
+                        <div id="flush-collapse02" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <h5 class="fw-light"><em>Recomendamos que você evite compartilhar informações pessoais sensíveis em salas de chat
+                                públicas.
+                                Mantenha sua segurança online em mente e conheça os outros usuários antes de compartilhar
+                                detalhes
+                                pessoais.</h5></em> 
+                            </div>
+                        </div>
+                    </div>
+                    <!--Pergunta 03-->
+                    <div class="accordion-item  bg-black text-white p-2">
+                        <h4 class="accordion-header  bg-black text-white">
+                            <button class="accordion-button collapsed  bg-black text-white" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapse03" aria-expanded="false"
+                                aria-controls="flush-collapseT03">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="currentColor" class="bi bi-lock-fill me-2" viewBox="0 0 16 16">
+                                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                                </svg>
+                                <strong> Como posso criar uma sala de chat privada para meus amigos?  </h4></strong>
+                            </button>
+                        </h2>
+                        <div id="flush-collapse03" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <h5 class="fw-light"><em>Sim, você pode criar salas de chat privadas e convidar seus amigos para participar. Escolha
+                                a opção
+                                "Privada" ao criar a sala e selecione os amigos que deseja convidar. </em></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Pergunta 04-->
+                    <div class="accordion-item  bg-black text-white p-2">
+                        <h4 class="accordion-header  bg-black text-white">
+                            <button class="accordion-button collapsed  bg-black text-white" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapse04" aria-expanded="false"
+                                aria-controls="flush-collapse04">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="currentColor" class="bi bi-camera-reels-fill me-2" viewBox="0 0 16 16">
+                                    <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                    <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                    <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"/>
+                                </svg>
+                                <strong> Como faço para iniciar minha própria transmissão de vídeo ao vivo?  </h4></strong>
+                            </button>
+                        </h2>
+                        <div id="flush-collapse04" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <h5 class="fw-light"><em>Na página inicial, clique na opção "Iniciar Transmissão ao Vivo" e siga as instruções para
+                                configurar e transmitir ao vivo. </h5></em>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Pergunta 05-->
+                    <div class="accordion-item  bg-black text-white p-2">
+                        <h4 class="accordion-header  bg-black text-white ">
+                            <button class="accordion-button collapsed  bg-black text-white" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapse05" aria-expanded="false"
+                                aria-controls="flush-collapse05">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="currentColor" class="bi bi-bookmark-heart-fill me-2" viewBox="0 0 16 16">
+                                    <path d="M2 15.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v13.5zM8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                </svg>
+                                <strong>Como encontro salas de chat com base em meus interesses?  </h4></strong>
+                            </button>
+                        </h2>
+                        <div id="flush-collapse05 " class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <h5 class="fw-light"><em>Use a função de pesquisa ou explore as recomendações de salas na página inicial com base em
+                                seus
+                                interesses e atividades recentes. </h5></em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,750 @@
+{% extends "baseRoomOn.html" %}
+{%block content%}
+{%if usuario%}
+
+<!--<main class="col-12 bg-black position-relative">
+  <div class="header-do-usuario" style="height: 14vw; background-color: white;">
+  </div>
+<!-- <main class="col-12 bg-black p-5" id="banner" style="background-color: #f00">
+    <img src="/static/imagens/fundo_perfil_usuario.png" alt="Fundo do perfil" width="100%" style="height:25vw"> -->
+
+<!-- <main class="col-12 bg-black" style="background-image: url('/static/imagens/fundo_perfil_usuario.png'); background-size: 100% 15vw;background-repeat: no-repeat; padding-top: 7vw"> -->
+    {% if tem_imagem %}
+    <img src="static/imagens/perfilRoomOn/icone{{ usuario.idPessoa|id_img }}.jpg" class="rounded-circle position-relative" alt="Icon de {{ usuario.nomeUsuario }}" style="height:12vw; left:2vw; top:-7vw;">
+    {% else %}
+    <!--<img src="static/imagens/perfilRoomOn/icone_padrao.jpg" class="rounded-circle position-relative" alt="Icon de {{ usuario.nomeUsuario }}" style="height:12vw; left:2vw; top:-7vw;">
+    {% endif %}
+    <div class="row">
+      <div class="col-md-3">
+        <h2 class="text-light ms-5 text fw-light"> {{ usuario.nome }} </h2>
+        <!--- maximo que vai é ms 5--> 
+        <!---<h3 class="text ms-5 fw-light text-secondary"> @{{ usuario.nomeUsuario }} </h3>
+        <div class="d-flex col-12 align-items-start px-3 px-sm-5 flex-column sliders slider-top-id">
+            <div class="h4 fw-bolder mb-1">
+                <p class="mt-3 mb-0 h6 text-light">Biografia</p>
+            </div>
+          {% if usuario.descricao != None %}
+            <p class="border-0 rounded-0 opacity-75 col-12 col-sm-8 col-md bg-black text-light fw-lighter" id="biografia" name="biografia" rows="3" maxlength="230" style="word-wrap: break-word;" required>{{ usuario.descricao }}</p>
+          {% else %}
+          <p class="border-0 rounded-0 opacity-75 col-12 col-sm-8 col-md bg-black text-light fw-lighter" id="biografia" name="biografia" rows="3" maxlength="230" style="word-wrap: break-word;" required>Nenhuma descrição ainda!</p>
+          {% endif %}
+        </div>
+        <div class="row text-center ">
+          <div class="col-6 mt-3">
+            <button type="button" class="btn btn-black botao-fonte" style="color: white; font-size: 20px;" data-bs-toggle="modal" data-bs-target="#meuModal">
+              <h3 class="text-light fw-light"> {{seguidores}} </h3> Seguidores
+            </button>
+            <div class="modal fade" id="meuModal" tabindex="-1" aria-labelledby="meuModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content bg-dark">
+                <!-- Cabeçalho do Modal -->
+                  <!--<div class="modal-header">
+                    <h4 class="text-light text-center">Seguidores</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal""></button>
+                  </div>
+                <!-- Corpo do Modal 
+                  <div class=" modal-body">
+                    <div class="row">
+                      <div class="col-auto">
+                        <img src="static/imagens/icone_seguidores.jpg" class="rounded-circle" style="height: 4vw;">
+                      </div>
+                      <div class="col">
+                        <h3 class="fw-light mt-3">@seguindo</h3>
+                      </div>
+                      <div class="col-auto mt-2">
+                        <img src="static/imagens/icone_seguidores.jpg" class="rounded-circle" style="height: 4vw;">
+                      </div>
+                      <div class="col">
+                        <h3 class="fw-light mt-4">@seguindo</h3>
+                      </div>
+                      <div class="col-auto mt-2">
+                        <img src="static/imagens/icone_seguidores.jpg" class="rounded-circle" style="height: 4vw;">
+                      </div>
+                      <div class="col">
+                        <h3 class="fw-light mt-4">@seguindo</h3>
+                      </div>
+                      <div class="col-auto mt-2">
+                        <img src="static/imagens/icone_seguidores.jpg" class="rounded-circle" style="height: 4vw;">
+                      </div>
+                      <div class="col">
+                        <h3 class="fw-light mt-4">@seguindo</h3>
+                      </div>
+                      <div class="col-auto mt-2">
+                        <img src="static/imagens/icone_seguidores.jpg" class="rounded-circle" style="height: 4vw;">
+                      </div>
+                      <div class="col">
+                        <h3 class="fw-light mt-4">@seguindo</h3>
+                      </div>
+                      <div class="col-auto mt-2">
+                        <img src="static/imagens/icone_seguidores.jpg" class="rounded-circle" style="height: 4vw;">
+                      </div>
+                      <div class="col">
+                        <h3 class="fw-light mt-4">@seguindo</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 mt-3">
+            <button type="button" class="btn btn-black botao-fonte" style="color: white; font-size: 20px;" data-bs-toggle="modal" data-bs-target="#meuModal2">
+              <h3 class="text-light fw-light"> {{seguindo}} </h3> Seguindo
+            </button>
+            <div class="modal fade" id="meuModal2" tabindex="-1" aria-labelledby="meuModal2Label" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content bg-dark">
+                <!-- Cabeçalho do Modal
+                  <div class="modal-header">
+                    <h4 class="text-light text-center">Seguindo</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal""></button>
+                  </div>                 
+                <!-- Corpo do Modal 
+                  <div class=" modal-body">
+                    <div class="row">
+                      <div class="col-auto">
+                        <img src="static/imagens/icone_seguidores.jpg" class="rounded-circle" style="height: 4vw;">
+                      </div>
+                      <div class="col">
+                        <h3 class="fw-light mt-3">@seguindo</h3>
+                      </div>
+                      <div class="col-auto mt-2">
+                        <img src="static/imagens/icone_seguidores.jpg" class="rounded-circle" style="height: 4vw;">
+                      </div>
+                      <div class="col">
+                        <h3 class="fw-light mt-4">@seguindo</h3>
+                      </div>
+                      <div class="col-auto mt-2">
+                        <img src="static/imagens/icone_seguidores.jpg" class="rounded-circle" style="height: 4vw;">
+                      </div>
+                      <div class="col">
+                        <h3 class="fw-light mt-4">@seguindo</h3>
+                      </div>
+                      <div class="col-auto mt-2">
+                        <img src="static/imagens/icone_seguidores.jpg" class="rounded-circle" style="height: 4vw;">
+                      </div>
+                      <div class="col">
+                        <h3 class="fw-light mt-4">@seguindo</h3>
+                      </div>
+                      <div class="col-auto mt-2">
+                        <img src="static/imagens/icone_seguidores.jpg" class="rounded-circle" style="height: 4vw;">
+                      </div>
+                      <div class="col">
+                        <h3 class="fw-light mt-4">@seguindo</h3>
+                      </div>
+                      <div class="col-auto mt-2">
+                        <img src="static/imagens/icone_seguidores.jpg" class="rounded-circle" style="height: 4vw;">
+                      </div>
+                      <div class="col">
+                        <h3 class="fw-light mt-4">@seguindo</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row text-center mt-4">
+        <!-- Centralizar todo o conteúdo 
+          <h3 class="text-light fw-light ms-5" style="text-align: start;"> Criadores Favoritos </h3>
+          <div class="col-6 mt-3">
+            <img src="static/imagens/luba_icon.jpg" class="rounded-circle" alt="Luba ícone" style="height: 7vw; width: 7vw;">
+            <h5 class="fw-light mt-2 mb-3"> @LubaTv </h5>
+            <img src="static/imagens/guaxinim_icon.jpg" class="rounded-circle" alt="Guaxinim ícone" style="height: 7vw;">
+            <h5 class="fw-light  mb-3"> @Guaxinim </h5>
+          </div>
+          <div class="col-6 mt-3">
+            <img src="static/imagens/rakin_icon.jpg" class="rounded-circle" alt="Rakin ícone" style="height: 7vw;">
+            <h5 class="fw-light mt-2 mb-3"> @Rakin </h5>
+            <img src="static/imagens/cellbit_icon.jpg" class="rounded-circle" alt="Cellbit ícone" style="height: 7vw; width: 7vw;">
+            <h5 class="fw-light mt-2 mb-3"> @Cellbit </h5>
+          </div>
+                                <div class="col-12 mt-3">
+                                    <button class="btn btn-lg sucess md-5 botao-fonte"
+                                        style="background-color: green; color: azure; width: 300px; height: 45px;"
+                                        type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+                                        aria-controls="offcanvasScrolling">Ver mais</button>
+                                    <!-- Como centralizar? 
+
+                                    <div class="offcanvas offcanvas-start" data-bs-scroll="true"
+                                        data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling"
+                                        aria-labelledby="offcanvasScrollingLabel">
+                                        <div class="offcanvas-header bg-black">
+                                            <h3 class="offcanvas-title fw-light text-light" id="cridores_favoritos">
+                                                Criadores favoritos</h5>
+                                                <button type="button" class="btn-close btn-close-white"
+                                                    data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body bg-black">
+                                            <div class="col-12 mt-3">
+                                                <img src="static/imagens/luba_icon.jpg" class="rounded-circle"
+                                                    alt="Luba ícone" style="height: 7vw; width: 7vw;">
+                                                <h5 class="fw-light mt-2 mb-3 text-light"> @LubaTv </h5>
+                                                <img src="static/imagens/guaxinim_icon.jpg" class="rounded-circle"
+                                                    alt="Guaxinim ícone" style="height: 7vw;">
+                                                <h5 class="fw-light mt-2 mb-3 text-light"> @Guaxinim </h5>
+                                            </div>
+                                            <div class="col-12 mt-2">
+                                                <img src="static/imagens/rakin_icon.jpg" class="rounded-circle"
+                                                    alt="Rakin ícone" style="height: 7vw;">
+                                                <h5 class="fw-light mt-2 mb-3 text-light"> @Rakin </h5>
+                                                <img src="static/imagens/cellbit_icon.jpg" class="rounded-circle"
+                                                    alt="Cellbit ícone" style="height: 7vw; width: 7vw;">
+                                                <h5 class="fw-light mt-2 mb-3 text-light"> @Cellbit </h5>
+                                            </div>
+                                            <div class="col-12 mt-5">
+                                                <img src="static/imagens/luba_icon.jpg" class="rounded-circle"
+                                                    alt="Luba ícone" style="height: 7vw; width: 7vw;">
+                                                <h5 class="fw-light mt-2 mb-3 text-light"> @LubaTv </h5>
+                                                <img src="static/imagens/guaxinim_icon.jpg" class="rounded-circle"
+                                                    alt="Guaxinim ícone" style="height: 7vw;">
+                                                <h5 class="fw-light mt-2 mb-3 text-light"> @Guaxinim </h5>
+                                            </div>
+                                            <div class="col-12 mt-2">
+                                                <img src="static/imagens/rakin_icon.jpg" class="rounded-circle"
+                                                    alt="Rakin ícone" style="height: 7vw;">
+                                                <h5 class="fw-light mt-2 mb-3 text-light"> @Rakin </h5>
+                                                <img src="static/imagens/cellbit_icon.jpg" class="rounded-circle"
+                                                    alt="Cellbit ícone" style="height: 7vw; width: 7vw;">
+                                                <h5 class="fw-light mt-2 mb-3 text-light"> @Cellbit </h5>
+
+                                            </div>
+                                            <div class="d-grid gap-2 d-md-flex justify-content-center">
+                                                <button type="button" class="btn btn-lg sucess botao-fonte "
+                                                    style="background-color: green; color: azure;">
+                                                    Editar criadores
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+
+
+
+                    <div class="col-md-9 position-end align-items-center">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a href="/perfilusuarioeditar" class="btn btn-lg sucess me-md-5 botao-fonte"
+                                style="background-color: green; color: azure;"><i
+                                    class="bi bi-pencil-square me-2"></i>Editar Perfil</a>
+                        </div>
+
+                        <h3 class="text-light mt-5 mb-4"> Histórico de salas </h3>
+                        <!--- <div class="slides container-fluid">
+                                <div id="carousel_salas_anteriores" class="carousel slide">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active text-center">
+                                            <img src="static/imagens/capa-room.png" class="d-inline-block w-25 m-3"
+                                                alt="Capa_da_sala">
+                                            <img src="static/imagens/capa-room.png" class="d-inline-block w-25 m-3"
+                                                alt="Capa_da_sala">
+                                            <img src="static/imagens/capa-room.png" class="d-inline-block w-25 m-3"
+                                                alt="Capa_da_sala">
+                                        </div>
+                                        <div class="carousel-item text-center">
+                                            <img src="static/imagens/capa-room.png" class="d-inline-block w-25 m-3"
+                                                alt="Capa_da_sala">
+                                            <img src="static/imagens/capa-room.png" class="d-inline-block w-25 m-3"
+                                                alt="Capa_da_sala">
+                                            <img src="static/imagens/capa-room.png" class="d-inline-block w-25 m-3"
+                                                alt="Capa_da_sala">
+                                        </div>
+                                        <div class="carousel-item text-center">
+                                            <img src="static/imagens/capa-room.png" class="d-inline-block w-25 m-3"
+                                                alt="Capa_da_sala">
+                                            <img src="static/imagens/capa-room.png" class="d-inline-block w-25 m-3"
+                                                alt="Capa_da_sala">
+                                            <img src="static/imagens/capa-room.png" class="d-inline-block w-25 m-3"
+                                                alt="Capa_da_sala">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carousel_salas_anteriores" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carousel_salas_anteriores" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                        <div id="carouselExample1"
+                            class="carousel slide w-100 start-50 translate-middle-x mb-5 col-sm-10">
+                            <div class="carousel-inner">
+                                <div class="carousel-item text-center active pb-2 col-sm-10">
+                                    <div class="cardnormal bg-black d-inline-flex me-2" style="width:250px;"><a href="#"
+                                            class="text-decoration-none">
+                                            <img class="card-img-top" src="static/imagens/capa-room.png"
+                                                alt="Capa da Room">
+                                            <div class="card-body d-flex">
+                                                <div class="col-auto">
+                                                    <img class="ms-3 mt-1" src="static/imagens/icon-criador.png"
+                                                        width="30" height="30">
+                                                </div>
+                                                <div class="col">
+                                                    <h5 class="text-light fw-light  mt-2 mb-3"> Nome Criador </h5>
+                                                    <h5 class="text-light fw-light">Assistindo vídeos de gatos fofos
+                                                        juntos!</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                            fill="white" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                        </svg>
+                                                </div>
+                                                <!-- Modal 
+                                                <div class="modal fade" id="meuModal3" tabindex="-1"
+                                                    aria-labelledby="meuModal3" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content bg-dark">
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            <div class="modal-body">
+                                                                <h5 class="text-light fw-light"> Tem certeza que deseja
+                                                                    excluir a sala de seu histórico?</h5>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary botao-fonte"
+                                                                    data-bs-dismiss="modal">Cancelar</button>
+                                                                <button type="button"
+                                                                    class="btn btn-success botao-fonte">Excluir</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a></div>
+
+                                    <div class="cardnormal bg-black d-inline-flex me-2" style="width:250px;"><a href="#"
+                                            class="text-decoration-none">
+                                            <img class="card-img-top" src="static/imagens/capa-room.png"
+                                                alt="Capa da Room">
+                                            <div class="card-body d-flex">
+                                                <div class="col-auto">
+                                                    <img class="ms-3 mt-1" src="static/imagens/icon-criador.png"
+                                                        width="30" height="30">
+                                                </div>
+                                                <div class="col">
+                                                    <h5 class="text-light fw-light  mt-2 mb-3"> Nome Criador </h5>
+                                                    <h5 class="text-light fw-light">Assistindo vídeos de gatos fofos
+                                                        juntos!</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                            fill="white" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                        </svg>
+                                                </div>
+                                            </div>
+                                        </a></div>
+
+                                    <div class="cardnormal bg-black d-inline-flex me-2" style="width:250px;"><a href="#"
+                                            class="text-decoration-none">
+                                            <img class="card-img-top" src="static/imagens/capa-room.png"
+                                                alt="Capa da Room">
+                                            <div class="card-body d-flex">
+                                                <div class="col-auto">
+                                                    <img class="ms-3 mt-1" src="static/imagens/icon-criador.png"
+                                                        width="30" height="30">
+                                                </div>
+                                                <div class="col">
+                                                    <h5 class="text-light fw-light  mt-2 mb-3"> Nome Criador </h5>
+                                                    <h5 class="text-light fw-light">Assistindo vídeos de gatos fofos
+                                                        juntos!</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                            fill="white" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                        </svg>
+                                                </div>
+                                            </div>
+                                        </a></div>
+
+                                </div>
+                                <div class="carousel-item col-sm-10 text-center pb-2">
+                                    <div class="cardnormal bg-black d-inline-flex me-2" style="width:250px;"><a href="#"
+                                            class="text-decoration-none">
+                                            <img class="card-img-top" src="static/imagens/capa-room.png"
+                                                alt="Capa da Room">
+                                            <div class="card-body d-flex">
+                                                <div class="col-auto">
+                                                    <img class="ms-3 mt-1" src="static/imagens/icon-criador.png"
+                                                        width="30" height="30">
+                                                </div>
+                                                <div class="col">
+                                                    <h5 class="text-light fw-light  mt-2 mb-3"> Nome Criador </h5>
+                                                    <h5 class="text-light fw-light">Assistindo vídeos de gatos fofos
+                                                        juntos!</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                            fill="white" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                        </svg>
+                                                </div>
+                                            </div>
+                                        </a></div>
+
+                                    <div class="cardnormal bg-black d-inline-flex me-2" style="width:250px;"><a href="#"
+                                            class="text-decoration-none">
+                                            <img class="card-img-top" src="static/imagens/capa-room.png"
+                                                alt="Capa da Room">
+                                            <div class="card-body d-flex">
+                                                <div class="col-auto">
+                                                    <img class="ms-3 mt-1" src="static/imagens/icon-criador.png"
+                                                        width="30" height="30">
+                                                </div>
+                                                <div class="col">
+                                                    <h5 class="text-light fw-light  mt-2 mb-3"> Nome Criador </h5>
+                                                    <h5 class="text-light fw-light">Assistindo vídeos de gatos fofos
+                                                        juntos!</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                            fill="white" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                        </svg>
+                                                </div>
+                                            </div>
+                                        </a></div>
+
+                                    <div class="cardnormal bg-black d-inline-flex me-2" style="width:250px;"><a href="#"
+                                            class="text-decoration-none">
+                                            <img class="card-img-top" src="static/imagens/capa-room.png"
+                                                alt="Capa da Room">
+                                            <div class="card-body d-flex">
+                                                <div class="col-auto">
+                                                    <img class="ms-3 mt-1" src="static/imagens/icon-criador.png"
+                                                        width="30" height="30">
+                                                </div>
+                                                <div class="col">
+                                                    <h5 class="text-light fw-light  mt-2 mb-3"> Nome Criador </h5>
+                                                    <h5 class="text-light fw-light">Assistindo vídeos de gatos fofos
+                                                        juntos!</p>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                            fill="white" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                        </svg>
+                                                </div>
+                                            </div>
+                                        </a></div>
+
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <h3 class="text-light  mb-4"> Categorias favoritas</h3>
+                        <div id="carouselExample2" class="carousel slide w-100 start-50 translate-middle-x mb-5">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active text-center">
+                                    <a href="#"><img src="static/imagens/arte_categoria.png" class="cat me-2"
+                                            style="width:150px; height:220px;"></a>
+                                    <a href="#"><img src="static/imagens/conversas_categoria.png" class="cat me-2"
+                                            style="width:150px; height:220px;"></a>
+                                    <a href="#"><img src="static/imagens/desenho_categoria.png" class="cat me-2"
+                                            style="width:150px; height:220px;"></a>
+                                    <a href="#"><img src="static/imagens/jogos_categoria.png" class="cat me-2"
+                                            style="width:150px; height:220px;"></a>
+                                    <a href="#"><img src="static/imagens/livros_categoria.png" class="cat me-2"
+                                            style="width:150px; height:220px;"></a>
+                                </div>
+                                <div class="carousel-item text-center">
+                                    <a href="#"><img src="static/imagens/musica_categoria.png" class="cat me-2"
+                                            style="width:150px; height:220px;"></a>
+                                    <a href="#"><img src="static/imagens/rpg_categoria.png" class="cat me-2"
+                                            style="width:150px; height:220px;"></a>
+                                    <a href="#"><img src="static/imagens/tutoriais_categoria.png" class="cat me-2"
+                                            style="width:150px; height:220px;"></a>
+                                    <label>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                            fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path
+                                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                        </svg>
+                                        <h5 class="text fw-light ms-3 mt-4"> Adicionar categoria</h5>
+                                    </label>
+                                </div>
+
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>-->
+                            <!--<div id="carousel_categorias_favoritas" class="carousel slide ">
+                                    <div class="carousel-inner">
+                                      <div class="carousel-item active text-center">
+                                        <img src="static/imagens/arte.png" class="d-inline-block ms-1" style="width: 180px;" alt="categoria">
+                                        <img src="static/imagens/conversas.png" class="d-inline-block ms-1" style="width: 180px;" alt="categoria">
+                                        <img src="static/imagens/desenho.png" class="d-inline-block ms-1" style="width: 180px;" alt="categoria">
+                                        <img src="static/imagens/jogos.png" class="d-inline-block ms-1" style="width: 180px;" alt="categoria">
+                                        
+                                    
+                                      </div>
+                                      <div class="carousel-item active text-center ">
+                                        <img class="card_room" src="static/imagens/livros.png" class="d-inline-block ms-1" style="width: 180px;" alt="categoria">
+                                        <img src="static/imagens/musica.png" class="d-inline-block ms-1" style="width: 180px;" alt="categoria">
+                                        <img src="static/imagens/rpg.png" class="d-inline-block ms-1" style="width: 180px;" alt="categoria">
+                                        <img src="static/imagens/tutoriais.png" class="d-inline-block ms-1" style="width: 180px;" alt="categoria">
+                                        <label>
+                                           
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-plus-circle " viewBox="0 0 16 16">
+                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                            </svg>
+                                            <h5 class="text text-center ms-3"> Adicionar categoria</h5> 
+                                        </label>
+                                
+                                
+                                      </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel_categorias_favoritas" data-bs-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carousel_categorias_favoritas" data-bs-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Next</span>
+                                    </button>
+                                  </div>-->
+
+                            <!--- <div class="categorias container-fluid">
+                                        <div class="swiffy-slider slider-item-show6 slider-nav-outside-expand slider-nav-visible slider-indicators-dark slider-indicators-outside slider-nav-chevron slider-nav-chevron"
+                                            style="height:30%;">
+                                            <ul class="slider-container">
+                                                <li><a href="#"><img class="cat" src="static/imagens/1.png"
+                                                            style="max-width: 100%;height: auto; "></a></li>
+                                                <li><a href="#"><img class="cat" src="static/imagens/2.png"
+                                                            style="max-width: 100%;height: auto; "></a></li>
+                                                <li><a href="#"><img class="cat" src="static/imagens/3.png"
+                                                            style="max-width: 100%;height: auto;"></a></li>
+                                                <li><a href="#"><img class="cat" src="static/imagens/4.png"
+                                                            style="max-width: 100%;height: auto;"></a></li>
+                                                <li><a href="#"><img class="cat" src="static/imagens/5.png"
+                                                            style="max-width: 100%;height: auto;"></a></li>
+                                                <li><a href="#"><img class="cat" src="static/imagens/7.png"
+                                                            style="max-width: 100%;height: auto;"></a></li>
+                                                <li><a href="#"><img class="cat" src="static/imagens/9.png"
+                                                            style="max-width: 100%;height: auto;"></a></li>
+                                                <li>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                                                        fill="currentColor" class="bi bi-plus-circle"
+                                                        viewBox="0 0 50 50">
+                                                        <path
+                                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                        <path
+                                                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                                    </svg>
+                                                    <h5 class="text fw-light text-center"> Adicionar categoria</h5>
+                                                </li>
+                                            </ul>
+
+                                            <button type="button" class="slider-nav"></button>
+                                            <button type="button" class="slider-nav slider-nav-next"></button>
+
+                                            <div class="slider-indicators">
+                                                <button class="active"></button>
+                                                <button></button>
+                                                <button></button>
+                                            </div>
+                                        </div>
+                                    </div> !--->
+
+                        </div>
+    <main class="container-fluid p-0">
+      <div class="col-12 col-sm-12 d-flex align-items-center justify-content-start flex-column">
+          <div class="col-12 bg-info p-3 px-5 d-flex align-items-center justify-content-center" id="banner"
+              style="aspect-ratio: 340/60; max-height:12rem; background: url('#')  center center; background-size: cover;">
+          </div>
+
+        <div class="d-flex col-12 align-items-start gap-0 gap-sm-3 px-2 px-sm-4 flex-sm-row flex-column">
+
+        <div class="d-flex animate--slower sliders slider-top-id">
+
+            <div class="bg-transparent  position-relative z-3 d-flex justify-content-start align-items-start w-auto overflow-hidden"
+                style="margin-top: -40px; aspect-ratio: 1;">
+                <div class=" bg-info rounded-circle overflow-hidden div_perfil position-relative"
+                    style="aspect-ratio: 1;">
+                    <img src='../static/imagens/capa_amarela.png'
+                        class='rounded-circle position-absolute imagemPerfil'>
+                </div>
+            </div>
+          <div class="d-flex flex-column mb-3 pt-4 ">
+                  <div class="h5 fw-bolder   mb-0 d-flex gap-0 gap-sm-1 align-items-center">
+                      <p class="mb-0">Nome exemplo</p>
+
+                  </div>
+                  <div class="h6 fw-bolder mb-0 opacity-50">@usuario_exemplo</div>
+              </div>
+          </div>
+          <div class="d-flex mb-3 pt-4 gap-3 ms-auto me-auto sliders slider-left-id">
+
+                  <div class="h6   mb-0 d-flex gap-0 gap-sm-1 align-items-center flex-column">
+                      <p class="mb-0 h4  "> 0</p>
+                      <p class="mb-0 opacity-75 h6">Seguidores</p>
+
+                  </div>
+                  <div class="h6   mb-0 d-flex gap-0 gap-sm-1 align-items-center flex-column">
+                      <p class="mb-0 h4  "> 0</p>
+                      <p class="mb-0 opacity-75">Seguindo</p>
+                  </div>
+              </div>
+          </div>
+        <div class="d-flex col-12 align-items-start px-3 px-sm-5 flex-column sliders slider-top-id ">
+            <div class="h4 fw-bolder mb-1">
+                <p class="mb-0 h6">Descrição</p>
+            </div>
+
+            <textarea class="border-0 rounded-2 p-2 opacity-100 col-12 col-sm-8 col-md limit-text-2lines bg-black"
+                placeholder="Exemplo de descrição"></textarea>
+
+        </div>
+        <div class="d-flex col-12 align-items-start px-3 px-sm-5 flex-column animate--slower sliders slider-left-id">
+        <div class=" d-flex align-items-center rounded-5 px-4 fundoKids kidshover my-3">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 72 72"
+                fill='white'>
+                <path
+                    d="M38.406 22.234l11.36 11.36L28.784 54.576l-12.876 4.307c-1.725.577-3.367-1.065-2.791-2.79l4.307-12.876L38.406 22.234zM41.234 19.406l5.234-5.234c1.562-1.562 4.095-1.562 5.657 0l5.703 5.703c1.562 1.562 1.562 4.095 0 5.657l-5.234 5.234L41.234 19.406z">
+                </path>
+            </svg>
+            <a class="h6 bebas mb-0 text-white text-decoration-none" href="/edicaoperfilkids">Editar
+                Perfil
+            </a>
+        </div>
+       
+          <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio='none' class='w-100' style="max-height:5rem;"
+                  viewBox="0 0 1440 320">
+                  <path fill="rgb(56,147,0)" fill-opacity="0.5"
+                      d="M0,224L80,234.7C160,245,320,267,480,250.7C640,235,800,181,960,170.7C1120,160,1280,192,1360,208L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+                  </path>
+                  <path fill="rgb(56,147,0)" fill-opacity="1"
+                      d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                  </path>
+
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class='w-100' preserveAspectRatio="none"
+                  style="max-height: 8rem;">
+                  <path fill="rgb(56,147,0)" fill-opacity="1"
+                      d="M0,160L48,170.7C96,181,192,203,288,202.7C384,203,480,181,576,160C672,139,768,117,864,117.3C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+                  </path>
+                  <path fill="rgb(56,147,0)" fill-opacity="0.5"
+                      d="M0,160L48,133.3C96,107,192,53,288,74.7C384,96,480,192,576,240C672,288,768,288,864,277.3C960,267,1056,245,1152,208C1248,171,1344,117,1392,90.7L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+                  </path>
+                  <path fill="rgb(56,147,0)" fill-opacity="0.5"
+                      d="M0,320L48,314.7C96,309,192,299,288,245.3C384,192,480,96,576,64C672,32,768,64,864,85.3C960,107,1056,117,1152,138.7C1248,160,1344,192,1392,208L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+                  </path>
+              </svg>
+          <div class="col-12 col-sm-12 d-flex align-items-center justify-content-start flex-column">
+          <div
+              class="container-box-salas d-flex align-items-center justify-content-between mt-2 mt-sm-5 mb-sm-5 px-2 px-sm-4">
+              <div class=" w-auto fundoKids text-center px-3 px-sm-5 animate--slower sliders slider-left-id"
+                  style="border-radius: 50% 10% 30% 20%/ 50% 80% 20%;">
+                  <h1 class="  h2 fw-medium text-white mb-0 ">Histórico de salas</h1>
+              </div>
+            <div class="container-box-salas scrollerGrid container-box-salas scrollerGrid px-2 px-sm-4" ">
+              <div class="card border-0 rounded-4 bg-transparent">
+                <div>
+                    <img src="../static/imagens/capa_rosa.png" class="thumbnail rounded-4">
+                </div>
+                <div class="card-body d-flex pt-2 p-0">
+                  <div class=' w-auto h-100 pe-3'>
+                    <div class='rounded-circle position-relative divMiniaturaPerfil' style='background-color: #D3D3D3'>
+                      <img src='../static/imagens/cellbit_icon.jpg'
+                        class='rounded-circle position-absolute imagemPerfil'>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="color: white;" fill="currentColor"
+                        class="position-absolute bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 
+                   0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class='d-flex align-items-start flex-column justify-content-center maxw80porcento'>
+                    <a class="limit-text-2lines titulo-card dosis text-justify text-decoration-none text-white h-100 w-100">
+                      Titulo
+                    </a>
+                    <div class="d-flex align-items-start w-100">
+                      <a class=" mb-1 h6 dosis text-decoration-none text-white">nome usuario</a>
+                    </div>
+                    <p class="rounded-5 h6 text-white dosis px-3" style="background-color: #3C7A89;">Categoria
+                    </p>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+          </div>
+
+          
+         
+
+            <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio='none' class='w-100' style="max-height:5rem;"
+                      viewBox="0 0 1440 320">
+                      <path fill="rgb(56,147,0)" fill-opacity="0.5"
+                          d="M0,224L80,234.7C160,245,320,267,480,250.7C640,235,800,181,960,170.7C1120,160,1280,192,1360,208L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+                      </path>
+                      <path fill="rgb(56,147,0)" fill-opacity="1"
+                          d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                      </path>
+
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class='w-100' preserveAspectRatio="none"
+                      style="max-height: 8rem;">
+                      <path fill="rgb(56,147,0)" fill-opacity="1"
+                          d="M0,160L48,170.7C96,181,192,203,288,202.7C384,203,480,181,576,160C672,139,768,117,864,117.3C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+                      </path>
+                      <path fill="rgb(56,147,0)" fill-opacity="0.5"
+                          d="M0,160L48,133.3C96,107,192,53,288,74.7C384,96,480,192,576,240C672,288,768,288,864,277.3C960,267,1056,245,1152,208C1248,171,1344,117,1392,90.7L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+                      </path>
+                      <path fill="rgb(56,147,0)" fill-opacity="0.5"
+                          d="M0,320L48,314.7C96,309,192,299,288,245.3C384,192,480,96,576,64C672,32,768,64,864,85.3C960,107,1056,117,1152,138.7C1248,160,1344,192,1392,208L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+                      </path>
+                  </svg>
+              <div class="col-12 col-sm-12 d-flex align-items-center justify-content-start flex-column">
+              <div
+                  class="container-box-salas d-flex align-items-center justify-content-between mt-2 mt-sm-5 mb-sm-5 px-2 px-sm-4">
+                  <div class=" w-auto fundoKids text-center px-3 px-sm-5 animate--slower sliders slider-left-id"
+                      style="border-radius: 50% 10% 30% 20%/ 50% 80% 20%;">
+                      <h1 class="  h2 fw-medium text-white mb-0 ">Categorias favoritas</h1>
+                  </div>
+              </div>
+              </div>
+          
+
+
+
+        </div>
+    </div>
+    </div>
+</div>
+    </div>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</main>
+<script src="/static/lib/bootstrap/js/bootstrap.bundle.js"></script>
+
+{%endif%}
+{% endblock %}
+
+<!--Diminuir / mudar a fonte-->
+<!--Mudar o adicionar categoria e excluir historico de sala para somente quando apertar em editar perfil-->
+<!--Animação botões-->
+

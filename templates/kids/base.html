@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Room KIDS</title>
+  <link rel="stylesheet" href="../static/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/pedro.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="../static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script defer src='../static/js/slider.js'></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/dragscroll/0.0.8/dragscroll.min.js"></script>
+  <script defer src="../static/js/sidebar.js"></script>
+</head>
+
+<!--Navbar-->
+
+<body class='overflow-y-hidden'>
+  <header style="z-index: 1000" class='container-fluid p-0'>
+
+    <nav
+      class='bg-white w-100 d-flex align-items-center justify-content-sm-center justify-content-between primary-navbar'>
+      <div class="d-flex align-items-center justify-content-start logo-kids">
+        <a class="logo-link" href="/inicialkids">
+          <div class="logo-imagem">
+            <img src="../static/imagens/room_kids_logo_nav.png" alt="Logo do site" width="50">
+          </div>
+          <div class="logo-texto">
+            <p class="h1 mb-0">Room Kids</p>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="d-sm-flex d-none align-items-center justify-content-center ms-auto me-auto h-100 maxw800"
+        style="flex: 0 0 40%;">
+        <form class='col-12 h-100'>
+          <div class=" col-12 h-100 d-flex align-items-center justify-content-end shadow-sm rounded-5 kidshover ">
+            <input type="text" class="w-100 border-0 lilita px-4 mb-0 h6 h-100 barraPesquisa"
+              placeholder="Procure algo super bacana">
+            <button class="border-0 fundodgreen px-3 text-center h-100" type='submit'
+              style='border-radius: 0 40px 40px 0;'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" class="bi bi-search kidshover"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+              </svg>
+            </button>
+
+          </div>
+        </form>
+      </div>
+
+      <div class="d-flex align-items-center justify-content-end position-relative gap-2">
+        <button class="sidebar-toggle border-0 bg-transparent kidshover">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50"
+              fill="green">
+              <path
+                d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 L 0 7.5 z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 L 0 22.5 z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 L 0 37.5 z">
+              </path>
+            </svg>
+          </span>
+        </button>
+        <a href="/perfilkids/{{crianca.nomeUsuario}}"
+          class="rounded-circle position-relative fundodgreen divMiniaturaPerfil">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"
+            class="position-absolute bi bi-person-fill " viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 
+                        0 1 0 0-6 3 3 0 0 0 0 6Z" />
+          </svg>
+          <img src='../static/imagens/usuarios/avatar{{ crianca.id|id_img }}.jpg'
+            class='rounded-circle position-absolute imagemPerfil'>
+        </a>
+
+
+      </div>
+    </nav>
+    <nav class="sidebar pt-2">
+      <ul class=" flex-column w-100 lista-sidebar gap-2 p-1">
+        <li>
+          <div class="bg-transparent rounded-circle d-flex align-items-center justify-content-center"
+            style="aspect-ratio: 1; width: 100%;">
+            <svg width="30" height="30" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" aria-hidden="true"
+              focusable="false" fill="black" id="arrow">
+              <g>
+                <path d="M4 16V4H2v12h2zM13 15l-1.5-1.5L14 11H6V9h8l-2.5-2.5L13 5l5 5-5 5z"></path>
+              </g>
+            </svg>
+          </div>
+        </li>
+        <h1 class="mb-2 h6 text-black tituloLista opacity-75 text-center">Canais Seguidos</h1>
+        <li class="d-flex align-items-center justify-content-center col-12 gap-3 position-relative">
+          <button class="bg-transparent border-0" aria-controls="sidebar-kids">
+            <div class="bg-info rounded-circle d-flex align-items-center justify-content-center position-relative"
+              style="aspect-ratio: 1; width: 2rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-person-fill "
+                viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3
+                                    0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+              </svg>
+              <div class="p-1 position-absolute rounded-circle statusBall">
+              </div>
+            </div>
+          </button>
+          <div class="flex-column escondido me-auto">
+            <p class="m-0 text-black small fw-bolder">
+              Usuario
+            </p>
+            <p class="mb-0 text-black small opacity-50">
+              Categoria
+            </p>
+          </div>
+
+
+        </li>
+
+
+        <hr style="background-color: white; height: 3px; width: 100%; margin-inline: .2rem;" class="my-2">
+        <h1 class="mb-2 h6 text-black tituloLista opacity-75 text-center">Criadores recomendados</h1>
+        {%if usuarios%}
+        {%for u in usuarios%}
+        <li class="d-flex align-items-center justify-content-center col-12 gap-3 position-relative">
+          <button class="bg-transparent border-0">
+            <div class="bg-info rounded-circle d-flex align-items-center justify-content-center position-relative"
+              style="aspect-ratio: 1; width: 2rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-person-fill "
+                viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3
+                                      0 1 0 0-6 3 3 0 0 0 0 6Z" />
+              </svg>
+              <div class="p-1 position-absolute rounded-circle statusBall">
+              </div>
+            </div>
+          </button>
+          <div class="flex-column escondido me-auto">
+            <p class="m-0 text-black small fw-bolder">
+              {{u.nomeUsuario}}
+            </p>
+            <p class="mb-0 text-black small opacity-50">
+              Categoria
+            </p>
+          </div>
+
+
+        </li>
+        {%endfor%}
+        {%endif%}
+      </ul>
+    </nav>
+
+  </header>
+
+  <div class='overflow-y-scroll retira-diferenca-sidebar h-100 d-flex flex-column'>
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+
+</html>

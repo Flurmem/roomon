@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/lib/bootstrap/css/bootstrap.min.css" class="rel">
+    <link rel="stylesheet" href="/static/lib/bootstrap-icons/font/bootstrap-icons.min.css" class="rel">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="static/imagens/roomonlogo2.png" />
+    <link rel="stylesheet" href="static/fernanda.css">
+    <title>Entrar</title>
+</head>
+<body>
+
+    <main>
+      <div class="login-box col-10 col-sm-8 col-md-4 h-75 mw-50 mh-100 top-50 start-50 translate-middle p-4">
+        <img class="img-fluid position-absolute start-50 translate-middle-x mt-2" src="static/imagens/room.png" width="200" height="50">
+        <h3 class="nome-form text-light fw-bold mt-5 pt-4">Entrar</h3>
+        <form method="post" action="/loginroomon" enctype="application/x-www-form-urlencoded">
+          <div class='mb-3'>
+          <label for="email" class="text-light">E-mail:</label>
+          <div class="input-group start-50 end-50 translate-middle-x col-12">
+            <i class="input-group-text text-success bi bi-person-fill" id='basic-addon1'></i>
+            <input type="text/email" name="email" id="email" class="form-control" aria-label="email" aria-describedby="basic-addon1" required>
+            <span class="text-danger d-none small dosis col-12"></span>
+
+          </div>         
+        
+            </div>
+           <div class='mb-3'>
+          <label for="senha" class="text-light">Senha:</label>
+          <div class="input-group start-50 end-50 translate-middle-x col-12">
+            <i class="input-group-text text-success bi bi-lock-fill" id='basic-addon1'></i>
+            <input type="password" name="senha" id="senha" class="form-control col-12" aria-label="senha" aria-describedby="basic-addon1" required>
+            <span class="text-danger d-none small dosis col-12"></span>
+
+          </div>         
+        
+            </div>
+          <a href="/esqueceusenha" class="esquecer text-success" title="esquecer">Esqueceu a senha?</a>
+          <div class="text-center">
+            <input type="checkbox" id="conectar" name="conectar" class="mt-4">
+            <label class="conectar text-light" for="conectar">Mantenha-me conectado</label>
+          </div>
+
+          <div class="text-center">
+            <button class="btn btn-success mt-3 botao-fonte" type="submit">Fazer Login</button>
+          </div>
+        </form>
+        <div class="text-center mb-5 mt-3">
+          <p class="text-light">Ainda não tem uma conta?<br><a class="text-success" href="/cadastroroomon">Faça seu cadastro!</a></p>
+        </div>
+        
+      </div>
+
+
+        <script src="/static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+{% if erros and valores: %}
+<script defer src="/static/js/formValidation.js"></script>
+<script>
+  const validationErrors = {{ erros| tojson }};
+  const fieldValues = {{ valores| tojson }};
+</script>
+{% endif %}
+      
+    </main>
+</body>
+</html>

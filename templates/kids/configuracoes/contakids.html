@@ -1,0 +1,80 @@
+{%extends "kids/baseBH.html"%}
+{%block content%}
+{%if crianca%}
+<main
+    class="align-self-center mb-5 align-items-center bg-transparent flex-column p-1 p-sm-0 rounded-4 col-11 col-sm-10 col-md-8 col-xl-7 col-xxl-7 d-flex maxw1360 gap-3 mt-2 z-2"
+    style="min-height: 0;margin-inline: auto;">
+    <div class="d-flex align-self-start flex-column mb-2">
+        <h1 class="bahiana display-6 text-white sliders fw-bolder slider-left-id">Configurações</h1>
+        <div class="d-flex gap-3 sliders slider-left-id animate--slower">
+            <a class="dosis h5 text-white kidshover elemento mb-0 text-decoration-none d-flex align-items-center flex-column"
+                href="/edicaoperfilkids">Edição de
+                Perfil
+                <div class="linha"></div>
+            </a>
+            <a class="dosis h5 text-white kidshover elemento mb-0 text-decoration-none d-flex align-items-center flex-column"
+                href="/contakids">Conta
+                <div class="linha"></div>
+            </a>
+        </div>
+    </div>
+    <div
+        class="col-12 col-sm-11 rounded-4 bg-white d-flex align-items-center justify-content-start flex-column h-auto p-3 px-4 px-sm-5 h-100 sliders slider-top-id animate--slower">
+        <div class="col-12 mb-4">
+            <h1 class="lilita mb-0 h4">Informações pessoais</h1>
+            <a class="dosis h6 text-decoration-none"> Altere detalhes da sua conta</a>
+        </div>
+
+        <form class="d-flex flex-column justify-content-start gap-3 col-12" method="post" action="/contakids"
+            enctype="application/x-www-form-urlencoded">
+
+            <div class="d-flex justify-content-start align-items-center col-12 flex-column flex-md-row">
+                <h6 class="col-12 col-md-3 text-start lilita"> Usuário </h6>
+                <div class="flex-grow-1 col-12 col-sm">
+                    <input name='nomeUsuario' id='nomeUsuario'
+                        class="fundocinzalight lilita shadow-sm form-control col-12 p-2 px-3 rounded-4"
+                        type="text" placeholder="{{crianca.nomeUsuario}}">
+                    <span class="text-danger d-none small dosis"></span>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-start align-items-center col-12 flex-column flex-md-row">
+                <h6 class="col-12 col-md-3 text-start lilita"> Email: </h6>
+                <div class="flex-grow-1 col-12 col-sm">
+                    <input name='email' id='email'
+                        class="fundocinzalight lilita shadow-sm form-control col-12 p-2 px-3 rounded-4"
+                        type="text/email" placeholder="{{crianca.email}}">
+                    <span class="text-danger small dosis"></span>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-start align-items-center col-12 flex-column flex-md-row">
+                <h6 class="col-12 col-md-3 text-start lilita"> Descrição: </h6>
+                <div class="flex-grow-1 col-12 col-sm">
+                    <textarea name='descricao' id='descricao'
+                        class="fundocinzalight lilita shadow-sm form-control col-12 p-2 px-3 rounded-4"
+                        type="text" placeholder="{{crianca.descricao}}"></textarea>
+                    <span class="text-danger small dosis"></span>
+                </div>
+            </div>
+
+            <button type="submit"
+                class="p-2 px-3 text-white fundoKids rounded-5 border-0 align-self-end bebas h5 mb-0 kidshover">Salvar
+                mudanças</button>
+
+        </form>
+    </div>
+
+</main>
+<script src='../static/js/intMenu.js'> </script>
+{%endif%}
+{% if erros and valores: %}
+<script defer src="../static/js/formValidation.js"></script>
+<script>
+    const validationErrors = {{ erros| tojson }};
+    const fieldValues = {{ valores| tojson }};
+</script>
+
+{% endif %}
+
+{%endblock%}

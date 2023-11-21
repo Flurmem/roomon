@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/lib/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/static/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed&display=swap"
+        rel="stylesheet">
+    <script src="/static/jss/funcoes.js"></script>
+    <script crossorigin="anonymous"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
+        defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" href="static/imagens/roomonlogo2.png" />
+    <title>Sala</title>
+</head>
+<body>
+    <div class="container-fluid text-bg-dark">
+        <div class="row">
+            <main class="col-12 bg-black">
+                <div class="row">
+                    <!--CARD CHAT-->
+                    <div class="col-9 pt-4 pb-2 ps-4">
+                        <div class="card mb-2 bg-dark text-white border-0" style="max-width: 100%;">
+                            <div class="card-body" style="max-height: 580px; overflow:auto">
+                                <!---Mensagem 01-->
+                                <div class="row mb-4 mt-3">
+                                    <div class="col-1">
+                                        <img src="/static/imagens/icon_perfil_usuario.jpg" class="rounded-circle" style="width: 60px" alt="icone_usuario">
+                                    </div>
+                                    <div class="col-11">
+                                        <div class="row">
+                                            <strong>UsuáriodeExemplo</strong>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <input type="text"
+                                                            class="form-control text-white bg-dark border-0"
+                                                            id="mensagem01" value="Eai gente, tudo bem?"
+                                                            aria-label="Senha" disabled readonly>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <!---Mensagem 02-->
+                                <div class="row mb-4">
+                                    <div class="col-1">
+                                        <img src="/static/imagens/icon-criador.png" class="rounded-circle" style="width: 60px" alt="icone_usuario">
+                                    </div>
+                                    <div class="col-11">
+                                        <div class="row">
+                                            <strong>UsuáriodeExemplo</strong>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <input type="text"
+                                                            class="form-control text-white bg-dark border-0 "
+                                                            id="mensagem01" value="Oioi, tudo sim e com vocês??"
+                                                            aria-label="Senha" disabled readonly>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <!---Mensagem 03-->
+                                <div class="row mb-4">
+                                    <div class="col-1">
+                                        <img src="/static/imagens/icon-criador.png" class="rounded-circle" style="width: 60px" alt="icone_usuario">
+                                    </div>
+                                    <div class="col-11">
+                                        <div class="row">
+                                            <strong>UsuáriodeExemplo</strong>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="/static/imagens/imagem_chat.jpg" class="rounded mt-2" alt="imagem do chat" style="height:300px">
+                                            </div>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <!--Mensagem do criador-->
+                                
+                                <!--Mensagem do criador-->
+                                <!--Mensagem 04-->
+                                <div class="row mb-4">
+                                    <div class="col-1">
+                                        <img src="/static/imagens/rakin_icon.jpg" class="rounded-circle" style="width: 60px" alt="icone_usuario">
+                                    </div>
+                                    <div class="col-11">
+                                        <div class="row">
+                                            <strong>UsuáriodeExemplo</strong>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <img src="/static/imagens/imagem_chat.jpg" class="rounded mt-2" alt="imagem do chat" style="height:300px">
+                                            </div>
+                                        </div>    
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                    <!--CARD PARTICIPANTES-->
+                    <div class="col-3 pt-4 pb-2 " style="max-width: 100%;">
+                        <div class="card mb-3 bg-dark text-white border-0" >
+                            <div class="card-body" style="max-height: 580px; overflow:auto; overflow-x: hidden;">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="btn-close btn-close-white"
+                                    data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                </div>
+                                <!--Usuario 01-->
+                                <div class="row">
+                                    <div class="col-3 mb-2">
+                                        <div class="position-relative">
+                                            <img src="/static/imagens/guaxinim_icon.jpg" class="rounded-circle" style="width: 60px" alt="icone_usuario">
+                                            <i class="position-absolute bottom-0 start-0 bi bi-pin-angle-fill""></i>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-9 mt-3">
+                                        UsuarioCriador
+                                    </div>
+                                    <hr>
+                                </div>
+                                <!--Usuario 02-->
+                                <div class="row">
+                                    <div class="col-3 mb-2">
+                                        <div class="position-relative">
+                                            <img src="/static/imagens/rakin_icon.jpg" class="rounded-circle " style="width: 60px" alt="icone_usuario">
+                                            <i class="position-absolute bottom-0 start-0 bi bi-nut-fill"></i>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-9 mt-3">
+                                        UsuarioModerador
+                                    </div>
+                                    <hr>
+                                </div>
+                                <!--Usuario 03-->
+                                <div class="row">
+                                    <div class="col-3 mb-2">
+                                        <img src="/static/imagens/icon_perfil_usuario.jpg" class="rounded-circle" style="width: 60px" alt="icone_usuario">
+                                    </div>
+                                    <div class="col-9 mt-3">
+                                        UsuariodeExemplo
+                                    </div>
+                                    <hr>
+                                </div>
+                                <!--Usuario 04-->
+                                <div class="row">
+                                    <div class="col-3 mb-2">
+                                        <img src="/static/imagens/icon-criador.png" class="rounded-circle" style="width: 60px" alt="icone_usuario">
+                                    </div>
+                                    <div class="col-9 mt-3">
+                                        UsuariodeExemplo
+                                    </div>
+                                    <hr>
+                                </div>
+                                <!--Usuario 01-->
+                                <div class="row">
+                                    <div class="col-3 mb-2">
+                                        <img src="/static/imagens/guaxinim_icon.jpg" class="rounded-circle" style="width: 60px" alt="icone_usuario">
+                                    </div>
+                                    <div class="col-9 mt-3">
+                                        UsuariodeExemplo
+                                    </div>
+                                    <hr>
+                                </div>
+                                <!--Usuario 02-->
+                                <div class="row">
+                                    <div class="col-3 mb-2">
+                                        <img src="/static/imagens/rakin_icon.jpg" class="rounded-circle " style="width: 60px" alt="icone_usuario">
+                                    </div>
+                                    <div class="col-9 mt-3">
+                                        UsuariodeExemplo
+                                    </div>
+                                    <hr>
+                                </div>
+                                <!--Usuario 03-->
+                                <div class="row">
+                                    <div class="col-3 mb-2">
+                                        <img src="/static/imagens/icon_perfil_usuario.jpg" class="rounded-circle" style="width: 60px" alt="icone_usuario">
+                                    </div>
+                                    <div class="col-9 mt-3">
+                                        UsuariodeExemplo
+                                    </div>
+                                    <hr>
+                                </div>
+                                <!--Usuario 04-->
+                                <div class="row">
+                                    <div class="col-3 mb-2">
+                                        <img src="/static/imagens/icon-criador.png" class="rounded-circle" style="width: 60px" alt="icone_usuario">
+                                    </div>
+                                    <div class="col-9 mt-3">
+                                        UsuariodeExemplo
+                                    </div>
+                                    <hr>
+                                </div>
+                                <!--Usuario 01-->
+                                <div class="row">
+                                    <div class="col-3 mb-2">
+                                        <img src="/static/imagens/guaxinim_icon.jpg" class="rounded-circle" style="width: 60px" alt="icone_usuario">
+                                    </div>
+                                    <div class="col-9 mt-3">
+                                        UsuariodeExemplo
+                                    </div>
+                                    <hr>
+                                </div>
+                                <!--Usuario 02-->
+                                <div class="row">
+                                    <div class="col-3 mb-2">
+                                        <img src="/static/imagens/rakin_icon.jpg" class="rounded-circle " style="width: 60px" alt="icone_usuario">
+                                    </div>
+                                    <div class="col-9 mt-3">
+                                        UsuariodeExemplo
+                                    </div>
+                                    <hr>
+                                </div>
+                                <!--Usuario 03-->
+                                <div class="row">
+                                    <div class="col-3 mb-2">
+                                        <img src="/static/imagens/icon_perfil_usuario.jpg" class="rounded-circle" style="width: 60px" alt="icone_usuario">
+                                    </div>
+                                    <div class="col-9 mt-3">
+                                        UsuariodeExemplo
+                                    </div>
+                                    <hr>
+                                </div>
+                                <!--Usuario 04-->
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img src="/static/imagens/icon-criador.png" class="rounded-circle" style="width: 60px" alt="icone_usuario">
+                                    </div>
+                                    <div class="col-9 mt-3">
+                                        UsuariodeExemplo
+                                    </div>
+                                    
+                                </div>
+                              
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </main>
+            <footer class=" fixed-bottom mt-5">
+                <div class="row">
+                    <div class="col-3 text-start p-3 ps-3">
+                         <h3 class="text-white fw-light">Nome da Sala </h4>
+                    </div>
+                    <div class="col-6 p-2 mb-3 mt-2">
+                        <div class="row mx-auto align-items-center">
+                            <div class="col-9">
+                                <input class="form-control form-control-lg" type="text" placeholder="Digite aqui sua mensagem!">
+                            </div>
+                            <div class="col-3 ">
+                                
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-send-fill me-2" viewBox="0 0 16 16">
+                                    <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-paperclip me-1" viewBox="0 0 16 16">
+                                    <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"/>
+                                  </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-up-square-fill me-2" viewBox="0 0 16 16">
+                                    <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z"/>
+                                </svg>
+                                <a href="/inicio"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="red" class="bi bi-door-open-fill" viewBox="0 0 16 16">
+                                    <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
+                                </svg></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-3 text-end p-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-square-fill me-3" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-plus-fill me-3" viewBox="0 0 16 16">
+                                    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                    <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                                  </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-gear-fill me-3" viewBox="0 0 16 16">
+                                    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-people-fill me-3" viewBox="0 0 16 16">
+                                    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chat-left-text-fill me-3" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
+                                </svg>
+                    </div>
+                </div>
+            </footer>
+
+            <!--Tooltip-->
+            <!--Transmissao-->
+            <!--Animacao java-->
+</body>
+</html>

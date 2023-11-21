@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/lib/bootstrap/css/bootstrap.min.css" class="rel">
+    <link rel="stylesheet" href="/static/lib/bootstrap-icons/font/bootstrap-icons.min.css" class="rel">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="static/imagens/roomonlogo2.png" />
+    <link rel="stylesheet" href="static/fernanda.css">
+    <title>Esqueceu a senha?</title>
+</head>
+<body>
+  
+  <main>
+    <div id="liveAlertPlaceholder" class="position-absolute top-0 start-50 translate-middle-x"></div>
+    <div class="container-fluid login-box col-10 col-sm-7 col-md-5 col-lg-4 col-xl-3 top-50 start-50 translate-middle text-center p-4">
+            
+            <h3 class="nome-form text-light fw-bold mb-4">Redefinição de senha</h3>
+            <form method="post" action="/esqueceusenha" enctype="application/x-www-form-urlencoded">
+                <label for="emailredefinir" class="text-light">Informe o e-mail para redefinir a senha</label>
+                <div class="input-group mb-3 start-50 end-50 translate-middle-x">
+                    
+                    <input type="text" name="emailredefinir" id="emailredefinir" class="form-control w-75" aria-label="Email" aria-describedby="basic-addon1" required>
+                  </div>
+
+              
+                <div class="text-center">
+                  <button type="submit" class="btn btn-success mt-3 botao-fonte" id="liveAlertBtn">Enviar e-mail</a>
+                </div>
+              </form>
+        </div>
+    
+    <script src="/static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/alertasucesso.js"></script>
+  </main>
+  
+</body>
+</html>

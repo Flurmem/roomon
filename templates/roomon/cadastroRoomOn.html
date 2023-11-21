@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/lib/bootstrap/css/bootstrap.min.css" class="rel">
+    <link rel="stylesheet" href="/static/lib/bootstrap-icons/font/bootstrap-icons.min.css" class="rel">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="static/imagens/roomonlogo2.png" />
+    <link rel="stylesheet" href="/static/fernanda.css">
+    <title>Fazer Cadastro</title>
+</head>
+<body>
+  <main>
+    <div class="container login-box w-50 top-50 start-50 translate-middle">
+      <img class="img-fluid position-absolute start-50 translate-middle-x mt-2" src="static/imagens/room.png" width="200" height="50">
+      <h3 class="nome-form text-light fw-bold mt-5 pt-4">Cadastro</h3>
+      <form method="post" action="/cadastroroomon" enctype="multipart/form-data"> 
+        <div class="row">
+          <div class="col-6">
+            <label for="nome-completo" class="label-cadastro text-light">Nome Completo</label>
+            <div class="input-group mb-3">
+              <i class="input-group-text bi bi-person-fill text-success" id="basic-addon1"></i>
+              <input type="text" name="nome" id="nome" class="form-control" aria-label="nome-completo" aria-describedby="basic-addon1">
+              <span class="text-danger d-none small dosis col-12"></span>
+            </div>
+          </div>
+          <div class="col-6">
+            <label for="nome-usuario" class="label-cadastro text-light">Nome de Usuário</label>
+            <div class="input-group mb-3">
+              <i class="input-group-text bi bi-people-fill text-success" id="basic-addon1"></i>
+              <input type="text" name="nomeUsuario" id="nomeUsuario" class="form-control" aria-label="nome-usuario" aria-describedby="basic-addon1">
+              <span class="text-danger d-none small dosis col-12"></span>
+            </div>
+          </div>                        
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label for="email" class="label-cadastro text-light">E-mail</label>
+            <div class="input-group mb-3">
+              <i class="input-group-text bi bi-envelope-at-fill text-success" id="basic-addon1"></i>
+              <input type="email" name="email" id="email" class="form-control" aria-label="email" aria-describedby="basic-addon1">
+              <span class="text-danger d-none small dosis col-12"></span>
+            </div>
+          </div>
+          <div class="col-6">
+            <label for="datanasc" class="label-cadastro text-light">Data de Nascimento</label>
+            <div class="input-group mb-3">
+              <i class="input-group-text bi bi-calendar-date-fill text-success" id="basic-addon1"></i>
+              <input type="date" name="dataNascimento" id="dataNascimento" class="form-control" aria-label="dataNascimento" aria-describedby="basic-addon1">
+              <span class="text-danger d-none small dosis col-12"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <label for="senha" class="label-cadastro text-light">Senha</label>
+            <div class="input-group mb-3">
+              <i class="input-group-text bi bi-key-fill text-success" id="basic-addon1"></i>
+              <input type="password" name="senha" id="senha" class="form-control" aria-label="senha" aria-describedby="basic-addon1">
+              <span class="text-danger d-none small dosis col-12"></span>
+            </div>
+          </div>
+          <div class="col-6">
+            <label for="cSenha" class="label-cadastro text-light">Confirme sua Senha</label>
+            <div class="input-group mb-3">
+              <i class="input-group-text bi bi-lock-fill text-success" id="basic-addon1"></i>
+              <input type="password" name="cSenha" id="cSenha" class="form-control" aria-label="cSenha" aria-describedby="basic-addon1">
+              <span class="text-danger d-none small dosis col-12"></span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <input type="checkbox" id="termos" name="termos" class="mt-4">
+          <label for="termos" class="text-light">Declaro que li e concordo com os <a href="#" class="text-success">Termos de Uso</a>.</label>
+        </div>
+      </div>
+        <div class="text-center">
+          <button class="btn btn-success mt-3 botao-fonte botao-cadastro p-2" type='submit'>Fazer Cadastro</button>
+        </div>
+      </form>
+      <div class="text-center mb-3 mt-3">
+        <p class="text-light">Já tem uma conta?<br><a class="text-success" href="/loginroomon">Faça seu login!</a></p>
+      </div>
+    </div>
+
+<!-- LOCAL PARA MOSTRAR IMAGEM SELECIONADA -->
+<div class="col-3">
+    <img id="preview" src="" class="border border-2 rounded rounded-3 p-2 w-100 d-none" />
+</div>
+<!-- ------------------------------------- -->
+<!-- SCRIPT PARA MOSTRAR IMAGEM SELECIONADA -->
+<script>
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var preview = document.getElementById('preview');
+            preview.src = reader.result;
+            preview.classList.remove('d-none');
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+<!-- -------------------------------------- -->
+
+{% if erros and valores: %}
+<script defer src="/static/js/formValidation.js"></script>
+<script>
+  const validationErrors = {{ erros| tojson }};
+  const fieldValues = {{ valores| tojson }};
+</script>
+{% endif %}
+
+  <script src="/static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </main>
+</body>
+</html>

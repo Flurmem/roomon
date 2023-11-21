@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/lib/bootstrap-icons/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/static/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/estilos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed&display=swap"
+      rel="stylesheet">
+  <script src="/static/js/funcoes.js"></script>
+  <script crossorigin="anonymous"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
+      defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
+      crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="icon" type="image/png" href="static/imagens/roomonlogo2.png" />
+  <title>Criação de Sala</title>
+</head>
+<body>
+
+    <main>
+        <div class="container login-box top-50 start-50 translate-middle p-5 col-11 col-sm-10 col-md-8 col-lg-6">
+            <img class="img-fluid position-absolute start-50 translate-middle-x mt-2" src="static/imagens/room.png" width="200" height="50">
+            <h3 class="nome-form text-light fw-bold mt-5 pt-4 mb-3">CRIAÇÃO DE SALA</h3>
+            <form class="row g-3 needs-validation" method='post' enctype='multipart/form-data' action='/criacaosala' novalidate>
+                
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="col-11 col-sm-6">
+                        <label for="titulo" class="label-cadastro text-light">Nome da sala*:</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text border-0" id="basic-addon1"><i class="bi bi-door-open-fill text-success"></i></span>
+                            <input type="text" name="titulo" id="titulo" class="form-control" aria-label="titulo" aria-describedby="basic-addon1">
+                          </div>
+                        <div class="invalid-feedback">
+                          Defina um nome para a sala!
+                        </div>
+                    </div>
+                    <div class="col-11 col-sm-6">
+                        <label for="categoria" class="label-cadastro text-light"> Categoria*</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="bi bi-tags-fill text-success"></i></span>
+                            <select class="form-select" id="categoria" name='categoria'>
+
+                              <option value="" disabled selected hidden>Selecione a categoria</option>
+                              {% for c in categorias %}
+                              <option class="text-black z-3" id="{{c.nome}}" name="categorias" value='{{c.id}}'> {{c.nome}}
+                              </option>
+                              {%endfor%}
+                              </select>
+                        </div>
+                        <div class="invalid-feedback">
+                          Selecione uma categoria!
+                        </div>
+                    </div>                        
+                </div>
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="col-11 col-sm-6">
+                        <label for="descricao" class="label-cadastro text-light">Descrição da sala*</label>
+                        <div class="input-group mb-3">
+                            <textarea class="form-control" id='descricao' name='descricao' aria-label="With textarea"></textarea>
+                        </div>
+                        <div class="invalid-feedback">
+                          Deixe uma descrição!
+                        </div>
+                    </div>
+                    <div class="col-11 col-sm-6">
+                        <label for="tipo_de_sala" class="label-cadastro text-light">Tipo de sala*</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="tipo_de_sala"><i class="bi bi-unlock-fill text-success"></i></span>
+                            <select class="form-select" id="publica" name='publica'>
+                              <option selected></option>
+                              <option value="true">Aberta</option>
+                              <option value="false">Privada</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="campoInput" style="display: none;">
+                          <label for="sala_privada_senha" class="label-cadastro text-light">Senha da sala privada</label>
+                          <div class="input-group mb-3">
+                              <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill text-success"></i></span>
+                              <input type="password" name="sala_privada_senha" id="sala_privada_senha" class="form-control" aria-label="sala_privada_senha" aria-describedby="basic-addon1">
+                          </div>
+                        </div>
+                        <div class="invalid-feedback">
+                          Selecione o tipo de sala!
+                        </div>
+
+                    </div>
+
+                <div class="row d-flex align-items-center">
+                    <div class="col-12 text-center">
+                        <label for="capa_sala" class="label-cadastro text-light d-block">Escolha a capa da sala</label>
+                            <div class="custom-control custom-radio custom-radio-img d-inline-block ">
+                              <input type="radio" id="capa_amarela" name="capa" class="custom-control-input">
+                              <label class="custom-control-label" for="capa_amarela">
+                                <img src="static/imagens/capa_amarela.png">
+                              </label>
+                            </div>
+                            <div class="custom-control custom-radio custom-radio-img d-inline-block">
+                              <input type="radio" id="capa_roxa" name="capa" class="custom-control-input">
+                              <label class="custom-control-label" for="capa_roxa">
+                                <img src="static/imagens/capa_roxa.png">
+                              </label>
+                            </div>
+                            <div class="custom-control custom-radio custom-radio-img d-inline-block">
+                              <input type="radio" id="capa_rosa" name="capa" class="custom-control-input">
+                              <label class="custom-control-label" for="capa_rosa">
+                                <img src="static/imagens/capa_rosa.png">
+                              </label>
+                            </div>
+                            <div class="custom-control custom-radio custom-radio-img d-inline-block">
+                              <input type="radio" id="capa_azul" name="capa" class="custom-control-input">
+                              <label class="custom-control-label" for="capa_azul">
+                                <img src="static/imagens/capa_azul.png">
+                              </label>
+                            </div>
+                            <div class="custom-control custom-radio custom-radio-img d-inline-block">
+                              <input type="radio" id="capa_vermelha" name="capa" class="custom-control-input">
+                              <label class="custom-control-label" for="capa_vermelha">
+                                <img src="static/imagens/capa_vermelha.png">
+                              </label>
+                            </div>
+                            <div class="input-group mt-3 mb-3">
+                              <input type="file" class="form-control" id="arquivoImagem" name='arquivoImagem' onchange="previewImage(event)" accept="image/jpeg" required>
+                              <img id='preview' src='' class='rounded-4 position-absolute d-none capaSala'>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+                <div class="text-center">
+                  <button class="btn btn-success mt-3 botao-fonte botao-cadastro p-2" type='submit'>CRIAR SALA</button>
+                </div>
+              </form>
+              
+        </div>
+
+      
+  <!--como fazer funcionar?-->
+  <!--como fazer para quando clicar em privada, aparecer o outro campo?-->
+  <!---Centralizar o título?-->
+  <!--Como fazer funcionar a validação-->
+  <!--Como deixar as imagens da capa responsivas?-->
+  <!--Como diminuir o tamanho do input?-->
+  <!--Trocar posição do tipo de sala com o da capa da sala-->
+
+    </main>
+<script src="../static/js/mostrarImagem.js"></script>
+</body>
+</html>

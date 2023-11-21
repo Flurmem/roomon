@@ -1,0 +1,77 @@
+{% extends "kids/basebolinhas.html" %}
+
+{% block content %}
+
+<main class="h-100 d-flex align-self-center justify-content-center z-3 p-3 col-12 col-sm-9 col-md-7 col-lg-6 maxw800">
+  <div
+    class="p-4 p-sm-5 bg-white d-flex h-auto align-self-center rounded-4 shadow-lg d-flex flex-column align-items-center justify-content-center slide-in-left col-12">
+    <h1 class="fw-bold display-3 text-black bahiana mb-3"> Contas </h1>
+    <div class="w-100 p-1 d-flex align-items-start justify-content-center gap-3 mb-5 container-login-dependentes">
+
+      {%for d in dependentes%}
+      <div class="text-center dependente" data-email="{{d.email}}">
+        <img src="../static/imagens/usuarios/avatar{{d.id|id_img}}.jpg" class="rounded-circle imagem-perfil-dependente">
+        <p class="lilita h5"> {{d.nomeUsuario}} </p>
+      </div>
+      {%endfor%}
+    </div>
+    <div class="d-flex align-items-center justify-content-center">
+      <button class="p-2 border-0 rounded-3 bg-info">
+        <p class="lilita opacity-75 mb-0">
+          Adicionar novo dependente
+        </p>
+      </button>
+    </div>
+
+    <script>
+async function chamarAPI(email) {
+    try {
+        const url = `logindependentes/${email}`;
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        recarregarPagina();
+
+    } catch (error) {
+        console.error('Erro ao chamar a API:', error);
+    }
+}
+
+function recarregarPagina() {
+    //const trs = document.querySelectorAll('tbody>tr');        
+    //if (trs.length === 0) {
+    window.location.href = 'inicialkids';
+    //}
+}
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const botoes = document.querySelectorAll('div.dependente');
+    botoes.forEach((botao) => {
+        botao.addEventListener('click', async (event) => {
+            event.preventDefault();
+            const email = botao.getAttribute('data-email');
+            console.log(email)
+            chamarAPI(email)
+        });
+    });
+});
+
+    </script>
+    {% if erros and valores: %}
+    <script defer src="/static/js/formValidation.js"></script>
+    <script>
+      const validationErrors = {{ erros| tojson }};
+      const fieldValues = {{ valores| tojson }};
+    </script>
+
+    {% endif %}
+  </div>
+
+</main>
+
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "kids/basebolinhas.html" %}
+
+{% block content %}
+
+<main
+  class="h-100 d-flex align-self-center justify-content-center z-3 p-3 col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5 col-xxl-3 max500">
+  <div
+    class="p-4 p-sm-5 bg-white d-flex h-auto align-self-center rounded-4 shadow-lg d-flex flex-column align-items-center justify-content-center slide-in-left col-12">
+    <h1 class="fw-bold display-2 text-black bahiana"> LOGIN </h1>
+    <hr>
+    {% if not logado: %}
+    {% if request.query_params["returnUrl"]: %}
+    <p class="lead">A página que você tentou acessar requer que esteja logado. Faça o login para prosseguir.</p>
+    {% endif %}
+    <form method="post" action="/loginkids" enctype="application/x-www-form-urlencoded"
+      class="d-flex align-items-center justify-content-center col-12 flex-column">
+      <div class='mb-3 col-12'>
+        <div class="mb-3">
+          <input name='email' class="shadow-sm lilita form-control col-12 sem-borda p-2 px-3 rounded-4 fundocinzalight" id='email'
+            type="text/email" placeholder="Email: ">
+          <span class="text-danger d-none small dosis"></span>
+        </div>
+        <div class="mb-3">
+          <input name='senha' class="shadow-sm lilita form-control col-12 sem-borda p-2 rounded-4 px-3 fundocinzalight" id='senha'
+            type="password" placeholder="Senha: ">
+          <span class="text-danger d-none small dosis"></span>
+        </div>
+      </div>
+      <div class='d-flex justify-content-center col-12 px-1 align-items-center'>
+        <input type='submit'
+          class="btn bebas text-white col-7 col-sm-7 col-lg-6 col-xl-6 col-xxl-8 rounded-5 shadow-sm mb-2 py-1" style="font-size: 27px; background-color: rgb(4, 172, 228);
+              " value="ENTRAR">
+      </div>
+    </form>
+    <a class='text-center lilita fw-light text-dark text-decoration-none' style='font-size: 1.08rem' href="/cadastro">Ainda não possui uma conta? </a>
+
+    {% if request.query_params["status"] and request.query_params["status"] == "403": %}
+    <p class="lead">Seu perfil de usuário não tem autorização de acesso à página solicitada. Caso essa permissão seja
+      necessária, entre em contato com o administrador do sistema.</p>
+    {% endif %}
+    {% else: %}
+    <h3>Você já está logado.</h3>
+    {% endif %}
+
+    {% if erros and valores: %}
+    <script defer src="/static/js/formValidation.js"></script>
+    <script>
+      const validationErrors = {{ erros| tojson }};
+      const fieldValues = {{ valores| tojson }};
+    </script>
+
+    {% endif %}
+  </div>
+
+</main>
+
+
+{% endblock %}

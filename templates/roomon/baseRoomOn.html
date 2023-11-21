@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap / CSS / JSS-->
+    <link rel="stylesheet" href="/static/lib/bootstrap/css/bootstrap.min.css" class="rel">
+    <link rel="stylesheet" href="/static/lib/bootstrap-icons/font/bootstrap-icons.min.css" class="rel">
+    <link rel="stylesheet" href="/static/lib/bootstrap/js/bootstrap.min.js">
+    <link rel="stylesheet" href="static/fernanda.css">
+    <link rel="stylesheet" href="static/estilos.css">
+    <link rel="stylesheet" href="static/pedro.css">
+    <!-- <link href='../static/pedro.css' rel='stylesheet'> -->
+
+
+    <!--Fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!--Icone aba-->
+    <link rel="icon" type="image/png" href="static/imagens/roomonlogo2.png" />
+
+
+    <title>Room ON</title>
+</head>
+
+
+<!--Navbar-->
+
+
+<body class="bg-black overflow-y-hidden">
+    <header class='container-fluid p-0'>
+        <nav class='w-100 d-flex align-items-center justify-content-center p-1 bg-black sticky-top'
+            style="box-shadow: 0 1px 2px black; z-index: 1000000"">
+          <div class=" d-flex align-items-center justify-content-start col logo-roomon col-3">
+            <a class="logo-link-roomon" href="/logadoroomon">
+                <div class="logo-imagem m-2">
+                  <a href="/inicio">
+                    <img src="static/imagens/room_on_logo_portafechada.png" alt="Logo do site" style="height:60px">
+                  </a>
+                </div>
+                <div class="logo-texto-roomon">
+                    <p class="h4 mb-0 text-white">Busque pela sala perfeita!</p>
+                </div>
+            </a>
+            </div>
+
+
+            <div class="d-flex align-items-center justify-content-center flex-grow-1 col-6">
+                <form class='col-12 d-flex align-items-center justify-content-center'>
+                    <div class=" col-12 col-xxl-11 d-sm-flex align-items-center justify-content-center maxw800 shadow-sm rounded-5 d-none"
+                        style="height: 50px">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-0 px-4 mb-0 h6 bg-dark text-white"
+                                placeholder="Buscar">
+                            <button class="btn border-0 px-3 text-center" style=' background-color: green;'
+                                type='submit'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="d-flex align-items-end justify-content-end gap-3 flex-grow-1 me-3 col-3">
+                <div class="dropdown-center">
+                    <button class="dropdown border-0 border-success text-light bg-transparent" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-person-circle icones-nav" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu usuario-navbar bg-black text-light border-success">
+                        <li><a class="dropdown-item text-light mb-1" href="/perfilusuario"><i
+                                    class="bi bi-person me-2"></i>Usuário</a></li>
+                        <li>
+                            <hr class="dropdown-divider bg-success">
+                        </li>
+                        <li><a class="dropdown-item text-light mb-1" href="/perfilusuarioeditar"><i
+                                    class="bi bi-pencil-square me-2"></i>Editar Perfil</a></li>
+                        <li><a class="dropdown-item text-light mb-1" href="/criacaosala"><i
+                                    class="bi bi-plus-circle me-2"></i>Criação de Rooms</a></li>
+                        <li><a class="dropdown-item text-light mb-1" href="/preferenciasconfiguracoes"><i
+                                    class="bi bi-gear me-2"></i>Configurações</a></li>
+                        <li>
+                            <hr class="dropdown-divider bg-success">
+                        </li>
+                        <li><a class="dropdown-item text-light mb-1" href="/perguntasfrequentessuporte"><i
+                                    class="bi bi-question-circle me-2"></i>Suporte</a></li>
+                        <li><a class="dropdown-item text-light mb-1" href="#"><i class="bi bi-book-half me-2"></i>Termos de Uso</a></li>
+                        <li>
+                            <hr class="dropdown-divider bg-success">
+                        </li>
+                        <li><a class="dropdown-item text-light mb-1" href="/logoutroomon"><i
+                                    class="bi bi-door-open me-2"></i>Sair</a></li>
+                    </ul>
+                </div>
+
+
+
+
+                <div class="dropdown-center">
+                    <button class="dropdown border-0 border-success text-light bg-transparent" type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-bell-fill icones-nav" viewBox="0 0 16 16">
+                            <path
+                                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu notif-navbar bg-black text-light border-success" style="width:200px;">
+                        <li><a class="dropdown-item text-light mb-1" href="#"><i class="bi bi-person-plus me-1"></i><img
+                                    src="static/imagens/icon-criador.png" class="me-2 align-items-baseline"
+                                    style="width:25px;height:25px;">VictorSM seguiu você!</a></li>
+                        <li>
+                            <hr class="dropdown-divider bg-success">
+                        </li>
+                        <li><a class="dropdown-item text-light mb-1" href="#"><i class="bi bi-door-open me-1"></i><img
+                                    src="static/imagens/icon-criador.png" class="me-2 align-items-baseline"
+                                    style="width:25px;height:25px;">SusuMelo
+                                abriu uma room neste momento!</a></li>
+                        <li>
+                            <hr class="dropdown-divider bg-success">
+                        </li>
+                        <li><a class="dropdown-item text-light mb-1" href="#"><i class="bi bi-door-open me-1"></i><img
+                                    src="static/imagens/icon-criador.png" class="me-2 align-items-baseline"
+                                    style="width:25px;height:25px;">R_Maroquio
+                                abriu uma room neste momento!</a></li>
+                        <li>
+                            <hr class="dropdown-divider bg-success">
+                        </li>
+                        <li><a class="dropdown-item text-light mb-1" href="#"><i class="bi bi-person-plus me-1"></i><img
+                                    src="static/imagens/icon-criador.png" class="me-2 align-items-baseline"
+                                    style="width:25px;height:25px;">LarinhaConversas seguiu você!</a></li>
+                        <li>
+                            <hr class="dropdown-divider bg-success">
+                        </li>
+                        <li><a class="dropdown-item text-light mb-1 text-decoration-underline text-center" href="#">Ver
+                                mais</a></li>
+                    </ul>
+                </div>
+                <!--<a class="btn botao-fonte text-white" style="background-color: purple;" href="/assinaturaroomon">Room
+                    Plus+</a>
+                <a class="btn botao-fonte text-white" style="background-color: green;" href="/assinaturaroomon"> <svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-square-fill me-2" viewBox="0 0 16 16">
+                        <path
+                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
+                    </svg>Criar sala</a>-->
+            </div>
+        </nav>
+        <nav class="sidebar primary-sidebar-roomon pt-2">
+          <ul class=" flex-column w-100 lista-sidebar gap-2 p-1">
+              <li>
+                  <div class="bg-transparent rounded-circle d-flex align-items-center justify-content-center"
+                      style="aspect-ratio: 1; width: 100%;">
+                      <svg width="30" height="30" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" aria-hidden="true"
+                          focusable="false" fill="white" id="arrow">
+                          <g>
+                              <path d="M4 16V4H2v12h2zM13 15l-1.5-1.5L14 11H6V9h8l-2.5-2.5L13 5l5 5-5 5z"></path>
+                          </g>
+                      </svg>
+                  </div>
+              </li>
+              <h1 class="mb-2 h6 text-white tituloLista opacity-75 text-center">Canais Seguidos</h1>
+              <li class="d-flex align-items-center justify-content-center col-12 gap-3 position-relative">
+                <button class="bg-transparent border-0" aria-controls="sidebar-kids">
+                    <div class="bg-info rounded-circle d-flex align-items-center justify-content-center position-relative" style="aspect-ratio: 1; width: 2rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-person-fill " viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3
+                                      0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+                        </svg>
+                        <div class="p-1 position-absolute rounded-circle statusBall">
+                        </div>
+                    </div>
+                </button>
+                <div class="flex-column escondido me-auto">
+                    <p class="m-0 text-white small fw-bolder">
+                        Usuario
+                    </p>
+                    <p class="mb-0 text-white small opacity-50">
+                        Categoria
+                    </p>
+                </div>
+
+
+            </li>
+
+
+              <hr style="background-color: white; height: 3px; width: 100%; margin-inline: .2rem;" class="my-2">
+              <h1 class="mb-2 h6 text-white tituloLista opacity-75 text-center">Salas recomendadas</h1>
+              <li class="d-flex align-items-center justify-content-center col-12 gap-3 position-relative">
+                  <button class="bg-transparent border-0" aria-controls="sidebar-kids">
+                      <div class="bg-info rounded-circle d-flex align-items-center justify-content-center position-relative"
+                          style="aspect-ratio: 1; width: 2rem;">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white"
+                              class="bi bi-person-fill " viewBox="0 0 16 16">
+                              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3
+                                        0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                          </svg>
+                          <div class="p-1 position-absolute rounded-circle statusBall">
+                          </div>
+                      </div>
+                  </button>
+                  <div class="flex-column escondido me-auto">
+                      <p class="m-0 text-white small fw-bolder">
+                          Usuario
+                      </p>
+                      <p class="mb-0 text-white small opacity-50">
+                          Categoria
+                      </p>
+                  </div>
+
+
+              </li>
+          </ul>
+      </nav>  
+    </header>
+
+
+    <!--Footer-->
+    <main class="position-relative retira-diferenca-sidebar overflow-y-scroll text-white">
+        {% block content %}
+        {% endblock %}
+      <footer class="ms-2 position-relative">
+          <div class="row text-white m-3 opacity-75">
+              <div class="col-12 col-sm-3 mt-2">
+                  <img src="/static/imagens/ROOM (1).png" alt="Logo do site" style="width:120px;">
+              </div>
+              <div class="col-12 col-sm-6 mt-2">
+                  <div class="row">
+                      <div class="col">
+                          <a class="nav-link active text-white" aria-current="page" href="#">Sobre nós</a>
+                      </div>
+                      <div class="col">
+                          <a class="nav-link text-white" href="#">Ajuda&FAQ</a>
+                      </div>
+                      <div class="col">
+                          <a class="nav-link text-white" href="#">Denúncias</a>
+                      </div>
+                      <div class="col">
+                          <a class="nav-link text-white" href="#">Termos de uso</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 col-sm-3 text-center mt-2">
+                  <a class="text-white" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                          fill="currentColor" class="bi bi-instagram me-4" viewBox="0 0 16 16">
+                          <path
+                              d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                      </svg></a>
+                  <a class="text-white" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                          fill="currentColor" class="bi bi-twitter-x me-4" viewBox="0 0 16 16">
+                          <path
+                              d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
+                      </svg></a>
+                  <a class="text-white" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                          fill="currentColor" class="bi bi-facebook me-4" viewBox="0 0 16 16">
+                          <path
+                              d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                      </svg></a>
+                  <a class="text-white" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                          fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                          <path
+                              d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                      </svg></a>
+
+
+              </div>
+              <hr class="text-white mb-1 mt-1">
+          </div>
+          <div class="col-5 text-center mx-auto">
+              <div class="row text-white m-1">
+                  <h5 class="text-center fw-light opacity-75 "> © Todos os direitos reservados. </h5>
+              </div>
+          </div>
+      </footer>
+    </main>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <script src="/static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/funcoes.js"></script>
+</body>
+
+
+</html>

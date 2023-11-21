@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{%block content%}
+<div class="overlap-1">
+
+    <div class="container-header">
+        <h1 class="roboto">Administração</h1>
+    </div>
+
+    <div class="categorias-cadastradas-box">
+        <h1 class="roboto"> Usuários Cadastrados</h1>
+        <table class="tableCategorias">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Usuário</th>
+                    <th>Email</th>
+                    <th>Data Nasc</th>
+                    <th>Senha</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in users %}
+                <tr>
+                    <td> {{u.id}}</td>
+                    <td> {{u.nome}}</td>
+                    <td> {{u.nome_usuario}}</td>
+                    <td> {{u.email}}</td>
+                    <td> {{u.data_nascimento}}</td>
+                    <td> {{u.senha}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+        <button class="button" onclick="window.location.href='/cadastrouser'"> Cadastrar Usuario</button>
+    </div>
+
+</div>
+
+{%endblock%}

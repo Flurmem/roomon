@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/lib/bootstrap/css/bootstrap.min.css" class="rel">
+    <link rel="stylesheet" href="/static/lib/bootstrap-icons/font/bootstrap-icons.min.css" class="rel">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="static/imagens/roomonlogo2.png" />
+    <link rel="stylesheet" href="static/estilos.css">
+  
+    <title>Assinatura Room Plus</title>
+</head>
+<body>
+
+    <!--Container de assinatura-->
+        <div class="container assinatura-box top-50 start-50 translate-middle p-5 col-11 col-sm-10 col-md-8 col-lg-7">
+            <img class="img-fluid position-absolute start-50 translate-middle-x mt-2 mb-5" src="static/imagens/LOGO_ROOMPLUS_ROXA.png" width="200" height="50">
+            <h3 class="nome-form text-light fw-bold mt-5 pt-5 mb-3">ASSINATURA ROOM+</h3>
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="row d-flex">
+                    <div class="col-6 ">
+                        <div class="col">
+                            <div>
+                                <label for="nome" class="label-cadastro text-light">Nome*:</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="purple" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                                      </svg></span>
+                                    <input type="text" name="nome_assinante" id="nome_assinante" class="form-control" aria-label="nome_assinante" aria-describedby="basic-addon1">
+                                </div>
+                                <div class="invalid-feedback">
+                                Digite seu nome!
+                                </div>
+                            </div>
+                            <div>
+                                <label for="cpf" class="label-cadastro text-light">CPF*:</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="purple" class="bi bi-credit-card-2-front-fill" viewBox="0 0 16 16">
+                                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2zm0 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm3 0a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>
+                                      </svg></span>
+                                    <input type="text" name="cpf_assinante" id="n_acpfsinante" class="form-control" aria-label="cpf_assinante" aria-describedby="basic-addon1">
+                                </div>
+                                <div class="invalid-feedback">
+                                Digite um CPF válido!
+                                </div>
+                            </div>
+                            <div>
+                                <label for="nome-sala" class="label-cadastro text-light">Data de nascimento*:</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="purple" class="bi bi-calendar-week-fill" viewBox="0 0 16 16">
+                                        <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zM9.5 7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm3 0h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zM2 10.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
+                                      </svg></span>
+                                    <input type="date" name="nascimento_assinante" id="nascimento_assinante" class="form-control" aria-label="nascimento_assinante" aria-describedby="basic-addon1">
+                                </div>
+                                <div class="invalid-feedback">
+                                Digite uma data de nascimento válida!
+                                </div>
+                            </div>
+                            <div>
+                                <a class="btn  mt-1 fw-light botao-cadastro p-1" style="background-color: purple; color:white; width:180px" href="https://www.paypal.com/br/home">
+                                    Pague com 
+                                    <img src="/static/imagens/paypal_logo_icon_170865.png" style=" width: 65px; height: 40px;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                  <!--Card Benefícios-->
+                    <div class="col-6 mt-3" >
+                        <div class="card bg-dark text-white p-3 cardplus" style="border-radius: 6px">
+                            <h5 class="text-white fw-light"> Torne-se assinante e tenha acesso a:</h4>
+                            <ul class="list-group text-white ">
+                                <li class="list-group-item text-white bg-dark border-0">Conteúdo sem anúncios!</li>
+                                <li class="list-group-item text-white bg-dark border-0">Recursos novos do sistema antes de todos!</li>
+                                <li class="list-group-item text-white bg-dark border-0">Personalização exclusiva do perfil!</li>
+                                <li class="list-group-item text-white bg-dark border-0">Criação de salas privadas!</li>
+                                <li class="list-group-item text-white bg-dark border-0">Salas sem limite de tempo!</li>
+                            </ul>
+    	                </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                  <a class="btn  mt-3 botao-fonte botao-cadastro p-2" style="background-color: purple; color:white" href="/assinaturaroomplus">ASSINAR</a>
+                    <a class="btn  mt-3 botao-fonte botao-cadastro p-2" style="background-color: purple; color:white" href="/inicio">CANCELAR</a>
+                </div>
+            
+              </form>
+              
+            </div>
+    </main>
+  
+<!---Hoover não funciona-->
+</body>
+</html>

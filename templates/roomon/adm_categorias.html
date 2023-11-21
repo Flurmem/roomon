@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{%block content%}
+<div class="overlap-1">
+
+    <div class="container-header">
+        <h1 class="roboto">Administração</h1>
+    </div>
+
+    <div class="categorias-cadastradas-box">
+        <h1 class="roboto"> Categorias Cadastradas</h1>
+        <table class="tableCategorias">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Descrição</th>
+                    <th>Assuntos</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in categorias %}
+                <tr>
+                    <td> {{c.id}}</td>
+                    <td> {{c.nome}}</td>
+                    <td> {{c.descricao}}</td>
+                    <td> {{c.assuntos}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+        <button class="button" onclick="window.location.href='/cadastrocategoria'"> Nova Categoria</button>
+    </div>
+
+</div>
+
+{%endblock%}

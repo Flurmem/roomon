@@ -1,0 +1,957 @@
+{% extends "baseRoomOn.html" %}
+{%block content%}
+        <div id="carouselExample" class="carousel slide w-75 start-50 end-50 translate-middle-x mb-5">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="/precadastro">
+                  <img src="static/imagens/roomkids.png" class="d-block w-100" alt="Imagem propaganda do Room Kids">
+                </a>
+              </div>
+              <div class="carousel-item">
+                <a href="/assinaturaroomon">
+                  <img src="static/imagens/roomplus.png" class="d-block w-100" alt="Imagem propaganda do Room Plus">
+                </a>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+        <h3 class="titulos text-light ms-5 ps-5">Rooms Populares <i class="text-light seta bi bi-chevron-right"></i></h3>
+
+        <div id="carouselExample1" class="carousel slide w-100 start-50 translate-middle-x mb-5">
+            <div class="carousel-inner">
+                <div class="carousel-item text-center active pb-2">
+                    <button type="button" class="modal-botao" data-bs-toggle="modal" data-bs-target="#myModal">
+                        <div class="card bg-black d-inline-flex me-2" style="width:200px;">
+                            <a href="#" class="text-decoration-none text-light">
+                                <img class="card-img-top" src="static/imagens/capa-room2.png" alt="Capa da Room" style="width:200px; height: 137px;">
+                                <div class="card-body text-start">
+                                    <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                                    <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                        height="30">
+                                    <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                        height="30">
+                                    <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                        height="30">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                        fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                                    </svg>
+                                    <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                                    <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                                </div>
+                            </a>
+                        </div>
+                    </button>
+                    
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                                        <div class="card-body text-start">
+                                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                                            </svg>
+                                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                                        </div>
+                        </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                                        <div class="card-body text-start">
+                                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                                            </svg>
+                                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                                        </div>
+                        </a></div>
+
+                        <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                            <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                            <div class="card-body text-start">
+                                <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                                <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                    height="30">
+                                <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                    height="30">
+                                <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                    height="30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                    fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                                </svg>
+                                <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                                <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                            </div>
+            </a></div>
+
+            <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                                        <div class="card-body text-start">
+                                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                                            </svg>
+                                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                                        </div>
+                        </a></div>
+
+                       
+
+
+                </div>
+                <div class="carousel-item text-center pb-2">
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    
+                </div>
+                <div class="carousel-item text-center pb-2">
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                </div>
+                <div class="carousel-item text-center pb-2">
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                </div>
+                </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="entrarRoom" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                        <div class="card popup-room mb-3 w-100 h-100 bg-black rounded-3">
+                            <div class="modal-content bg-black text-light rounded-3">
+                                <div class="row g-0">
+                                    <div class="col-md-5">
+                                        <img src="static/imagens/capa-room2.png" class="w-100 h-100 rounded-3">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="card-body">
+                                            <h5 class="card-title d-inline-flex">Assistindo a vídeos de gatos fofos juntos!</h5>
+                                            <button type="button" class="btn btn-close btn btn-close-white ms-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <p class="card-text">Criada por <img class="mini-icon" src="static/imagens/icon-criador.png" width=20 height=20><a class="link-criador-sala text-light text-decoration-none" href="#">Susu_Melo</a></p>
+                                            <h5 class="card-title">Descrição:</h5>
+                                            <p class="card-text justify-content-center">Essa sala será para transmissão de vídeos de gatinhos para deixar seu dia mais feliz! Vem com a gente!</p>
+                                            <h5 class="card-title">Categorias:</h5>
+                                            <button class="categoria-sala botao-fonte text-light p-2" href="#">Conversa</button>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger botao-fonte" data-bs-dismiss="modal">Cancelar</button>
+                                                <a class="btn btn-success botao-fonte" href="/sala-nomecriador">Entrar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>     
+            </div>
+        </div>
+
+
+        <h3 class="titulos text-light ms-5 ps-5">Categorias <i class="seta bi bi-chevron-right"></i></h3>
+
+        <div id="carouselExample2" class="carousel slide w-100 start-50 translate-middle-x mb-5">
+            <div class="carousel-inner">
+              <div class="carousel-item active text-center">
+                <a href="#"><img src="static/imagens/jogos.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/rpg.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/musica.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/livros.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/desenho.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/tutoriais.png" class="cat" style="width:150px; height:220px;"></a>
+              </div>
+              <div class="carousel-item text-center">
+                <a href="#"><img src="static/imagens/jogos.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/rpg.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/musica.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/livros.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/desenho.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/tutoriais.png" class="cat" style="width:150px; height:220px;"></a>
+              </div>
+              <div class="carousel-item text-center">
+                <a href="#"><img src="static/imagens/jogos.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/rpg.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/musica.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/livros.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/desenho.png" class="cat me-2" style="width:150px; height:220px;"></a>
+                <a href="#"><img src="static/imagens/tutoriais.png" class="cat" style="width:150px; height:220px;"></a>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+
+        <h3 class="titulos text-light ms-5 ps-5">Recomendados <i class="seta bi bi-chevron-right"></i></h3>
+
+        <div id="carouselExample3" class="carousel slide w-100 start-50 translate-middle-x mb-5">
+            <div class="carousel-inner">
+                <div class="carousel-item text-center active pb-2">
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                                        <div class="card-body text-start">
+                                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                                            </svg>
+                                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                                        </div>
+                        </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                                        <div class="card-body text-start">
+                                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                                            </svg>
+                                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                                        </div>
+                        </a></div>
+
+                        <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                            <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                            <div class="card-body text-start">
+                                <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                                <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                    height="30">
+                                <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                    height="30">
+                                <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                    height="30">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                    fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                                </svg>
+                                <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                                <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                            </div>
+            </a></div>
+
+            <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                                        <div class="card-body text-start">
+                                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                                height="30">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                                            </svg>
+                                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                                        </div>
+                        </a></div>
+
+                       
+
+
+                </div>
+                <div class="carousel-item text-center pb-2">
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    
+                </div>
+                <div class="carousel-item text-center pb-2">
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                </div>
+                <div class="carousel-item text-center pb-2">
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                    <div class="card bg-black d-inline-flex me-2" style="width:200px;"><a href="#" class="text-decoration-none text-light">
+                        <img class="card-img-top" src="static/imagens/capa-room.png" alt="Capa da Room">
+                        <div class="card-body text-start">
+                            <img class="icon-usuario1" src="static/imagens/icon-criador.png" width="30" height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <img class="icon-usuario2" src="static/imagens/icon-criador.png" width="30"
+                                height="30">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                fill="currentColor" class="mais bi bi-plus-circle-fill text-secondary" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                            </svg>
+                            <p class="card-text text-light criador-room">Criada por <a class="text-success text-decoration-underline">kamille-desenhos</a></p>
+                            <p class="card-text text-light "> Assistindo vídeos de gatos fofos juntos!</p>
+                        </div>
+                    </a></div>
+
+                </div>
+                </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample3" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample3" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+
+        <script src="/static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}

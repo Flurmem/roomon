@@ -1,0 +1,183 @@
+{% extends "kids/base.html"%}
+
+{% block content %}
+<main class="w-100 d-flex p-2 gap-2 maxw1600 position-relative"
+    style="aspect-ratio: 16/9;max-height: 100%; align-self: center; background-image: linear-gradient(90deg, #00a58e, #02ff1b, #00a58e);">
+
+    <div class="d-flex flex-column" style="flex-grow: 1; max-width: 100%;">
+
+        <div class="w-100 bg-white h-100 rounded-top-3 d-flex flex-column p-1 overflow-hidden">
+
+            <div class="w-100 rounded-3 d-flex p-1" style="height: 5rem; background-color: rgb(105, 105, 105); ">
+                <img class="h-100 rounded-3 p-1" style="aspect-ratio: 16/9; object-fit: cover;"
+                    src="../static/imagens/salas/capas/capa{{sala.idSala|id_img}}.jpg">
+                <div class="flex-grow-1">
+                    <h4 class="mb-0 text-white dosis limit-text-2lines">{{sala.titulo}}</h4>
+                    <p class="mb-0 text-white dosis limiteLinhas"> {{sala.descricao}}</p>
+                </div>
+                <div class="controllerSideContainer">
+                    <svg class="w-100 h-100 ">
+                        <rect x="" y="50%" width="100" height="2" rx="15"></rect>
+                    </svg>
+                </div>
+            </div>
+
+            <ul id='messages' style="max-height: 100%;" class="overflow-y-scroll list-unstyled p-3">
+            </ul>
+        </div>
+
+        <div class=" w-100 d-flex gap-2 rounded-bottom-3 position-relative"
+            style="height: 5rem; background-color: rgb(190, 190, 190);">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio='none' class='w-100 position-absolute z-0 h-100' style="min-height:5rem;"
+                viewBox="0 0 1440 320">
+                <path fill="#38B6FF" fill-opacity="1"
+                    d="M0,224L80,234.7C160,245,320,267,480,250.7C640,235,800,181,960,170.7C1120,160,1280,192,1360,208L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+                </path>
+                <path fill="#0099ff" fill-opacity="1"
+                    d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                </path>
+
+            </svg> -->
+            <div class="w-100 h-100  gap-2 d-flex align-items-center z-1">
+                <form action="" onsubmit="sendMessage(event)"
+                    class="d-flex gap-3 align-items-center justify-content-center w-100 px-2">
+                    <div class="position-relative w-100 d-flex">
+                        <input type="text" class="form-control w-100 lilita" style="flex-grow: 1;"
+                            placeholder="Escreva sua mensagem para o mundo" id="messageText" autocomplete="off" />
+                        <div class="position-absolute end-0 align-self-center d-flex align-items-center px-2">
+                            <div class="iconeEmoji rounded-3">
+                                <svg width="30" height="30" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
+                                    <g>
+                                        <path
+                                            d="M7 11a1 1 0 100-2 1 1 0 000 2zM14 10a1 1 0 11-2 0 1 1 0 012 0zM10 14a2 2 0 002-2H8a2 2 0 002 2z">
+                                        </path>
+                                        <path fill-rule="evenodd"
+                                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0a6 6 0 11-12 0 6 6 0 0112 0z"
+                                            clip-rule="evenodd">
+
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="bebas px-3 p-2 kidshover rounded-5 border-0 text-white"
+                        style="background-color: green;">Enviar</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="col-3 bg-white h-100 rounded-3 overflow-y-scroll p-3 sideContainer">
+        <div class="w-100 mb-3" id="criador">
+            <div class="d-flex gap-1 align-items-center">
+                <p class="mb-0 lilita">Criador</p>
+                <hr>
+            </div>
+            <div class="w-100 d-flex mb-2 gap-2">
+                {%if criador%}
+                <div class="rounded-circle" style="flex: 0 1 20%;">
+                    <img src="../static/imagens/usuarios/avatar{{criador.id|id_img}}.jpg"
+                        class="imagemPerfil rounded-circle">
+                </div>
+                <div class="d-flex flex-column align-items-start justify-content-center" style="flex: 1 0">
+                    <p class="mb-0 lilita h5 fw-bold dosis limit-text-2lines">{{criador.nome}}</p>
+                    <p class="mb-0 h6 dosis">@{{criador.nomeUsuario}}</p>
+                </div>
+                {%else%}
+                {%endif%}
+            </div>
+        </div>
+
+        <div class="w-100 mb-3" id="moderadores">
+            <div class="d-flex gap-1 align-items-center">
+                <p class="mb-0 lilita lilita">Moderadores</p>
+                <hr>
+            </div>
+            <div class="w-100 d-flex">
+                <img>
+                <div class="d-flex flex-column align-items-start justify-content-center">
+                    <p class="mb-0 dosis h5 fw-bold">Nome</p>
+                    <p class="mb-0 h6 dosis">@nomeusuario</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100" id="participantes">
+            <div class="d-flex gap-1 align-items-center">
+                <p class="mb-0 lilita lilita">Participantes</p>
+                <hr>
+            </div>
+            {% if participantes%}
+            {%for p in participantes%}
+            {% if p.id != criador.id %}
+            <div class="w-100 d-flex mb-2 gap-2">
+                <div class="rounded-circle" style="flex: 0 1 20%;">
+                    <img src="../static/imagens/usuarios/avatar{{p.id|id_img}}.jpg" class="imagemPerfil rounded-circle">
+                </div>
+                <div class="d-flex flex-column align-items-start justify-content-center" style="flex: 1 0">
+                    <p class="mb-0 lilita h5 dosis fw-bold">{{p.nome}}</p>
+                    <p class="mb-0 h6 dosis">@{{p.nomeUsuario}}</p>
+                </div>
+            </div>
+            {%endif%}
+            {%endfor%}
+            {%else%}
+            {%endif%}
+
+        </div>
+
+    </div>
+</main>
+
+
+
+<script>
+    var wsProtocol = window.location.protocol === "https:" ? "wss" : "ws";
+    const url = `${wsProtocol}://${window.location.host}/ws/{{crianca.nomeUsuario}}/{{crianca.id}}`
+    console.log(url)
+  
+    var ws = new WebSocket(url);
+    ws.onmessage = function (event) {
+
+        dados = JSON.parse(event.data)
+        var content = document.createTextNode(dados["mensagem"]);
+        var idUsuario = dados["idUsuario"];
+        var nomeUsuario = document.createTextNode(dados["nomeUsuario"]);
+
+        var messages = document.getElementById('messages')
+        var message = document.createElement('li')
+        message.idUsuario = idUsuario
+        message.classList.add("mensagem")
+
+        var avatar = document.createElement("img")
+        avatar.src = `../static/imagens/usuarios/avatar00${idUsuario}.jpg`
+        avatar.classList.add('avatarParaSalas')
+
+        var body = document.createElement("div")
+        body.classList.add('corpoMensagem')
+        var emissor = document.createElement("a")
+        emissor.href = `/perfilkids/${dados["nomeUsuario"]}`
+        emissor.appendChild(nomeUsuario)
+        emissor.classList.add('nickname')
+        var conteudo = document.createElement("p")
+        conteudo.appendChild(content)
+        conteudo.classList.add('conteudoMensagem')
+
+        messages.appendChild(message)
+        message.appendChild(avatar)
+        message.appendChild(body)
+        body.appendChild(emissor)
+        body.appendChild(conteudo)
+
+    };
+    function sendMessage(event) {
+        var input = document.getElementById("messageText")
+        ws.send(input.value)
+        input.value = ''
+        event.preventDefault()
+    }
+</script>
+{%endblock%}

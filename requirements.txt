@@ -7,3 +7,4 @@ bcrypt
 sendgrid
 python-dotenv
 htmlmin
+websockets

@@ -182,16 +182,15 @@ async def getSalaPagina(
             return RedirectResponse("/loginkids", status.HTTP_302_FOUND)
 
 
-@router.websocket("/ws/{nomeUsuario}/{idUsuario}/{idSala}")
+@router.websocket("/ws/{nomeUsuario}/{idUsuario}")
 async def websocket_endpoint(websocket: WebSocket, 
                              nomeUsuario: str,
-                             idUsuario: int,
-                             idSala: int):
-    await manager.connect(websocket, idSala)
+                             idUsuario: int,):
+    await manager.connect(websocket)
     try: 
         while True:
             message = await websocket.receive_text()
-            data = [nomeUsuario, message, idUsuario, idSala]
+            data = [nomeUsuario, message, idUsuario]
             await manager.broadcast(data)
     except WebSocketDisconnect:
         manager.disconnect(websocket)

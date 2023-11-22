@@ -196,7 +196,5 @@ async def websocket_endpoint(websocket: WebSocket,
     except WebSocketDisconnect:
         manager.disconnect(websocket)
         await manager.broadcast(f"{nomeUsuario} has left the chat")
-    finally:
-        # Fecha a conexão e retorna os headers CORS
-        await websocket.close()
+
 

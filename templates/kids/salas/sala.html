@@ -153,12 +153,13 @@
 
 <script>
     var wsProtocol = window.location.protocol === "https:" ? "wss" : "ws";
-    const url = `${wsProtocol}://${window.location.hostname}/ws/{{crianca.nomeUsuario}}/{{crianca.id}}`
+    const url = `${wsProtocol}://${window.location.host}/ws/{{crianca.nomeUsuario}}/{{crianca.id}}`
   
     var ws = new WebSocket(url);
     ws.onmessage = function (event) {
 
         dados = JSON.parse(event.data)
+        console.log(dados)
         var content = document.createTextNode(dados["mensagem"]);
         var idUsuario = dados["idUsuario"];
         var nomeUsuario = document.createTextNode(dados["nomeUsuario"]);

@@ -153,6 +153,95 @@ async def postCadastro(
               "Não foi possível alterar o token do usuário no banco de dados."
           )
 
+@router.get("/cadastroresponsavel", response_class=HTMLResponse)
+# address of the route and type of return
+async def getCadastroAdulto(
+    request: Request, usuario: Usuario = Depends(validar_usuario_logado)
+):
+    return templates.TemplateResponse(
+        "kids/cadastro/cadastroResponsavel.html",
+        {
+            "request": request,
+            "usuario": usuario,
+        },
+    )
+
+
+@router.post("/cadastroresponsavel", response_class=HTMLResponse)
+async def postCadastro(
+    request: Request,
+    usuario: Usuario = Depends(validar_usuario_logado),
+    email: str = Form(""),
+    senha: str = Form(""),
+    nome: str = Form(""),
+    dataNascimento: date = Form(""),
+    crianca: bool = False,
+    returnUrl: str = Query("/perfilresponsavel"),
+):
+      nome = capitalizar_nome_proprio(nome).strip()
+      senha = senha.strip()
+  
+      erros = {}
+      # validação do campo nome
+      is_not_empty(email, "email", erros)
+      is_not_empty(nome, "nome", erros)
+      is_person_fullname(nome, "nome", erros)
+      # validação do campo email
+      
+      if is_email(email, "email", erros):
+          if pessoaRepo.emailExiste(email):
+              add_error("email", "Já existe um usuário cadastrado com este e-mail.", erros)
+      # validação do campo senha
+      is_not_empty(senha, "senha", erros)
+      is_password(senha, "senha", erros)
+
+  
+      is_not_empty(dataNascimento, "dataNascimento", erros)
+  
+      # se tem erro, mostra o formulário novamente
+      if len(erros) > 0:
+          valores = {}
+          valores["nome"] = nome
+          valores["email"] = email
+          valores['dataNascimento'] = str(dataNascimento)
+  
+          return templates.TemplateResponse(
+              "kids/cadastro/cadastroResponsavel.html",
+              {
+                  "request": request,
+                  "usuario": usuario,
+                  "erros": erros,
+                  "valores": valores,
+              },
+          )
+
+      print(erros)
+  
+      usuarioCadastro = Pessoa(
+          idPessoa=0,
+          idResponsavel=None,
+          nome=nome,
+          nomeUsuario=None,
+          email=email,
+          dataNascimento=dataNascimento,
+          senha=obter_hash_senha(senha),
+          crianca=crianca
+      )
+
+      pessoaRepo.cadastraResponsavel(usuarioCadastro)
+  
+      token = gerar_token()
+      if pessoaRepo.alterarToken(email, token):
+          response = RedirectResponse(returnUrl, status.HTTP_302_FOUND)
+          response.set_cookie(
+              key="auth_token", value=token, max_age=1800, httponly=True
+          )
+          return response
+      else:
+          raise Exception(
+              "Não foi possível alterar o token do usuário no banco de dados."
+          )
+
 
 
 @router.get("/precadastro", response_class=HTMLResponse)
@@ -161,14 +250,27 @@ async def getPreCadastroUser(
     request: Request,
     usuario: Usuario = Depends(validar_usuario_logado),
 ):
-    if usuario and pessoaRepo.possuiDependente(usuario.id): 
-        return RedirectResponse("/logindependentes", status.HTTP_302_FOUND)
-    else:
+    # if usuario and pessoaRepo.possuiDependente(usuario.id): 
+    #     return RedirectResponse("/logindependentes", status.HTTP_302_FOUND)
+    # else:
       return templates.TemplateResponse(
           "kids/cadastro/pre_cadastro.html", {"request": request, "usuario": usuario}
       )
-    
 
+@router.get("/souadulto", response_class=HTMLResponse)
+# address of the route and type of return
+async def getPreCadastroUser(
+    request: Request,
+    usuario: Usuario = Depends(validar_usuario_logado),
+):
+    # if usuario and pessoaRepo.possuiDependente(usuario.id): 
+    #     return RedirectResponse("/logindependentes", status.HTTP_302_FOUND)
+    # else:
+      return templates.TemplateResponse(
+          "kids/cadastro/souadulto.html", {"request": request, "usuario": usuario}
+      )
+    
+    
 @router.get("/aviso", response_class=HTMLResponse)
 # address of the route and type of return
 async def getAviso(request: Request):

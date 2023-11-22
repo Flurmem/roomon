@@ -1,0 +1,114 @@
+{%extends "kids/baseresponsavel.html" %}
+
+{% block content %}
+{%if usuario%}
+<main class="bg-transparent col-11 col-sm-10 col-md-9 col-lg-7 col-xl-6 align-self-center mt-3 z-1 maxw800 pb-5"
+    style="margin-inline: auto;">
+    <div
+        class="bahiana text-white d-flex align-items-center justify-content-center animate--slower sliders slider-top-id">
+        <h1>Criação de Sala</h1>
+    </div>
+
+    <div
+        class="bg-white d-flex flex-column align-items-center justify-content-center rounded-4 p-4 p-sm-5 animate--slower sliders slider-left-id">
+        <div class='container rounded-circle w-auto p-3 mb-4 text-center rounded-4 fundoKids'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="white" class="bi bi-door-open-fill"
+                viewBox="0 0 16 16">
+                <path
+                    d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
+            </svg>
+        </div>
+        <p class="h5 text-justify" style="font-family: Lilita; color: black"> Crie uma sala super bacana para interagir
+            com seus amigos</p>
+
+        <hr>
+
+        <form class="form-cadastro-grid col-12" method="post" action="/criacaoroom"
+        enctype="multipart/form-data">
+            <div>
+                <input type="text" style="background-color: #D3D3D3 !important;" class="shadow-sm form-control lilita col-12 p-2 fundocinzalight px-3 rounded-4"
+                    id="titulo" name="titulo" placeholder="Insira o Titulo da room">
+                <span class="text-danger d-none small dosis"></span>
+            </div>
+            <div>
+                <select type="text" style="background-color: #D3D3D3 !important;" class="shadow-sm form-select lilita col-12 p-2 fundocinzalight px-3 rounded-4"
+                    id="categoria" name="categoria" placeholder="Selecione a categoria*">
+                    <option value="" disabled selected hidden>Selecione a categoria</option>
+                    
+                    <option class="text-black z-3" id="" name="categorias" value=''> 
+                    </option>
+                    
+                </select>
+                <span class="text-danger d-none small dosis"></span>
+            </div>
+
+            <div class=" grid-col-span-2 d-flex flex-column">
+                <p class="lilita"> Escolha uma capa para sua sala* </p>
+                <div class="d-flex align-items-center gap-1 justify-content-center position-relative capaSala rounded-4" style="background-color: #D3D3D3;">
+                    <input type="file" class="d-none" id="arquivoImagem" name="arquivoImagem"
+                        onchange="previewImage(event)" accept="image/jpeg" required>
+                    <label for="arquivoImagem" class="w-50 h-50 rounded-4 position-absolute"
+                        style='z-index: 50'>
+                    </label>
+                    <img id='preview' src='' class='rounded-4 position-absolute d-none capaSala'>
+                </div>
+            </div>
+
+            <div class="grid-col-span-2">
+                <p class="lilita"> Descrição da sala*</p>
+                <textarea type="text" style="background-color: #D3D3D3 !important;" class=" shadow-sm form-control lilita col-12 p-2 fundocinzalight px-3 rounded-4"
+                    id="descricao" name="descricao" placeholder="Descrição da sala">
+                </textarea>
+                <span class="text-danger d-none small dosis"></span>
+            </div>
+
+            <div class="grid-col-span-2 lilita gap-1">
+                <p class="lilita"> Defina a privacidade</p>
+                <div class="d-flex align-items-center justify-content-center gap-4">
+                    <div>
+                        <input id="publica" name="publica" type="radio" value="false">
+                        <label for="publica">Pública</label>
+                    </div>
+                  <div>
+                      <input  id="privada" name="privada" type="radio" value="false">
+                      <label class="opacity-50" for="publica">Privada</label>
+                  </div>
+                </div>
+
+            </div>
+            <div class="grid-col-span-2 lilita gap-1">
+                <p class="lilita"> Conteúdo da Sala*</p>
+                <div class="d-flex align-items-center justify-content-center gap-4">
+                    <div>
+                        <input id="infantil" name="infantil" type="radio" value="True">
+                        <label for="infantil">Infantil</label>
+                    </div>
+                    <div>
+                        <input id="educativo" name="educativo" type="radio" value="True">
+                        <label for="infantil">Educativo</label>
+                    </div>
+                  <div>
+                      <input id="entretenimento" name="entretenimento" type="radio" value="True">
+                      <label for="infantil">Entretenimento</label>
+                  </div>
+                </div>
+
+            </div>
+            <button type="submit"
+                class="kidshover grid-col-span-2 bebas border-0 rounded-4 bg-info px-2 text-white text-btn-grid w-auto">
+                Criar
+                Sala</button>
+            <button type="submit"
+              class="kidshover grid-col-span-2 bebas border-0 rounded-4 px-2 text-white text-btn-grid w-auto" style="background-color:#363636">
+              Cancelar</button>
+        </form>
+    </div>
+</main>
+
+<script src="../static/js/mostrarImagem.js">
+</script>
+
+
+{%endif%}
+
+{% endblock %}

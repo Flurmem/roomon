@@ -32,6 +32,12 @@ async def startup_event():
     templates.env.filters["date"] = formatarData
     templates.env.filters["id_img"] = formatarIdParaImagem
 
+@router.get("/", response_class=HTMLResponse)
+# address of the route and type of return
+async def getInicialRoomOn(request: Request):
+  
+    return templates.TemplateResponse("kids/cadastro/pre_cadastro.html", {"request": request}
+    )
 
 @router.get("/inicialkids", response_class=HTMLResponse)
 # address of the route and type of return
@@ -131,8 +137,8 @@ async def postLoginKids(
     # validação do campo email
     is_not_empty(email, "email", erros)
     is_email(email, "email", erros)
-    if not pessoaRepo.emailPertenceCrianca(email):
-       add_error("email", "O email não pertence a uma criança", erros)
+    if pessoaRepo.emailPertenceCrianca(email):
+       add_error("email", "O email pertence a uma criança", erros)
     # validação do campo senha
     is_not_empty(senha, "senha", erros)
 
@@ -148,7 +154,7 @@ async def postLoginKids(
               if pessoaRepo.alterarToken(email, token):
                   response = RedirectResponse(returnUrl, status.HTTP_302_FOUND)
                   response.set_cookie(
-                      key="auth_token_crianca", value=token, httponly=True
+                      key="auth_token", value=token, httponly=True
                   )
                   return response
               else:

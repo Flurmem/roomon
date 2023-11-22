@@ -45,14 +45,6 @@ async def startup_event():
     templates.env.filters["date"] = formatarData
     templates.env.filters["id_img"] = formatarIdParaImagem
 
-@router.get("/", response_class=HTMLResponse)
-# address of the route and type of return
-async def getInicialRoomOn(request: Request):
-  
-    salas = salaRepo.obterSalas()
-    categorias = categoriaRepo.lerTodos()
-    return templates.TemplateResponse("index.html", {"request": request, "salas": salas, "categorias": categorias}
-    )
 
 @router.get("/inicio", response_class=HTMLResponse)
 async def getPaginaInicial(

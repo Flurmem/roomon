@@ -1,0 +1,253 @@
+{% extends "kids/baseresponsavel.html" %}
+{% block content %}
+<!--Guia-->
+<div class="m-3">
+    <h1 class="bahiana text-success">Suporte</h2>
+        <ul class="nav nav-underline mt-3">
+            <li class="nav-item">
+                <a class="nav-link  text-black lilita" aria-current="page" href="/faq">
+                    <h5>Ajuda&FAQ</h5>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-black lilita" href="/sobrenos">
+                    <h5>Sobre nós</h5>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-black lilita active" href="/denuncias">
+                    <h5>Denúncias</h5>
+                </a>
+            </li>
+        </ul>
+</div>
+
+<!--Denuncia exemplo-->
+<div class="col-11 mx-auto mt-4">
+    <div class="row justify-content-center mt-3">
+        {%if denuncias%}
+        {%for d in denuncias%}
+        <div class="card cardenuncia bg-white w-25 text-black mt-4 ">
+            <h3 class="card-header border-light p-2 m-2 d-flex align-items-center bahiana">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="red"
+                    class="bi bi-clipboard-x-fill me-2" viewBox="0 0 16 16">
+                    <path
+                        d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z" />
+                    <path
+                        d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm4 7.793 1.146-1.147a.5.5 0 1 1 .708.708L8.707 10l1.147 1.146a.5.5 0 0 1-.708.708L8 10.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 10 6.146 8.854a.5.5 0 1 1 .708-.708L8 9.293Z" />
+                </svg>
+                Denúncia
+                </h5>
+                <div class="card-body">
+                    <h5 class="card-title lilita">{{d.titulo}}</h5>
+                    <p class="card-text bebas">{{d.descricao}}</p>
+                    <a href="#" class="btn btn-success bebas" data-bs-toggle="modal"
+                        data-bs-target="#detalhesDenuncia">Ver detalhes</a>
+                    <a href="#" class="btn btn-danger bebas" data-bs-toggle="modal"
+                        data-bs-target="#excluirDenuncia"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="white" class="bi bi-trash3-fill mb-1" viewBox="0 0 16 16">
+                            <path
+                                d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                        </svg></a>
+                </div>
+                <div class="card-footer text-black opacity-50 text-center border-white">
+                    Status da denúncia
+                </div>
+        </div>
+        {%endfor%}
+        {%endif%}
+
+
+
+        <!--Denuncia nova-->
+        <div class="card cardenuncia bg-white ms-4 w-25 text-black mt-4 mb-4">
+            <h3 class="card-header border-light p-2 m-2 d-flex align-items-center bahiana">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="red"
+                    class="bi bi-clipboard-x-fill me-2" viewBox="0 0 16 16">
+                    <path
+                        d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z" />
+                    <path
+                        d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm4 7.793 1.146-1.147a.5.5 0 1 1 .708.708L8.707 10l1.147 1.146a.5.5 0 0 1-.708.708L8 10.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 10 6.146 8.854a.5.5 0 1 1 .708-.708L8 9.293Z" />
+                </svg>
+                Denúncia
+                </h5>
+                <div class="card-body text-center">
+                    <h5 class="card-title lilita">Adicione uma nova denúncia!</h5>
+                    <p class="card-text bebas">Caso tenha presenciado algum comportamento que fere nossos termos de
+                        uso, crie uma denúncia e deixe que o suporte resolva a situação!</p>
+                    <a href="#" class="btn btn-success bebas" data-bs-toggle="modal"
+                        data-bs-target="#adicionarDenuncia"><svg xmlns="
+                        http://www.w3.org/2000/svg" width="20" height="25" fill="white" class="bi bi-plus-circle-fill"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                        </svg></a>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Modal excluir-->
+<div class="modal fade" id="excluirDenuncia" tabindex="-1" aria-labelledby="excluir" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-white">
+            <!--Botão feio-->
+            <div class="modal-header">
+                <h2 class="text-black bahiana">Excluir denúncia</h4>
+                    <button type="button" class="btn-close btn-close-white bebas" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <h4 class="text-black fw-light ms-4 lilita">Você tem certeza que deseja excluir a denúncia? </h4>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary bebas" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn bebas" style="background-color: red; color: azure;">Excluir</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal detalhes--> <!--Alinhamento-->
+<div class="modal fade" id="detalhesDenuncia" tabindex="-1" aria-labelledby="detalhesDenuncia" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-white p-3">
+            <!--Botão feio-->
+            <div class="modal-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="red"
+                    class="bi bi-clipboard-x-fill me-2" viewBox="0 0 16 16">
+                    <path
+                        d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z" />
+                    <path
+                        d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm4 7.793 1.146-1.147a.5.5 0 1 1 .708.708L8.707 10l1.147 1.146a.5.5 0 0 1-.708.708L8 10.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 10 6.146 8.854a.5.5 0 1 1 .708-.708L8 9.293Z" />
+                </svg>
+                <h2 class="text-black bahiana">Detalhes da denúncia</h4>
+                    <button type="button" class="btn-close btn-close-white " data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label for="tituloDenuncia" class="form-label text-black lilita">Título da denúncia</label>
+                            <div class="input-group mb-3 ">
+                                <span class="input-group-text border-0 " style="background-color:rgb(216, 49, 49)"
+                                    id="icon_tituloDenuncia">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                                        class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path
+                                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                        <path fill-rule="evenodd"
+                                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                    </svg>
+                                </span>
+                                <input type="text" class="form-control bg-tertiary text-secondary border-0 "
+                                    id="tituloDenuncia" value="Título da denúncia" aria-label="" disabled readonly>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="tituloSala" class="form-label text-blac lilita">Título da sala do
+                                ocorrido</label>
+                            <div class="input-group mb-3 ">
+                                <span class="input-group-text border-0" style="background-color:rgb(216, 49, 49)"
+                                    id="icon_tituloSala">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                                        class="bi bi-door-closed-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1h8zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                    </svg>
+                                </span>
+                                <input type="text" class="form-control bg-tertiary text-secondary border-0"
+                                    id="tituloSala" value="Título da sala" aria-label="" disabled readonly>
+                            </div>
+                        </div>
+                        <label for="valor" class="form-label text-black lilita">Descrição</label>
+                        <div class="text-center">
+                            <textarea class="form-control bg-tertiary text-secondary border-0"
+                                id="descricaoDenuncia">Descrição da denúncia</textarea>
+                        </div>
+                    </div>
+
+                </form>
+                <div class="col-12 text-end me-5">
+                    <button type="button" class="btn btn-secondary bebas" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal adicionar-->
+<div class="modal fade" id="adicionarDenuncia" tabindex="-1" aria-labelledby="adicionarDenuncia" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-white p-3">
+            <!--Botão feio-->
+            <div class="modal-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="red"
+                    class="bi bi-clipboard-x-fill me-2" viewBox="0 0 16 16">
+                    <path
+                        d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z" />
+                    <path
+                        d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm4 7.793 1.146-1.147a.5.5 0 1 1 .708.708L8.707 10l1.147 1.146a.5.5 0 0 1-.708.708L8 10.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 10 6.146 8.854a.5.5 0 1 1 .708-.708L8 9.293Z" />
+                </svg>
+                <h2 class="text-black bahiana">Adicionar denúncia</h4>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+
+                <form action="/denuncias" method="post" enctype="application/x-www-form-urlencoded">
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <label for="titulo" class="form-label text-black lilita">Título da denúncia</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text " style="background-color:rgb(216, 49, 49)"
+                                    id="icon_tituloDenuncia">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                                        class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path
+                                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                        <path fill-rule="evenodd"
+                                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                    </svg>
+                                </span>
+                                <input type="text" class="form-control text-secondary border-0 " id="titulo" name="titulo"
+                                    placeholder="Título da denúncia" aria-label="">
+                            </div>
+                        </div>
+                        <!-- <div class="col-6">
+                                    <label for="tituloSala"
+                                        class="form-label text-black lilita">Título da sala do ocorrido</label>
+                                    <div class="input-group mb-3 ">
+                                        <span class="input-group-text " style="background-color:rgb(216, 49, 49)"
+                                            id="icon_tituloSala">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-door-closed-fill" viewBox="0 0 16 16">
+                                                <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1h8zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                              </svg>
+                                        </span>
+                                        <input type="text"
+                                            class="form-control  bg-tertiary text-secondary border-0"
+                                            id="tituloSala" value="Título da sala" aria-label=""
+                                            >
+                                    </div>
+                                </div> -->
+                        <label for="descricao" class="form-label lilita text-black">Descrição do ocorrido</label>
+                        <div class="text-center">
+                            <textarea class="form-control text-secondary border-0" id="descricao" name="descricao"
+                                placeholder="Descrição da denúncia"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-12 text-end me-5">
+                        <button type="button" class="btn btn-secondary bebas" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success bebas">Adicionar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+{%endblock%}

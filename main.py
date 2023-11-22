@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from repositories.denunciaRepo import denunciaRepo
 # Rotas Room ON #
 from routes.roomon.MainRoutes import router as mainRouter
 from routes.roomon.CadastrosRoutes import router as cadastroRoomOnRouter
@@ -12,6 +13,8 @@ from routes.kids.CadastroRoutes import router as cadastroRouter
 from routes.kids.ConfiguracoesRoutes import router as configRouter
 from routes.kids.SalaRoutes import router as salaRouter
 from routes.kids.AdmRoutes import router as admRouter
+from routes.kids.ResponsavelRoutes import router as responsavelRouter
+from routes.kids.SuporteRoutes import router as suporteRouter
 
 import uvicorn
 
@@ -31,19 +34,10 @@ pessoaRepo.tabelaSeguindo()
 #Tabelas categoria
 categoriaRepo.tabelaCategoria()
 
+#Tabelas denuncia
+denunciaRepo.tabelaDenuncia()
+
 app = FastAPI()
-
-# origins = [
-#     "https://roomon.cachoeiro.es"
-# ]
-
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=origins,
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
 
 app.mount(path="/static", app=StaticFiles(directory="static"), name="static")
 
@@ -57,6 +51,8 @@ app.include_router(cadastroRoomOnRouter)
 app.include_router(configRoomOnRouter)
 app.include_router(pagRouter)
 app.include_router(perfilUserRouter)
+app.include_router(responsavelRouter)
+app.include_router(suporteRouter)
 
 if __name__ == "__main__":
     uvicorn.run(app="main:app", reload=True)

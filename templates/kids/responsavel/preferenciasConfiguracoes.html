@@ -1,0 +1,286 @@
+{% extends "kids/baseresponsavel.html" %}
+{% block content %}
+<!--Guia-->
+<div class="m-3">
+              <h1 class="bahiana text-success">Configurações</h2>
+              <ul class="nav nav-underline mt-3">
+                  <li class="nav-item">
+                    <a class="nav-link  text-black" aria-current="page" href="/perfilconfiguracoes"><h5 class="lilita">Perfil</h5></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-black" href="/dependentes"><h5 class="lilita">Dependentes</h5></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-black" href="/assinatura"><h5 class="lilita">Assinatura</h5></a>
+                    </li>
+                  <li class="nav-item">
+                    <a class="nav-link  text-black" href="/preferencias"><h5 class="lilita">Preferências</h5></a>
+                  </li>
+
+                </ul>
+</div>     
+                  <!---Notificações-->
+                  <div class="cardnormal card col-9 mx-auto mt-4 text-black "style="background-color:#DCDCDC">
+                    <h3 class="card-header border-light p-2 m-2 d-flex align-items-center bahiana">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="red" class="bi bi-bell-fill me-2" viewBox="0 0 16 16">
+                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                          </svg>
+                        
+                        Notificações
+                    </h5>
+                    <div class="card-body">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-9">
+                            <h5 class="fw-light lilita">Desejo receber notificações das novidades do site via E-mail</h5>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-check form-switch form-check-reverse me-5">
+                                <input class="form-check-input" style="width: 50px; height: 25px;" type="checkbox" id="notificacaoViaEmail" type="checkbox" id="flexSwitchCheckReverse">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h5 class="fw-light lilita">Desejo que minhas notificações sejam mostradas na página inicial</h5>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check form-switch form-check-reverse me-5">
+                                    <input class="form-check-input" style="width: 50px; height: 25px;" type="checkbox" id="notificacaoNaPaginaInicial" type="checkbox" id="flexSwitchCheckReverse">
+                                </div>
+                            </div>
+                    </div>
+                    <hr>
+                    <div class="row d-flex align-items-center">
+                        <div class="col-10">
+                            <h5 class="fw-light lilita">Desejo receber notificações de:</h5>
+                        </div>
+                        <div class="col-12">
+                                <div class="container col-md-12 ms-5 mb-3">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-check text-start mb-2">
+                                                <input class="form-check-input "
+                                                    type="checkbox" value="seguidores"
+                                                    id="novoSeguidores">
+                                                <label
+                                                    class="form-check-label text-black bebas"
+                                                    for="novosSeguidores">
+                                                    Novos seguidores
+                                                </label>
+                                            </div>
+                                            <div class="form-check text-start mb-2 bebas">
+                                                <input class="form-check-input"
+                                                    type="checkbox" value="mencoes_chata"
+                                                    id="mencoesChat">
+                                                <label
+                                                    class="form-check-label text-black bebas"
+                                                    for="mencoesChat">
+                                                    Menções no Chat
+                                                </label>
+                                            </div>
+                                            <div class="form-check text-start mb-2 bebas">
+                                                <input class="form-check-input"
+                                                    type="checkbox" value="novasSalas"
+                                                    id="novasSalas">
+                                                <label
+                                                    class="form-check-label text-black bebas"
+                                                    for="novasSalas">
+                                                    Quando salas forem criadas por aqueles que você segue
+                                                </label>
+                                            </div>
+                                            <div class="form-check text-start">
+                                                <input class="form-check-input"
+                                                    type="checkbox" value="salaPrivada"
+                                                    id="salaPrivada">
+                                                <label
+                                                    class="form-check-label text-black bebas"
+                                                    for="salaPrivada">
+                                                    Quando for convidado para uma sala Privada
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check text-start mb-2 bebas">
+                                                <input class="form-check-input"
+                                                    type="checkbox" value="novoAcesso"
+                                                    id="novoAcesso" checked>
+                                                <label
+                                                    class="form-check-label text-black bebas"
+                                                    for="novoAcesso">
+                                                    Quando um novo acesso for realizado em sua conta
+                                                </label>
+                                            </div>
+                                            <div class="form-check text-start mb-2 bebas">
+                                                <input class="form-check-input"
+                                                    type="checkbox" value="atualizacoes"
+                                                    id="atualizacoes">
+                                                <label
+                                                    class="form-check-label text-black bebas"
+                                                    for="atualizacoes">
+                                                    Quando houverem atualizações em nosso site
+                                                </label>
+                                            </div>
+                                            <div class="form-check text-start bebas">
+                                                <input class="form-check-input"
+                                                    type="checkbox" value="suporte"
+                                                    id="suporte"  >
+                                                <label
+                                                    class="form-check-label text-black bebas"
+                                                    for="suporte">
+                                                    Quando nosso suporte lhe responder
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                </div>        
+                            </div>
+                        </div>
+                  </div>
+                </div>
+
+                <!--Privacidade-->
+                <div class="cardnormal card col-9 mx-auto mt-4 text-black" style="background-color:#DCDCDC">
+                    <h3 class="card-header border-light p-2 m-2 d-flex align-items-center bahiana">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="red" class="bi bi-lock-fill me-2" viewBox="0 0 16 16">
+                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                          </svg>
+                        Privacidade
+                    </h5>
+                    <div class="card-body">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-9">
+                            <h5 class="fw-light lilita">Desejo mostrar meu histórico de salas em meu perfil</h5>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-check form-switch form-check-reverse me-5">
+                                <input class="form-check-input" style="width: 50px; height: 25px;" type="checkbox" id="historicoNoPerfil" type="checkbox" id="flexSwitchCheckReverse">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row d-flex align-items-center">
+                            <div class="col-9">
+                                <h5 class="fw-light lilita">Desejo mostrar minhas categorias favoritadas em meu perfil</h5>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check form-switch form-check-reverse me-5">
+                                    <input class="form-check-input" style="width: 50px; height: 25px;" type="checkbox" id="categoriasFavoritadasPerfil" type="checkbox" id="flexSwitchCheckReverse">
+                                </div>
+                            </div>
+                    </div>
+                    <hr>
+                    <div class="row d-flex align-items-center">
+                        <div class="col-9">
+                            <h5 class="fw-light lilita">Desejo mostrar meus criadores favoritos em meu perfil</h5>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-check form-switch form-check-reverse me-5">
+                                <input class="form-check-input" style="width: 50px; height: 25px;" type="checkbox" id="criadoresFavoritosPerfil" type="checkbox" id="flexSwitchCheckReverse">
+                            </div>
+                        </div>
+                </div>
+                <hr>
+            </div>
+            </div>
+
+            <!--Permissões-->
+            <div class="cardnormal card col-9 mx-auto mt-4  text-black" style="background-color:#DCDCDC">
+                <h3 class="card-header border-light p-2 m-2 d-flex align-items-center bahiana">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="red" class="bi bi-clipboard-check-fill me-2" viewBox="0 0 16 16">
+                        <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+                      </svg>
+                    Permissões
+                </h5>
+                <div class="card-body">
+                <div class="row d-flex align-items-center">
+                    <div class="col-9">
+                        <h5 class="fw-light lilita">Aceitar ser mencionado por</h5>
+                    </div>
+                    <!--tornar funcional-->
+                    <div class="col-3 mb-3">
+                        <select class="form-select bg-white text-black bebas">
+                            
+                            <option value="todos" selected>Todos</option>
+                            <option value="quemSigo">Quem sigo</option>
+                            <option value="ninguem">Ninguém</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <div class="col-9">
+                        <h5 class="fw-light lilita">Aceitar convite de Room's de</h5>
+                    </div>
+                    <div class="col-3 mb-3">
+                        <select class="form-select bg-white text-black bebas">
+                            
+                            <option value="todos" selected>Todos</option>
+                            <option value="quemSigo">Quem sigo</option>
+                            <option value="ninguem">Ninguém</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <div class="col-9">
+                        <h5 class="fw-light lilita">Permitir ser moderador de</h5>
+                    </div>
+                    <div class="col-3">
+                        <select class="form-select bg-white text-black bebas">
+                            
+                            <option value="todos" selected>Todos</option>
+                            <option value="quemSigo">Quem sigo</option>
+                            <option value="ninguem">Ninguém</option>
+                        </select>
+                    </div>
+                </div>
+                </div>
+              </div>
+
+            
+            <!--Recomendações-->
+            <div class="cardnormal card col-9 mx-auto mt-4 text-black" style="background-color:#DCDCDC">
+                <h3 class="card-header border-light p-2 m-2 d-flex align-items-center bahiana">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="red" class="bi bi-funnel-fill me-2" viewBox="0 0 16 16">
+                        <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z"/>
+                      </svg>
+                    Recomendações
+                </h5>
+                <div class="card-body">
+                <div class="row d-flex align-items-center">
+                    <div class="col-9">
+                        <h5 class="fw-light lilita">Desejo receber recomendações de criadores em minha página inicial</h5>
+                    </div>
+                    <div class="col-3 mb-3">
+                        <div class="form-check form-switch form-check-reverse me-5">
+                            <input class="form-check-input" style="width: 50px; height: 25px;" type="checkbox" id="recomendacaoCriadores" type="checkbox" id="flexSwitchCheckReverse">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col-9">
+                        <h5 class="fw-light lilita">Desejo receber recomendações de categorias em minha página inicial</h5>
+                    </div>
+                    <div class="col-3 mb-3">
+                        <div class="form-check form-switch form-check-reverse me-5">
+                            <input class="form-check-input" style="width: 50px; height: 25px;" type="checkbox" id="recomendacaoCriadores" type="checkbox" id="flexSwitchCheckReverse">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col-9">
+                        <h5 class="fw-light lilita">Desejo receber recomendações via E-mail</h5>
+                    </div>
+                    <div class="col-3 mb-3">
+                        <div class="form-check form-switch form-check-reverse me-5">
+                            <input class="form-check-input" style="width: 50px; height: 25px;" type="checkbox" id="recomendacaoCriadores" type="checkbox" id="flexSwitchCheckReverse">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-11 d-flex justify-content-end mt-4 mb-5">
+                <button type="button" class="btn btn-secondary me-3 bebas">Cancelar</button>
+                <button type="button" class="btn me-3 bebas" style="background-color:green; color: azure">Salvar alterações</button>
+            </div>
+            </div>
+<!--Adicionar o icones e fazer o java para editar-->
+{% endblock %}

@@ -1,0 +1,125 @@
+{%extends "kids/baseresponsavel.html" %}
+{%block content%}
+<!--Guia-->
+<div class="m-3">
+              <h1 class="bahiana text-success">Configurações</h2>
+              <ul class="nav nav-underline mt-3">
+                  <li class="nav-item">
+                    <a class="nav-link  text-black" aria-current="page" href="/perfilconfiguracoes"><h5 class="lilita">Perfil</h5></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-black" href="/dependentes"><h5 class="lilita">Dependentes</h5></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-black" href="/assinatura"><h5 class="lilita">Assinatura</h5></a>
+                    </li>
+                  <li class="nav-item">
+                    <a class="nav-link  text-black" href="/preferencias"><h5 class="lilita">Preferências</h5></a>
+                  </li>
+
+                </ul>
+</div>  
+
+    <!---Planos ativos-->
+<div class="col-11 mx-auto mt-4">
+  <div class=" col-9 cardnormal card text-center mx-auto mt-3 text-black mt-4" style="background-color:#DCDCDC">
+      <div class="card-header text-start p-2 m-2 border-light">
+        <h3 class="bahiana">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="green" class="bi bi-bookmarks-fill me-2" viewBox="0 0 16 16">
+            <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z" />
+            <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z" />
+          </svg>
+          Planos ativos
+        </h5>
+      </div>
+      <div class="card-body">
+        <img src="/static/imagens/room_kids_logoofc.png" alt="logo_room_plus" style="width:230px; height:80px">
+        <h3 class="card-title lilita"><em>Room Kids</em></h3>
+        <h5 class="col-11 card-text fw-light mx-auto m-2 bebas">Esse é o plano básico de acesso ao nosso site, utilizando dele você não possui acesso a nenhum dos benefícios do Usuário Plus+!</h6>
+      </div>
+      <div class="card-footer text-black border-white mt-2">
+        <h6 class="opacity-75 fw-light">Plano padrão</h6>
+      </div>
+    </div>
+
+  <!--Demais planos-->
+    <div class=" col-9 cardnormal card text-center mx-auto mt-3 bg-tertiary text-black cardplus mb-5 "style="background-color:#DCDCDC">
+      <div class="card-header text-start p-2 m-2 border-light">
+        <h3 class="bahiana">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="purple" class="bi bi-bookmarks-fill me-2" viewBox="0 0 16 16">
+            <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z" />
+            <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z" />
+          </svg>
+          Demais planos
+        </h5>
+      </div>
+      <div class="card-body">
+        <img src="/static/imagens/room_plus_logoofc.png" alt="logo_room_plus" style="width:200px; height:80px">
+        <h3 class="card-title lilita"><em>Room Plus+</em></h3>
+        <h5 class="col-12 card-text fw-light mx-auto m-3 bebas">Esse é o plano Plus+ de nosso site, ele te dá acesso a diversos benefícios. Assine já!</h5>
+        <button type="button" class="btn btn-success bebas border-0" data-bs-toggle="modal" data-bs-target="#mostrarBeneficios" style="background-color: purple; color: azure">Ver benefícios</button>
+        <a href="/assinarroomplus" class="btn bebas" style="background-color: purple; color: azure">Assinar</a>
+      </div>
+      <div class="card-footer text-black border-white mt-2">
+        <h6 class="opacity-75 fw-light">Torne-se Plus+ já!</h6>
+      </div>
+    </div>
+
+            <!--Modal Mostrar benefícios-->
+    <div class="modal fade" id="mostrarBeneficios" tabindex="-1" aria-labelledby="mostrarBeneficiosLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="card popup-room mb-3 bg-white rounded-3">
+          <div class="modal-content text-light rounded-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="static/imagens/ROOM_PLUS_BANNER.png" class="w-100 h-100 rounded-3">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body mt-3">
+                  <div>
+                    <div class="row mb-2">
+                      <div class="d-flex align-items-end">
+                        <button type="button" class="btn btn-close btn btn-close-white ms-auto bebas" data-bs-dismiss="modal" aria-label="Close">
+                        </button>
+                      </div>
+                      <div class="mb-3 text-start">
+                        <div>
+                          <h1 class="text-black bahiana">Benefícios Plus+</h2>
+                          <h4 class="text-black fw-light bebas"><em> Torne-se assinante e tenha acesso a:</em></h3>
+                          <ul class="list-group text-black">
+                            <li class="list-group-item text-black bg-white border-0 bebas">Conteúdo sem anúncios!</li>
+                            <li class="list-group-item text-black bg-white border-0 bebas">Recursos novos do sistema antes de todos!</li>
+                            <li class="list-group-item text-black bg-white border-0 bebas">Personalização exclusiva do perfil!</li>
+                            <li class="list-group-item text-black bg-white border-0 bebas">Criação de salas privadas!</li>
+                            <li class="list-group-item text-black bg-white border-0 bebas">Salas sem limite de tempo!</li>
+                            <li class="list-group-item text-black bg-white border-0 bebas">Possua quantos dependentes desejar!</li>
+                          </ul>
+                        </div>
+                        <div class="col-12 d-flex justify-content-end mt-3">
+                          <button type="button" class="btn btn-secondary me-3 bebas" data-bs-dismiss="modal">Fechar</button>
+                          <a class="btn bebas" href="/assinarroomplus" role="button" style="background-color:purple; color: azure">Assinar</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+              
+
+                          
+
+            <!--Modal ver detalhes-->
+
+            <!---Modal cancelar assinatura--->
+
+               
+{% endblock %}
+
+<!--Abrir  mais de um modal-->

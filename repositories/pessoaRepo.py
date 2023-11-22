@@ -61,18 +61,21 @@ class pessoaRepo:
 
     # CADASTRO
     @classmethod
-    def cadastro(cls, pessoa: Pessoa) -> Pessoa:
-        sql = "INSERT INTO pessoa(nome, nomeUsuario, email, dataNascimento, senha) VALUES(?,?,?,?,?)"
+    def cadastraResponsavel(cls, pessoa: Pessoa) -> Pessoa:
+        sql = "INSERT INTO pessoa(idResponsavel, nome, nomeUsuario, email, dataNascimento, senha, crianca) VALUES(?,?,?,?,?,?,?)"
         conn = Database.createConnection()
         cursor = conn.cursor()
         resultado = cursor.execute(
             sql,
             (
+                pessoa.idResponsavel,
                 pessoa.nome,
-                pessoa.nomeUsuario,
+                pessoa.nome,
                 pessoa.email,
                 pessoa.dataNascimento,
                 pessoa.senha,
+                pessoa.crianca
+
             ),
         )
         if resultado.rowcount > 0:

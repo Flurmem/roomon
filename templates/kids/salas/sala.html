@@ -1,7 +1,7 @@
 {% extends "kids/base.html"%}
 
 {% block content %}
-<div style="background-image: linear-gradient(90deg, #00a58e, #02ff1b, #00a58e); border-radius: 10px 0 0 0;"
+<div style="background-image: linear-gradient(90deg, #00a58e, #00c914, #00a58e); border-radius: 10px 0 0 0;"
     class="w-100 h-100 d-flex justify-content-center">
     <main class="bg-trasnparent h-100 w-100 d-flex p-2 gap-2 maxw1600 position-relative"
         style="aspect-ratio: 16/9;max-height: 100%; align-self: center; ">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="controllerSideContainer">
                         <svg class="w-100 h-100 ">
-                            <rect x="" y="50%" width="100" height="2" rx="15"></rect>
+                            <rect x="0" y="50%" width="100" height="2" rx="15"></rect>
                         </svg>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
             </div>
 
             <div class=" w-100 d-flex gap-2 rounded-bottom-3 position-relative"
-                style="height: 5rem; background-image: linear-gradient(90deg, #00a58e, #02ff1b, #00a58e);">
+                style="height: 5rem; background-image: linear-gradient(90deg, #00a58e, #00c914, #00a58e);">
                 <div class="w-100 h-100  gap-2 d-flex align-items-center z-1">
                     <form action="" onsubmit="sendMessage(event)"
                         class="d-flex gap-3 align-items-center justify-content-center w-100 px-2">
@@ -153,7 +153,7 @@
 
 <script>
     var wsProtocol = window.location.protocol === "https:" ? "wss" : "ws";
-    const url = `${wsProtocol}://${window.location.host}/ws/{{crianca.nomeUsuario}}/{{crianca.id}}`
+    const url = `${wsProtocol}://${window.location.hostname}/ws/{{crianca.nomeUsuario}}/{{crianca.id}}`
   
     var ws = new WebSocket(url);
     ws.onmessage = function (event) {

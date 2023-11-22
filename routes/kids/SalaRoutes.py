@@ -182,7 +182,7 @@ async def getSalaPagina(
             return RedirectResponse("/loginkids", status.HTTP_302_FOUND)
 
 
-@router.websocket("/ws/{nomeUsuario:str}/{idUsuario:int}")
+@router.websocket("/ws/{nomeUsuario}/{idUsuario}")
 async def websocket_endpoint(websocket: WebSocket, 
                              nomeUsuario: str,
                              idUsuario: int,):

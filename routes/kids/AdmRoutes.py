@@ -5,7 +5,6 @@ from repositories.categoriaRepo import categoriaRepo
 from models.pessoa import Pessoa
 from models.categoria import Categoria
 from models.usuario import Usuario
-from repositories.denunciaRepo import denunciaRepo
 from repositories.pessoaRepo import pessoaRepo
 from util.templateFilters import formatarData
 from typing import List
@@ -56,9 +55,8 @@ async def getDenunciasAdm(request: Request,
                           ):
 
   if usuario:
-    denunciasTotais = denunciaRepo.obterDenunciasTotais()
     return templates.TemplateResponse(
-      "kids/administracao/denunciaAdm.html", {"request": request, "usuario": usuario, "crianca": crianca, "denunciasTotais":denunciasTotais})
+      "kids/administracao/denunciaAdm.html", {"request": request, "usuario": usuario, "crianca": crianca})
 
   else:
     return RedirectResponse("/loginkids", status.HTTP_302_FOUND)

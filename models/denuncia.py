@@ -5,6 +5,6 @@ from typing import List, Optional
 @dataclass
 class Denuncia:
     id: int
-    idDenunciante: str
+    idDenunciante: int
     titulo: str
     descricao: str

@@ -1064,9 +1064,9 @@ em{
   }
 
 .adminItemDropdown{
-    display: block;
+    display: none;
 }
 
 .adminItemDropdown[admin = 'true']{
-    display: none;
+    display: block;
 }

@@ -42,7 +42,7 @@ body {
 }
 
 .circulo {
-    position: absolute;
+    position: fixed;
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -888,6 +888,10 @@ footer {
     width: 30cqi;
     aspect-ratio: 1;
     object-fit: cover;
+}
+
+.imagem-perfil-dependente:hover{
+    cursor: pointer;
 }
 
 .imagemPerfil{

@@ -92,16 +92,28 @@
 
         <div class="d-flex gap-3">
             {%if dependentes%}
+            {%if dependentes|length == 0%}
+            <h3 class="text-black lilita mb-3" style="width: fit-content;"> Oops... Parece que você não tem nenhum dependente cadastrado</h3>
+            {%endif%}
             {%for d in dependentes%}
             <div class="cardnormal card text-center mt-1 " style="width: 18rem; background-color:	#DCDCDC">
                 <div class="card-body">
                     <img src="/static/imagens/usuarios/avatar{{d.id|id_img}}.jpg" class="rounded-circle mt-3 mb-3"
                         style="width:150px; height: 150px; object-fit: cover;" alt="Ícone do dependente">
-                    <h4 class="card-title text-info lilita">{{d.nome}}</h4>
-                    <h5 class="card-text text-black bebas">Perfil dedicado ao filho mais novo.</h5>
+                    <h4 class="card-title text-black lilita lilita">{{d.nome}}</h4>
+                    <h5 class="card-text text-black bebas dosis">Perfil dedicado ao filho mais novo.</h5>
                 </div>
             </div>
             {%endfor%}
+            {%if dependentes|length < 3%}
+            <div class="cardnormal card text-center mt-1 d-flex align-items-center justify-content-center border-0" style="width: 18rem; background-color: transparent">
+                <a class="d-flex align-items-center justify-content-center bg-white border border-3 rounded-circle" style="aspect-ratio: 1 !important; height: 50%;" href="/cadastro">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16" color='green'>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                      </svg>
+                </a>
+            </div>
+            {%endif%}
             {%endif%}
         </div>
     </div>

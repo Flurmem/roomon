@@ -24,20 +24,6 @@ async def startup_event():
     templates.env.filters["date"] = formatarData
     templates.env.filters["id_img"] = formatarIdParaImagem
 
-@router.get("/inicialresponsavel", response_class=HTMLResponse)
-async def getEsqueceuSenha(request: Request,
-                          usuario: Usuario = Depends(validar_usuario_logado),
-                          crianca: Usuario = Depends(validar_crianca_logado)
-                          ):
-
-  if usuario:
-    return templates.TemplateResponse(
-      "kids/responsavel/inicialResponsavel.html", {"request": request, "usuario": usuario, "crianca": crianca})
-
-  else:
-    return RedirectResponse("/loginkids", status.HTTP_302_FOUND)
-
-
 @router.get("/perfilresponsavel", response_class=HTMLResponse)
 async def getEsqueceuSenha(request: Request,
                           usuario: Usuario = Depends(validar_usuario_logado),
@@ -65,17 +51,6 @@ async def getDenuncias(request: Request,
     return RedirectResponse("/loginkids", status.HTTP_302_FOUND)
 
 
-@router.get("/editarperfil", response_class=HTMLResponse)
-async def getEditarPerfil(request: Request,usuario: Usuario = Depends(validar_usuario_logado),
-                      crianca: Usuario = Depends(validar_crianca_logado)):
-  if usuario:
-    return templates.TemplateResponse(
-      "kids/responsavel/preferenciasConfiguracoes.html", {"request": request, "usuario": usuario, "crianca": crianca})
-
-  else:
-    return RedirectResponse("/loginkids", status.HTTP_302_FOUND)
-
-
  # CONFIGURAÇÕES
 
 @router.get("/configuracoes", response_class=HTMLResponse)
@@ -88,15 +63,6 @@ async def getConfiguracoes(request: Request,usuario: Usuario = Depends(validar_u
   else:
     return RedirectResponse("/loginkids", status.HTTP_302_FOUND)
 
-@router.get("/preferencias", response_class=HTMLResponse)
-async def getDenuncias(request: Request,usuario: Usuario = Depends(validar_usuario_logado),
-                      crianca: Usuario = Depends(validar_crianca_logado)):
-  if usuario:
-    return templates.TemplateResponse(
-      "kids/responsavel/preferenciasConfiguracoes.html", {"request": request, "usuario": usuario, "crianca": crianca})
-
-  else:
-    return RedirectResponse("/loginkids", status.HTTP_302_FOUND)
 
 @router.get("/assinatura", response_class=HTMLResponse)
 async def getDenuncias(request: Request,
@@ -114,8 +80,9 @@ async def getDenuncias(request: Request,
                        usuario: Usuario = Depends(validar_usuario_logado),
                       crianca: Usuario = Depends(validar_crianca_logado)):
   if usuario:
+    dependentes = pessoaRepo.obterDependentes(usuario.id)
     return templates.TemplateResponse(
-      "kids/responsavel/dependentesConfiguracoes.html", {"request": request, "usuario": usuario, "crianca": crianca})
+      "kids/responsavel/dependentesConfiguracoes.html", {"request": request, "usuario": usuario, "crianca": crianca, "dependentes": dependentes})
 
   else:
     return RedirectResponse("/loginkids", status.HTTP_302_FOUND)

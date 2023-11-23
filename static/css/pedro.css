@@ -907,7 +907,7 @@ footer {
 
 .divMiniaturaPerfil{
     aspect-ratio: 1;
-    width: clamp(1rem, 4vw + .5rem, 2.5rem);
+    width: clamp(2rem, 4vw + .5rem, 2.5rem);
 
 }
 
@@ -1058,3 +1058,11 @@ footer {
 em{
     font-family: dosis !Important;
   }
+
+.adminItemDropdown{
+    display: block;
+}
+
+.adminItemDropdown[admin = 'true']{
+    display: none;
+}

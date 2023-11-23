@@ -494,3 +494,11 @@ class pessoaRepo:
             return objeto
         else:
             return None
+    
+    @classmethod
+    def verificaAdmin(cls, id) -> bool:
+        sql = "SELECT admin FROM pessoa WHERE idPessoa=?"
+        conexao = Database.createConnection()
+        cursor = conexao.cursor()
+        resultado = cursor.execute(sql, (id,)).fetchone()
+        return bool(resultado[0])

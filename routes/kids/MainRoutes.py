@@ -269,3 +269,12 @@ async def getUsuarios(
     usuarios_json = [asdict(user) for user in usuarios]
 
     return JSONResponse({"usuarios": usuarios_json})
+
+@router.get("/verificaadmin", response_class=JSONResponse)
+async def getUsuarios(
+    request: Request, usuario: Usuario = Depends(validar_usuario_logado),
+    crianca: Usuario = Depends(validar_crianca_logado),
+
+):
+    admin = pessoaRepo.verificaAdmin(usuario.id)
+    return JSONResponse({"admin": admin})

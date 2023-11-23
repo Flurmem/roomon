@@ -128,7 +128,7 @@
                 {% if participantes%}
                 {%for p in participantes%}
                 {% if p.id != criador.id %}
-                <div class="w-100 d-flex mb-2 gap-2">
+                <a class="w-100 d-flex mb-2 gap-2 text-decoration-none text-black" href="/perfilkids/{{p.nomeUsuario}}">
                     <div class="rounded-circle" style="flex: 0 1 20%;">
                         <img src="../static/imagens/usuarios/avatar{{p.id|id_img}}.jpg"
                             class="imagemPerfil rounded-circle">
@@ -137,7 +137,7 @@
                         <p class="mb-0 lilita h5 dosis fw-bold">{{p.nome}}</p>
                         <p class="mb-0 h6 dosis">@{{p.nomeUsuario}}</p>
                     </div>
-                </div>
+                </a>
                 {%endif%}
                 {%endfor%}
                 {%else%}

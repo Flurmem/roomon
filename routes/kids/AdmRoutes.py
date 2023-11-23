@@ -57,7 +57,6 @@ async def getDenunciasAdm(request: Request,
 
   if usuario:
     denunciasTotais = denunciaRepo.obterDenunciasTotais()
-    print(denunciasTotais)
     return templates.TemplateResponse(
       "kids/administracao/denunciaAdm.html", {"request": request, "usuario": usuario, "crianca": crianca, "denunciasTotais":denunciasTotais})
 

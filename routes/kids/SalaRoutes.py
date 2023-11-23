@@ -194,7 +194,7 @@ async def websocket_endpoint(websocket: WebSocket,
             data = [nomeUsuario, message, idUsuario, idSala]
             await manager.broadcast(data)
     except WebSocketDisconnect:
-        manager.disconnect(websocket)
+        await manager.disconnect(websocket)
         await manager.broadcast(f"{nomeUsuario} has left the chat")
 
 

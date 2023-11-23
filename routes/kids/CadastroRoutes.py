@@ -60,8 +60,6 @@ async def getCadastroAdulto(
 async def postCadastro(
     request: Request,
     usuario: Usuario = Depends(validar_usuario_logado),
-    email_responsavel: str = Form(""),
-    senha: str = Form(""),
     nome: str = Form(""),
     nomeUsuario: str = Form(""),
     email: str = Form(""),
@@ -72,19 +70,9 @@ async def postCadastro(
 ):
       nome = capitalizar_nome_proprio(nome).strip()
       email = email.lower().strip()
-      senha = senha.strip()
-  
+
       erros = {}
-      # validação do campo nome
-      is_not_empty(email_responsavel, "email_responsavel", erros)
-      if is_email(email_responsavel, "email_responsavel", erros):
-          if pessoaRepo.emailExiste(email_responsavel):
-              if pessoaRepo.possuiMaxDependentes(email_responsavel):
-                  add_error("email_responsavel", "O usuário já possui 3 dependentes cadastrados", erros)
-              if pessoaRepo.emailPertenceCrianca(email_responsavel):
-                  add_error("email_responsavel", "O email pertece a uma criança", erros)
-          else:
-              add_error("email_responsavel", "O email não existe", erros)
+
       is_not_empty(nome, "nome", erros)
       is_person_fullname(nome, "nome", erros)
       # validação do campo email
@@ -93,8 +81,6 @@ async def postCadastro(
           if pessoaRepo.emailExiste(email):
               add_error("email", "Já existe um usuário cadastrado com este e-mail.", erros)
       # validação do campo senha
-      is_not_empty(senha, "senha", erros)
-      is_password(senha, "senha", erros)
   
       is_not_empty(nomeUsuario, "nomeUsuario", erros)
   
@@ -106,7 +92,6 @@ async def postCadastro(
           valores = {}
           valores["nome"] = nome
           valores["email"] = email.lower()
-          valores["email_responsavel"] = email_responsavel
           valores['dataNascimento'] = str(dataNascimento)
           valores["nomeUsuario"] = nomeUsuario
   
@@ -122,20 +107,15 @@ async def postCadastro(
               },
           )
   
-      email_existe = pessoaRepo.emailExiste(email_responsavel)
-      if email_existe:
-          idResponsavel = pessoaRepo.verificaResponsavel(email_responsavel)
-      else:
-          return None
   
       usuarioCadastro = Pessoa(
           idPessoa=0,
-          idResponsavel=idResponsavel,
+          idResponsavel=usuario.id,
           nome=nome,
           nomeUsuario=nomeUsuario,
           email=email,
           dataNascimento=dataNascimento,
-          senha=obter_hash_senha(senha),
+          senha=0,
       )
       pessoaRepo.cadastraCrianca(usuarioCadastro)
       for c in categorias:

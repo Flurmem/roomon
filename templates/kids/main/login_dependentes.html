@@ -7,50 +7,56 @@
     class="p-4 p-sm-5 bg-white d-flex h-auto align-self-center rounded-4 shadow-lg d-flex flex-column align-items-center justify-content-center slide-in-left col-12">
     <h1 class="fw-bold display-3 text-black bahiana mb-3"> Contas </h1>
     <div class="w-100 p-1 d-flex align-items-start justify-content-center gap-3 mb-5 container-login-dependentes">
-
+      {%if dependentes%}
       {%for d in dependentes%}
       <div class="text-center dependente" data-email="{{d.email}}">
-        <img src="../static/imagens/usuarios/avatar{{d.id|id_img}}.jpg" class="rounded-circle imagem-perfil-dependente">
+        <img src="../static/imagens/usuarios/avatar{{d.id|id_img}}.jpg" class="rounded-circle border border-3 imagem-perfil-dependente">
         <p class="lilita h5"> {{d.nomeUsuario}} </p>
       </div>
       {%endfor%}
+      {%else%}
+      <div class="d-flex align-items-center justify-content-center flex-column">
+        <h3 class="text-black lilita mb-3" style="width: fit-content;"> Oops... Parece que você não tem nenhum dependente cadastrado</h3>
+        <a href="/cadastro" class="dosis text-decoration-none fundoKids rounded-4 text-white p-2" >Cadastrar um agora mesmo</a>
+      </div>
+      {%endif%}
     </div>
     <script>
-async function chamarAPI(email) {
-    try {
-        const url = `logindependentes/${email}`;
-        const response = await fetch(url, {
+      async function chamarAPI(email) {
+        try {
+          const url = `logindependentes/${email}`;
+          const response = await fetch(url, {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+              'Content-Type': 'application/json'
             }
-        });
-        recarregarPagina();
+          });
+          recarregarPagina();
 
-    } catch (error) {
-        console.error('Erro ao chamar a API:', error);
-    }
-}
+        } catch (error) {
+          console.error('Erro ao chamar a API:', error);
+        }
+      }
 
-function recarregarPagina() {
-    //const trs = document.querySelectorAll('tbody>tr');        
-    //if (trs.length === 0) {
-    window.location.href = 'inicialkids';
-    //}
-}
+      function recarregarPagina() {
+        //const trs = document.querySelectorAll('tbody>tr');        
+        //if (trs.length === 0) {
+        window.location.href = 'inicialkids';
+        //}
+      }
 
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    const botoes = document.querySelectorAll('div.dependente');
-    botoes.forEach((botao) => {
-        botao.addEventListener('click', async (event) => {
+      document.addEventListener('DOMContentLoaded', (event) => {
+        const botoes = document.querySelectorAll('div.dependente');
+        botoes.forEach((botao) => {
+          botao.addEventListener('click', async (event) => {
             event.preventDefault();
             const email = botao.getAttribute('data-email');
             console.log(email)
             chamarAPI(email)
+          });
         });
-    });
-});
+      });
 
     </script>
     {% if erros and valores: %}

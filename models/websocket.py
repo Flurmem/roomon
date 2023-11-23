@@ -10,8 +10,15 @@ class ConnectionManager:
         await websocket.accept()
         self.active_connections.append([websocket, idSala])
 
-    def disconnect(self, websocket: WebSocket):
-        self.active_connections.remove(websocket)
+    async def disconnect(self, websocket: WebSocket):
+        connection_to_remove = None
+        for connection in self.active_connections:
+            if connection[0] == websocket:
+                connection_to_remove = connection
+                break
+
+        if connection_to_remove:
+            self.active_connections.remove(connection_to_remove)
 
     async def send_personal_message(self, message: str, websocket: WebSocket):
         await websocket.send_text(message)

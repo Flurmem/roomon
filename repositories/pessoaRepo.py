@@ -394,7 +394,7 @@ class pessoaRepo:
     # Métodos que controlam os dependentes e o usuário criança
     @classmethod
     def obterDependentes(cls, idResponsavel: int) -> int:
-        sql = "SELECT idPessoa, email, nomeUsuario FROM pessoa where idResponsavel = ? and crianca = 1"
+        sql = "SELECT idPessoa, email, nomeUsuario, nome FROM pessoa where idResponsavel = ? and crianca = 1"
         conexao = Database.createConnection()
         cursor = conexao.cursor()
         resultado = cursor.execute(sql, (idResponsavel,)).fetchall()
@@ -403,7 +403,7 @@ class pessoaRepo:
             for dependente in resultado:
                 usuario = Usuario(id=dependente[0],
                                       email=dependente[1], 
-                                      nome=None, 
+                                      nome=dependente[3], 
                                       nomeUsuario=dependente[2])
                 dependentes.append(usuario)
             return dependentes

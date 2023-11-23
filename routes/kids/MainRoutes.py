@@ -185,7 +185,7 @@ async def postLoginKids(
 async def getLogout(request: Request):
     response = RedirectResponse("/logindependentes", status.HTTP_302_FOUND)
     response.set_cookie(
-        key="auth_token_crianca", value="", httponly=True, expires="1970-01-01T00:00:00Z"
+        key="auth_token_crianca", value="", httponly=True, max_age=1800, expires="1970-01-01T00:00:00Z"
     )
     return response
 

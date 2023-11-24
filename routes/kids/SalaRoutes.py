@@ -172,6 +172,7 @@ async def getSalaPagina(
         criador = pessoaRepo.obterUsuarioPorNomedoUsuario(nomeUsuario)
         
         chat = chatRepo.obterChat(sala.idSala)
+        print(chat)
 
         return templates.TemplateResponse(
             "kids/salas/sala.html",

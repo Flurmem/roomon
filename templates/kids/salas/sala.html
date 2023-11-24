@@ -25,10 +25,10 @@
                 </div>
 
                 <ul id='messages' style="height: 100%;" class="overflow-y-scroll list-unstyled p-3 flex-grow-1">
-                    {%if chat%}
+                    {%if chat|length > 0 %}
                     {%for m in chat%}
                     <li class="mensagem">
-                        <img src = '../static/imagens/usuarios/avatar{{m.idEmissor|id_img}}.jpg' class="avatarParaSalas">
+                        <img src='../static/imagens/usuarios/avatar{{m.idEmissor|id_img}}.jpg' class="avatarParaSalas">
                         <div class="corpoMensagem">
                             <a class="nickname">{{m.nomeUsuario}}</a>
                             <p class="conteudoMensagem">{{m.conteudo}}</p>
@@ -38,13 +38,15 @@
                     {%endfor%}
                     {%endif%}
                 </ul>
-                <div class=" w-100 d-flex gap-2 rounded-bottom-3 position-relative bg-transparent" style="height: 4rem;">
+                <div class=" w-100 d-flex gap-2 rounded-bottom-3 position-relative bg-transparent"
+                    style="height: 4rem;">
                     <div class="w-100 h-100  gap-2 d-flex align-items-center z-1">
                         <form action="" onsubmit="sendMessage(event)"
                             class="d-flex gap-3 align-items-center justify-content-center w-100">
                             <div class="position-relative w-100 d-flex">
-                                <input type="text" class="form-control w-100 lilita gradientBorder" style="flex-grow: 1;"
-                                    placeholder="Escreva sua mensagem para o mundo" id="messageText" autocomplete="off" />
+                                <input type="text" class="form-control w-100 lilita gradientBorder"
+                                    style="flex-grow: 1;" placeholder="Escreva sua mensagem para o mundo"
+                                    id="messageText" autocomplete="off" />
                                 <div class="position-absolute end-0 align-self-center d-flex align-items-center px-2">
                                     <div class="iconeEmoji rounded-3">
                                         <svg width="30" height="30" version="1.1" viewBox="0 0 20 20" x="0px" y="0px">
@@ -55,7 +57,7 @@
                                                 <path fill-rule="evenodd"
                                                     d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0a6 6 0 11-12 0 6 6 0 0112 0z"
                                                     clip-rule="evenodd">
-    
+
                                                 </path>
                                             </g>
                                         </svg>
@@ -65,12 +67,12 @@
                             <button class="bebas px-3 p-2 kidshover rounded-5 border-0 text-white"
                                 style="background-color: green;">Enviar</button>
                         </form>
-    
+
                     </div>
                 </div>
             </div>
 
-            
+
         </div>
 
         <div class="col-3 bg-white h-100 rounded-3 overflow-y-scroll p-3 sideContainer">

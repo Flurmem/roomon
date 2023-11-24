@@ -3,9 +3,11 @@ from PIL import Image
 from fastapi import APIRouter, Depends, File, Form, Query, Request, UploadFile, status
 from fastapi.responses import HTMLResponse, RedirectResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
+from models.chat import Mensagem
 from repositories.categoriaRepo import categoriaRepo
 from models.sala import Sala
 from models.websocket import ConnectionManager
+from repositories.chatRepo import chatRepo
 from repositories.pessoaRepo import pessoaRepo
 from repositories.salaRepo import salaRepo
 from models.usuario import Usuario
@@ -101,9 +103,13 @@ async def postCriacaoRoomKids(
                 infantil=infantil
             )
         )
+        
 
         if sala:
             imagem.save(f"static/imagens/salas/capas/capa{sala.idSala:04d}.jpg", "JPEG")
+            
+            #cria o chat
+            chatRepo.criarChat(sala.idSala)
         return RedirectResponse("/listagem", status.HTTP_302_FOUND)
     else:
         if usuario:
@@ -164,6 +170,8 @@ async def getSalaPagina(
             participantes.append(crianca)
 
         criador = pessoaRepo.obterUsuarioPorNomedoUsuario(nomeUsuario)
+        
+        chat = chatRepo.obterChat(sala.idSala)
 
         return templates.TemplateResponse(
             "kids/salas/sala.html",
@@ -172,7 +180,8 @@ async def getSalaPagina(
                 "crianca": crianca,
                 'sala': sala,
                 'participantes': participantes,
-                'criador': criador
+                'criador': criador,
+                'chat': chat,
             },
         )
     else:
@@ -182,16 +191,20 @@ async def getSalaPagina(
             return RedirectResponse("/loginkids", status.HTTP_302_FOUND)
 
 
-@router.websocket("/ws/{nomeUsuario}/{idUsuario}/{idSala}")
+@router.websocket("/ws/{nomeUsuario}/{idUsuario}/{idSala}/{idChat}")
 async def websocket_endpoint(websocket: WebSocket, 
                              nomeUsuario: str,
                              idUsuario: int,
-                             idSala: int):
+                             idSala: int,
+                             idChat: int,):
     await manager.connect(websocket, idSala)
     try: 
         while True:
             message = await websocket.receive_text()
             data = [nomeUsuario, message, idUsuario, idSala]
+            if message:
+                mensagem = Mensagem(idMensagem=0, idChat=idChat, idEmissor=idUsuario, conteudo=message)
+                chatRepo.armazenarMensagem(mensagem)
             await manager.broadcast(data)
     except WebSocketDisconnect:
         await manager.disconnect(websocket)

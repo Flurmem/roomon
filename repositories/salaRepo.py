@@ -242,8 +242,9 @@ class salaRepo:
 
     @classmethod
     def obterDadosDaSalaAPartirdoUsuario(cls, nomeUsuario: int) -> Sala:
-        sql = """SELECT idSala, idDono, titulo, nome, nomeUsuario, idCategoria, sala.descricao FROM sala 
+        sql = """SELECT sala.idSala, idDono, titulo, nome, nomeUsuario, idCategoria, sala.descricao, idChat FROM sala 
         LEFT JOIN pessoa p on p.idPessoa = sala.idDono 
+        LEFT JOIN chat on chat.idSala = sala.idSala
         WHERE nomeUsuario = ? and crianca=TRUE
 """
 
@@ -259,6 +260,7 @@ class salaRepo:
                 nomeUsuario=resultado[4],
                 idCategoria=resultado[5],
                 descricao=resultado[6],
+                idChat=resultado[7]
             )
 
         return dados

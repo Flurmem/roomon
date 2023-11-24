@@ -19,3 +19,4 @@ class Sala:
     dataCriacao: Optional[datetime] = None
     publica: Optional[bool] = False
     infantil: Optional[bool] = False
+    idChat: Optional[int] = 0

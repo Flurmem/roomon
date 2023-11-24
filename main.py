@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from repositories.denunciaRepo import denunciaRepo
+
 # Rotas Room ON #
 from routes.roomon.MainRoutes import router as mainRouter
 from routes.roomon.CadastrosRoutes import router as cadastroRoomOnRouter
@@ -21,6 +21,8 @@ import uvicorn
 from repositories.salaRepo import salaRepo
 from repositories.pessoaRepo import pessoaRepo
 from repositories.categoriaRepo import categoriaRepo
+from repositories.denunciaRepo import denunciaRepo
+from repositories.chatRepo import chatRepo
 
 #tabelas da sala
 salaRepo.tabelaSala()
@@ -36,6 +38,10 @@ categoriaRepo.tabelaCategoria()
 
 #Tabelas denuncia
 denunciaRepo.tabelaDenuncia()
+
+#Tabelas do Chat
+chatRepo.tabelaChat()
+chatRepo.tabelaMensagem()
 
 app = FastAPI()
 

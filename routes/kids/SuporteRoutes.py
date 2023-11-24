@@ -78,7 +78,7 @@ async def postDenuncias(
             )
         )
 
-        return RedirectResponse("/listagem", status.HTTP_302_FOUND)
+        return RedirectResponse("/denuncias", status.HTTP_302_FOUND)
     else:
         if usuario:
             return RedirectResponse("/logindependentes", status.HTTP_302_FOUND)

@@ -84,20 +84,3 @@ class denunciaRepo:
         else:
             conn.close()
             return None
-    @classmethod
-    def obterDenunciasTotais(cls) -> List[Denuncia]:
-        sql = """SELECT idDenuncia, idDenunciante, titulo, descricao FROM denuncia """
-        conn = Database.createConnection()
-        cursor = conn.cursor()
-        resultados = cursor.execute(sql,).fetchall()
-        if resultados is not None:
-            objetos = [Denuncia(id=objeto[0],
-                                idDenunciante=objeto[1],
-                                titulo=objeto[2],
-                                descricao=objeto[3]) for objeto in resultados]
-            conn.commit()
-            conn.close()
-            return objetos
-        else:
-            conn.close()
-            return None

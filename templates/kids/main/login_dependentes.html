@@ -10,14 +10,17 @@
       {%if dependentes%}
       {%for d in dependentes%}
       <div class="text-center dependente" data-email="{{d.email}}">
-        <img src="../static/imagens/usuarios/avatar{{d.id|id_img}}.jpg" class="rounded-circle border border-3 imagem-perfil-dependente">
+        <img src="../static/imagens/usuarios/avatar{{d.id|id_img}}.jpg"
+          class="rounded-circle border border-3 imagem-perfil-dependente">
         <p class="lilita h5"> {{d.nomeUsuario}} </p>
       </div>
       {%endfor%}
       {%else%}
       <div class="d-flex align-items-center justify-content-center flex-column">
-        <h3 class="text-black lilita mb-3" style="width: fit-content;"> Oops... Parece que você não tem nenhum dependente cadastrado</h3>
-        <a href="/cadastro" class="bebas text-decoration-none fundoKids rounded-4 text-white p-2" >Cadastrar um agora mesmo</a>
+        <h3 class="text-black lilita mb-3" style="width: fit-content;"> Oops... Parece que você não tem nenhum
+          dependente cadastrado</h3>
+        <a href="/cadastro" class="bebas text-decoration-none fundoKids rounded-4 text-white p-2">Cadastrar um agora
+          mesmo</a>
       </div>
       {%endif%}
     </div>
@@ -52,7 +55,6 @@
           botao.addEventListener('click', async (event) => {
             event.preventDefault();
             const email = botao.getAttribute('data-email');
-            console.log(email)
             chamarAPI(email)
           });
         });

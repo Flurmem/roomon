@@ -5,6 +5,7 @@ from repositories.categoriaRepo import categoriaRepo
 from models.pessoa import Pessoa
 from models.categoria import Categoria
 from models.usuario import Usuario
+from repositories.denunciaRepo import denunciaRepo
 from repositories.pessoaRepo import pessoaRepo
 from util.templateFilters import formatarData
 from typing import List
@@ -55,8 +56,9 @@ async def getDenunciasAdm(request: Request,
                           ):
 
   if usuario:
+    denunciasTotais = denunciaRepo.obterDenunciasTotais()
     return templates.TemplateResponse(
-      "kids/administracao/denunciaAdm.html", {"request": request, "usuario": usuario, "crianca": crianca})
+      "kids/administracao/denunciaAdm.html", {"request": request, "usuario": usuario, "crianca": crianca, "denunciasTotais":denunciasTotais})
 
   else:
     return RedirectResponse("/loginkids", status.HTTP_302_FOUND)
@@ -70,6 +72,16 @@ async def getAdm(request: Request,
   if usuario:
     return templates.TemplateResponse(
       "kids/administracao/inicialAdm.html", {"request": request, "usuario": usuario, "crianca": crianca})
+
+  else:
+    return RedirectResponse("/loginkids", status.HTTP_302_FOUND)
+
+@router.get("/excluirdenuncia/{idDenuncia:int}", response_class=HTMLResponse)
+async def getExcluirDenuncia(idDenuncia: int, usuario: Usuario = Depends(validar_usuario_logado)):
+
+  if usuario:
+    denuncia = denunciaRepo.delete(idDenuncia)
+    return RedirectResponse("/denunciasadm", status.HTTP_302_FOUND)
 
   else:
     return RedirectResponse("/loginkids", status.HTTP_302_FOUND)

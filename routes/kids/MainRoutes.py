@@ -154,7 +154,7 @@ async def postLoginKids(
               if pessoaRepo.alterarToken(email, token):
                   response = RedirectResponse(returnUrl, status.HTTP_302_FOUND)
                   response.set_cookie(
-                      key="auth_token", value=token, httponly=True
+                      key="auth_token", value=token, max_age=7200, httponly=True
                   )
                   return response
               else:

@@ -1070,3 +1070,54 @@ em{
 .adminItemDropdown[admin = 'true']{
     display: block;
 }
+
+.responsavel__navigation{
+  width: 100%;
+}
+
+.responsavel__navigation__ul{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  list-style: none;
+  gap: 1.5rem;
+  padding: .5rem 0;
+}
+
+.responsavel__navigation__ul > *{
+  flex: 0 1 auto;
+}
+
+.responsavel__navigation__ul > li > a{
+  text-decoration: none;
+  color: black;
+  font-family: lilita;
+}
+
+.wrapper{
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+.radio__navigation{
+    display: none;
+}
+
+.label__navigation{
+    background-color: transparent;
+    border-radius: 50% 10% 30% 20%/ 50% 80% 20%;
+    padding: 0 1rem;
+    font-family: dosis;
+    font-weight: 600;
+}
+
+.radio__navigation:checked + .label__navigation{
+    background-color: #389300;
+    color: white;
+
+}
+
+.label__navigation > a{
+    text-decoration: none;
+    color: inherit;
+}

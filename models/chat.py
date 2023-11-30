@@ -1,14 +1,12 @@
 from datetime import datetime
-from pydantic import BaseModel
 from typing import List, Optional
 from dataclasses import dataclass
 from datetime import datetime
-from models.usuario import Usuario
 
 @dataclass
 class Chat:
     idChat: int
-    idSala:int
+    idSala: int
     dataCriacao: Optional[datetime] = None
 
 @dataclass

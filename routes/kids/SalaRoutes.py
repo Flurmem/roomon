@@ -3,7 +3,7 @@ from PIL import Image
 from fastapi import APIRouter, Depends, File, Form, Query, Request, UploadFile, status
 from fastapi.responses import HTMLResponse, RedirectResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
-from models.chat import Mensagem
+from models.chat import Chat, Mensagem
 from repositories.categoriaRepo import categoriaRepo
 from models.sala import Sala
 from models.websocket import ConnectionManager
@@ -109,7 +109,8 @@ async def postCriacaoRoomKids(
             imagem.save(f"static/imagens/salas/capas/capa{sala.idSala:04d}.jpg", "JPEG")
             
             #cria o chat
-            chatRepo.criarChat(sala.idSala)
+            chat = Chat(idChat=0, idSala=sala.idSala)
+            chatRepo.criarChat(chat)
         return RedirectResponse("/listagem", status.HTTP_302_FOUND)
     else:
         if usuario:
@@ -172,8 +173,7 @@ async def getSalaPagina(
         criador = pessoaRepo.obterUsuarioPorNomedoUsuario(nomeUsuario)
         
         chat = chatRepo.obterChat(sala.idSala)
-        print(chat)
-
+        
         return templates.TemplateResponse(
             "kids/salas/sala.html",
             {

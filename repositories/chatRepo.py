@@ -51,18 +51,15 @@ class chatRepo:
         return resultado.rowcount > 0
 
     @classmethod
-    def criarChat(cls, idSala, chat:Chat) -> Chat:
+    def criarChat(cls, chat:Chat) -> Chat:
         sql = '''
         INSERT INTO chat(idSala) VALUES(?)
         '''
         conn = Database.createConnection()
         cursor = conn.cursor()
         resultado = cursor.execute(
-            sql,
-            (
-                idSala
-            ),
-        )
+            sql,(chat.idSala,)
+            )
 
         if resultado.rowcount > 0:
             chat.idChat = cursor.lastrowid

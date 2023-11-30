@@ -1121,3 +1121,13 @@ em{
     text-decoration: none;
     color: inherit;
 }
+
+.cards__dependentes{
+    display: grid;
+    border-radius: 15px;
+    border: #389300 2px solid;
+    padding: 1em 2em;
+    /* background: white; */
+    width: 18rem;
+    gap: 1.5em;
+}

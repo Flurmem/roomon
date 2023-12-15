@@ -28,6 +28,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-display: swap;
 }
 
 html,
@@ -1130,4 +1131,9 @@ em{
     /* background: white; */
     width: 18rem;
     gap: 1.5em;
+}
+
+.crianca__pc__img{
+    width: 350px;
+    height: 193px;
 }

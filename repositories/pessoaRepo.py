@@ -455,6 +455,7 @@ class pessoaRepo:
         sql = """SELECT idPessoa, nome, nomeUsuario
                 FROM pessoa p
                 WHERE crianca = TRUE"""
+                
     
         conexao = Database.createConnection()
         cursor = conexao.cursor()

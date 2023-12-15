@@ -269,8 +269,8 @@ class salaRepo:
     def obterParticipantesKids(cls, idSala: int) -> List[Usuario]:
         sql = """SELECT pessoa.idPessoa, nome, nomeUsuario FROM participacaoSala 
         LEFT JOIN pessoa on participacaoSala.idPessoa = pessoa.idPessoa
-        WHERE participacaoSala.idSala = ? and crianca=TRUE
-
+        WHERE participacaoSala.idSala = ? and crianca=TRUE 
+        LIMIT 0, 3;
 """
         conexao = Database.createConnection()
         cursor = conexao.cursor()

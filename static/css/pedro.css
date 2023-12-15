@@ -1134,6 +1134,6 @@ em{
 }
 
 .crianca__pc__img{
-    width: 350px;
-    height: 193px;
+    width: min(350px, 100%);
+    object-fit: cover;
 }
